@@ -1,0 +1,29 @@
+._06_card {
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+._06_card.light {
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.88);
+}
+
+._06_card.dark {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+._06_card .title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+._06_setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
