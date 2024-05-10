@@ -26,10 +26,6 @@ export const navigation = [{
   path: 'use/05',
   name: 'use(promise) 05',
   component: require('./pages/05_use_demo')
-}, {
-  path: 'use/05_',
-  name: 'Suspense',
-  component: require('./pages/05_use_demo')
 },{
   path: 'use/06',
   name: 'use(context) 01',

@@ -9,14 +9,13 @@ const getApi = async () => {
 var tabs = ['首页', '视频', '探索']
 
 export default function Index() {
-  var r = useRef(false)
-  var api = r.current ? null : getApi()
-  const [promise, setPromise] = useState(api)
+  const [promise, setPromise] = useState(getApi)
   const [current, setCurrent] = useState(0)
 
-  useEffect(() => {
-    r.current = true
-  }, [])
+  var __switchHandler = (index) => {
+    setCurrent(index)
+    setPromise(getApi())
+  }
 
   return (
     <div>
@@ -26,10 +25,7 @@ export default function Index() {
           <button 
             id='btn_05_item' 
             className={current == index ? 'active' : ''}
-            onClick={() => {
-              setCurrent(index)
-              setPromise(getApi())
-            }}
+            onClick={() => __switchHandler(index)}
             key={item}
           >{item}</button>
         ))}
@@ -43,7 +39,7 @@ export default function Index() {
 }
 
 const Item = ({api}) => {
-  const joke = use(api)
+  const joke = api ? use(api) : {value: 'nothing'}
 
   return (
     <div className='_05_a_value_item'>{joke.value}</div>

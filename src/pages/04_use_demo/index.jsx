@@ -1,4 +1,4 @@
-import {use, Suspense, useState, useEffect, useRef} from 'react'
+import {use, Suspense, useState} from 'react'
 import './index.css'
 
 const postApi = () => {
@@ -13,13 +13,7 @@ const postApi = () => {
 }
 
 export default function Index() {
-  const i = useRef(false)
-  let __api = i.current ? null : postApi()
-  const [api, setApi] = useState(__api)
-
-  useEffect(() => {
-    i.current = true
-  }, [])
+  const [api, setApi] = useState(postApi)
 
   function __inputChange() {
     api.cancel()

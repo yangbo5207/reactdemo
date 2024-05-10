@@ -7,22 +7,19 @@ const getMessage = async () => {
   return res.json()
 }
 
-const api = getMessage()
 
 function Message() {
-  const [messagePromise, setMessagePromise] = useState(null)
-  const [show, setShow] = useState(false)
+  const [messagePromise, setMessagePromise] = useState(getMessage)
 
   function __clickHandler() {
     setMessagePromise(getMessage())
-    setShow(true)
   }
   
   return (
     <div>
-      <div id='tips'>更新父级状态</div>
+      <div id='tips'>更新父级状态1</div>
       <button onClick={__clickHandler}>更新父级消息</button>
-      {show && <MessageContainer messagePromise={messagePromise} />}
+      <MessageContainer messagePromise={messagePromise} />
     </div>
   )
 }
@@ -61,7 +58,7 @@ const _api2 = new Promise((resolve) => {
 /**
  * 如果将 Promise 放入 state 中存储，则可以写成如下格式，也可以写成上面的格式
  */
-function fetchMessage__() {
+function fetchMessage() {
   return new Promise((resolve) => {
     setTimeout(resolve, 1000, '***')
   })

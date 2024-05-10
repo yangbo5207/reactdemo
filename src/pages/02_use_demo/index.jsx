@@ -10,13 +10,7 @@ const getApi = async () => {
 
 
 export default function Index() {
-  const r = useRef(false)
-  var __api = r ? null : getApi()
-  const [api, setApi] = useState(__api)
-
-  useEffect(() => {
-    r.current = true
-  }, [])
+  const [api, setApi] = useState(getApi)
 
   function __clickToGetMessage() {
     setApi(getApi())
