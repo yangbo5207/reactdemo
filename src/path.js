@@ -27,6 +27,18 @@ export const navigation = [{
   name: 'use(promise) 05',
   component: require('./pages/05_use_demo')
 },{
+  path: 'use/05_markdown',
+  name: 'react markdown',
+  component: require('./pages/05_markdown')
+},{
+  path: 'use/05_editor',
+  name: 'react editor',
+  component: require('./pages/05_editor')
+},{
+  path: 'use/05_suspense',
+  name: 'suspense',
+  component: require('./pages/05_suspense')
+},{
   path: 'use/06',
   name: 'use(context) 01',
   component: require('./pages/06_use_context')

@@ -4,3 +4,7 @@
   padding: 20px;
   border-radius: 8px;
 }
+
+.a_value {
+  transition: 0.3s;
+}

@@ -10,9 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@editorjs/editorjs": "^2.29.1",
+    "@editorjs/header": "^2.8.1",
+    "@editorjs/list": "^1.9.0",
+    "antd": "^5.17.0",
     "react": "19.0.0-beta-4508873393-20240430",
     "react-dom": "19.0.0-beta-4508873393-20240430",
+    "react-editor-js": "^2.1.0",
+    "react-markdown": "^9.0.1",
     "react-router-dom": "^6.23.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "rehype-highlight": "^7.0.0",
+    "remark-gfm": "^4.0.0",
     "vite-plugin-require-transform": "^1.0.21"
   },
   "devDependencies": {

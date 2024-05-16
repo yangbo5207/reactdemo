@@ -10,7 +10,7 @@ const getApi = async () => {
 }
 
 export default function Index() {
-  const [api, setApi] = useState(null)
+  const [api, setApi] = useState(getApi)
   const [list, setList] = useState([])
   const [disabled, setDisabled] = useState(false)
 
@@ -44,7 +44,6 @@ const Item = ({api, setList, setDisabled}) => {
 
   useEffect(() => {
     if (!api) return
-    setDisabled(false)
     setList((list) => {
       if (!list.includes(joke.value)) {
         return list.concat(joke.value)

@@ -1,11 +1,15 @@
 import {use} from 'react'
 import {Context} from './context'
 
+document.documentElement.setAttribute('data-theme', 'light')
+
 export default function Card() {
   const {theme, counter, setTheme, setCounter} = use(Context)
 
   const __switch = () => {
-    setTheme(theme == 'light' ? 'dark' : 'light')
+    let _theme = theme == 'light' ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', _theme)
+    setTheme(_theme)
     setCounter(counter + 1)
   }
   return (

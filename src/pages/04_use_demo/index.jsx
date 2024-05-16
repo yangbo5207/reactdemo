@@ -1,5 +1,7 @@
 import {use, Suspense, useState} from 'react'
 import './index.css'
+import { useTransition } from 'react';
+import { useRef } from 'react';
 
 const postApi = () => {
   let controller = new AbortController();
@@ -14,10 +16,17 @@ const postApi = () => {
 
 export default function Index() {
   const [api, setApi] = useState(postApi)
+  const [isPending, startTransition] = useTransition()
+  const timer = useRef(21)
 
   function __inputChange() {
-    api.cancel()
-    setApi(postApi())
+    clearTimeout(timer.current)
+    timer.current = setTimeout(() => {
+      startTransition(() => {
+        api.cancel()
+        setApi(postApi())
+      })
+    }, 300)
   }
 
   return (
@@ -30,17 +39,17 @@ export default function Index() {
         onChange={__inputChange}
       />
       <Suspense fallback={<div>loading...</div>}>
-        <List api={api} />
+        <List api={api} isPending={isPending} />
       </Suspense>
     </div>
   )
 }
 
-const List = ({api}) => {
+const List = ({api, isPending}) => {
   const posts = use(api)
   
   return (
-    <ul className='_04_list'>
+    <ul className='_04_list' style={{opacity: isPending ? 0.5 : 1}}>
       {posts.map((post) => (
         <div key={post.id} className='_04_item'>
           <h2>{post.title}</h2>

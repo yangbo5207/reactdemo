@@ -1,3 +1,14 @@
+[data-theme=dark] {
+  --font-color: rgba(255, 255, 255, 0.8);
+  --background-color:  rgba(0, 0, 0, 0.8);
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+[data-theme=light] {
+  --font-color: rgba(0, 0, 0, 0.88);
+  --background-color:  rgba(0, 0, 0, 0.02);;
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+
 ._06_card {
   margin: 20px 0;
   padding: 20px;
@@ -5,16 +16,10 @@
   transition: all 0.2s;
 }
 
-._06_card.light {
-  background-color: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.88);
-}
-
-._06_card.dark {
-  background-color: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(0, 0, 0, 1);
-  color: rgba(255, 255, 255, 0.8);
+._06_card {
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  color: var(--font-color);
 }
 
 ._06_card .title {

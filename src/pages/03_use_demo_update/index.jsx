@@ -7,7 +7,7 @@ const getApi = async () => {
 }
 
 export default function Index() {
-  const [list, setList] = useState([])
+  const [list, setList] = useState(() => [getApi()])
 
   function __clickToGetMessage() {
     list.push(getApi())

@@ -19,7 +19,6 @@ function Layout() {
       <div id='playground'>
         <Outlet />
       </div>
-      
     </div>
   );
 }
