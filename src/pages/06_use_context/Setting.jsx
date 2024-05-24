@@ -1,5 +1,5 @@
 import {use} from 'react'
-import {Context} from './context'
+import {Context} from './context.jsx'
 
 document.documentElement.setAttribute('data-theme', 'light')
 

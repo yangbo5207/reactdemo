@@ -6,6 +6,7 @@
   margin-bottom: 20px;
   border-radius: 8px;
 }
+
 ._04_list {
   transition: 0.3s;
 }
@@ -19,5 +20,5 @@
 
 #_04_input {
   margin-bottom: 20px;
-  color: #dae76b;
+  color: #5c5c5c;
 }

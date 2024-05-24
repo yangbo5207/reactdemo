@@ -1,97 +1,107 @@
+import {lazy} from 'react'
+
 export const navigation = [{
   path: '',
   name: 'home',
-  component: require('./pages/home')
+  component: lazy(() => import('./pages/home'))
+}, {
+  path: 'motion',
+  name: 'react motion',
+  component: lazy(() => import('./pages/00_motion'))
 }, {
   path: 'use/01',
   name: 'use(promise) 01',
-  component: require('./pages/01_use_demo')
+  component: lazy(() => import('./pages/01_use_demo'))
 }, {
   path: 'use/02',
   name: 'use(promise) 02',
-  component: require('./pages/02_use_demo')
+  component: lazy(() => import('./pages/02_use_demo'))
 }, {
   path: 'use/03',
   name: 'use(promise) 03',
-  component: require('./pages/03_use_demo')
+  component: lazy(() => import('./pages/03_use_demo'))
 },{
   path: 'use/03_1',
   name: 'use(promise) 03_update',
-  component: require('./pages/03_use_demo_update')
+  component: lazy(() => import('./pages/03_use_demo_update'))
 }, {
   path: 'use/04',
   name: 'use(promise) 04',
-  component: require('./pages/04_use_demo')
+  component: lazy(() => import('./pages/04_use_demo'))
 }, {
   path: 'use/05',
   name: 'use(promise) 05',
-  component: require('./pages/05_use_demo')
+  component: lazy(() => import('./pages/05_use_demo'))
 },{
   path: 'use/05_markdown',
   name: 'react markdown',
-  component: require('./pages/05_markdown')
+  component: lazy(() => import('./pages/05_markdown'))
 },{
   path: 'use/05_editor',
   name: 'react editor',
-  component: require('./pages/05_editor')
+  component: lazy(() => import('./pages/05_editor'))
 },{
   path: 'use/05_suspense',
   name: 'suspense',
-  component: require('./pages/05_suspense')
+  component: lazy(() => import('./pages/05_suspense'))
 },{
   path: 'use/06',
   name: 'use(context) 01',
-  component: require('./pages/06_use_context')
+  component: lazy(() => import('./pages/06_use_context'))
 },{
   path: 'use/07',
   name: 'form Action 01',
-  component: require('./pages/07_action_demo')
+  component: lazy(() => import('./pages/07_action_demo'))
 },{
   path: 'use/08',
   name: 'form Action 02',
-  component: require('./pages/08_action_demo')
+  component: lazy(() => import('./pages/08_action_demo/index.jsx'))
 },{
   path: 'use/09',
   name: 'useFormStatus()',
-  component: require('./pages/09_useFormStatus')
+  component: lazy(() => import('./pages/09_useFormStatus'))
 },{
   path: 'use/10',
   name: 'useForm(Action)State',
-  component: require('./pages/10_useFormState')
+  component: lazy(() => import('./pages/10_useFormState'))
 },{
   path: 'use/11',
   name: 'useOptimistic()',
-  component: require('./pages/11_useOptimistic')
+  component: lazy(() => import('./pages/11_useOptimistic'))
 },{
   path: 'use/12',
   name: 'async transition',
-  component: require('./pages/12_async_transition')
+  component: lazy(() => import('./pages/12_async_transition'))
 },{
   path: 'use/13',
   name: '增强的 ref',
-  component: require('./pages/13_ref')
+  component: lazy(() => import('./pages/13_ref'))
 },{
   path: 'use/14',
   name: 'useDeferredValue',
-  component: require('./pages/14_useDeferredValue')
+  component: lazy(() => import('./pages/14_useDeferredValue'))
 },{
-  path: 'use/15',
-  name: '文档元数据',
-  component: require('./pages/15_meta')
+  path: 'use/1500',
+  name: 'Compiler case 00',
+  component: lazy(() => import('./pages/15_compiler_00'))
 },{
-  path: 'use/16',
-  name: '在组件中引入样式表',
-  component: require('./pages/15_meta')
+  path: 'use/1501',
+  name: 'Compiler case 01',
+  component: lazy(() => import('./pages/16_compiler_01'))
 },{
-  path: 'use/17',
-  name: '在组件中引入 <script>',
-  component: require('./pages/15_meta')
+  path: 'use/1502',
+  name: 'Compiler case 02',
+  component: lazy(() => import('./pages/17_compiler_02'))
 },{
-  path: 'use/18',
-  name: '预加载 API',
-  component: require('./pages/15_meta')
+  path: 'use/1503',
+  name: 'Compiler case 03',
+  component: lazy(() => import('./pages/18_compiler_03'))
 },{
-  path: 'use/19',
-  name: '异常处理',
-  component: require('./pages/15_meta')
+  path: 'use/1504',
+  name: 'useDeferredValue',
+  component: lazy(() => import('./pages/19_deferredValue'))
+},{
+  path: 'use/20',
+  name: 'ref 更改',
+  component: lazy(() => import('./pages/20_ref'))
 }]

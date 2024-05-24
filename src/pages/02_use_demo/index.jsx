@@ -4,11 +4,12 @@ import './index.css'
 import { useEffect } from 'react'
 import { useTransition } from 'react'
 
+import Modal from '../../components/Modal'
+
 const getApi = async () => {
   const res = await fetch('https://api.chucknorris.io/jokes/random')
   return res.json()
 }
-
 
 export default function Index() {
   const [api, setApi] = useState(getApi)
@@ -24,7 +25,6 @@ export default function Index() {
     <div>
       <div id='tips'>点击按钮获取一条新的数据</div>
       <button onClick={__clickToGetMessage} disabled={isPending}>获取数据</button>
-
       <div className="content">
         <Suspense fallback={<div>loading...</div>}>
           <Item api={api} isPending={isPending} />

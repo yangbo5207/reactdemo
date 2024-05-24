@@ -1,45 +1,36 @@
 import { useState } from 'react'
 import './index.css'
+import CartDisplay from "./CartDsiplay.jsx";
+import AddToCart from "./AddToCart.jsx";
 
 function Index() {
-  const [posts, setPosts] = useState([])
-  function formAction(formdata) {
-    const data = {
-      title: formdata.get('title'),
-      content: formdata.get('content')
-    }
-    if (data.title && data.content) {
-      setPosts([...posts, data])
-    }
+  const [carts, setCarts] = useState([{
+    id: 1,
+    title: 'Traversy Media Ebook'
+  }])
+
+  const addToCart = async (formData, title) => {
+    const id = String(formData.get('itemID'))
+    await new Promise((resolve) => {
+      setTimeout(resolve, 1000)
+      setCarts(carts => [...carts, {id, title}])
+    })
+    return {id}
   }
+
   return (
     <div>
-      <div>基础的表单提交案例</div>
-
-      <form action={formAction}>
-        <div className="form_item">
-          <div className="label">Title</div>
-          <input name='title' type="text" placeholder='请输入' />
-        </div>
-        
-        <div className="form_item">
-          <div className="label">Name</div>
-          <input name='content' type="text" placeholder='Enter title' />
-        </div>
-
-        <div className="form_item">
-          <button className='primary' type='submit'>Submit</button>
-        </div>
-      </form>
-
-      <ul className='_04_list'>
-      {posts.map((post) => (
-        <div key={post.title} className='_04_item'>
-          <h2>{post.title}</h2>
-          <p>{post.content}</p>
-        </div>
-      ))}
-    </ul>
+      <CartDisplay cart={carts} />
+      <AddToCart
+        id='1'
+        title='JavaScript: The Definitive Guide'
+        addToCart={addToCart}
+      />
+      <AddToCart
+        id='1'
+        title='JavaScript: The Definitive Guide'
+        addToCart={addToCart}
+      />
     </div>
   )
 }

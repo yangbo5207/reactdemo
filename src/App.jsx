@@ -1,3 +1,4 @@
+import {Suspense} from 'react'
 import {Routes, Route, Outlet} from 'react-router-dom'
 import ActiveLink from './components/ActiveLink'
 import {navigation} from './path'
@@ -28,10 +29,15 @@ function App() {
     <Routes>
       <Route path='/' element={<Layout />}>
         {navigation.map((item, index) => (
-          index == 0 ? 
+          index === 0 ?
             <Route key={item.path} index element={<item.component />} /> : 
-            <Route key={item.path} path={item.path} element={<item.component />} />  
+            <Route key={item.path} path={item.path} element={
+              // <Suspense fallback={<div>loading...</div>}>
+                <item.component />
+              // </Suspense>
+            } />
         ))}
+        <Route path="*" element={<div>nothing</div>} />
       </Route>
     </Routes>
   )

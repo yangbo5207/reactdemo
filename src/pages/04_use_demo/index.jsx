@@ -1,7 +1,5 @@
-import {use, Suspense, useState} from 'react'
+import {use, Suspense, useState, useDeferredValue, useRef} from 'react'
 import './index.css'
-import { useTransition } from 'react';
-import { useRef } from 'react';
 
 const postApi = () => {
   let controller = new AbortController();
@@ -16,17 +14,11 @@ const postApi = () => {
 
 export default function Index() {
   const [api, setApi] = useState(postApi)
-  const [isPending, startTransition] = useTransition()
-  const timer = useRef(21)
+  const deferred = useDeferredValue(api)
 
-  function __inputChange() {
-    clearTimeout(timer.current)
-    timer.current = setTimeout(() => {
-      startTransition(() => {
-        api.cancel()
-        setApi(postApi())
-      })
-    }, 300)
+  function __inputChange(e) {
+    api.cancel()
+    setApi(postApi())
   }
 
   return (
@@ -34,12 +26,13 @@ export default function Index() {
       <div id='tips'>初始化时获取列表</div>
       <input 
         id='_04_input' 
-        type="text" 
-        placeholder='输入内容模拟重新请求' 
+        type="text"
+        autoComplete='off'
+        placeholder='input key word'
         onChange={__inputChange}
       />
       <Suspense fallback={<div>loading...</div>}>
-        <List api={api} isPending={isPending} />
+        <List api={deferred} isPending={api !== deferred} />
       </Suspense>
     </div>
   )

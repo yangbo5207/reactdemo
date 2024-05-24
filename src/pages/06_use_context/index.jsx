@@ -1,6 +1,6 @@
 import Card from './Card'
 import Setting from './Setting'
-import Provider from './context'
+import Provider from './context.jsx'
 import './index.css'
 
 function Index() {

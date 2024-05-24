@@ -1,0 +1,28 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  animation-duration: 400ms;
+
+  &.in {
+    animation-name: show;
+  }
+
+  &.out {
+    animation-name: hide;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes show {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+@keyframes hide {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}

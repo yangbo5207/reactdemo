@@ -3,28 +3,44 @@ import './index.css'
 
 function Index() {
   const [posts, setPosts] = useState([])
-  function formAction(formdata) {
-    const data = {
-      title: formdata.get('title'),
-      content: formdata.get('content')
-    }
-    if (data.title && data.content) {
-      setPosts([...posts, data])
+
+  function action(data) {
+    const title = data.get('title')
+    const content = data.get('content')
+
+    if (title && content) {
+      setPosts([...posts, {title, content}])
     }
   }
+  function onInput(event) {
+    let input = event.target
+    console.log(input.validity)
+    if (input.validity.valid) {
+      console.log('xxxxx', input.validity)
+    }
+  }
+
+
   return (
     <div>
       <div>基础的表单提交案例</div>
 
-      <form action={formAction}>
+      <form action={action}>
         <div className="form_item">
           <div className="label">Title</div>
-          <input name='title' type="text" placeholder='请输入' />
+          <input name='title' type="text" placeholder='Enter title' required />
         </div>
         
         <div className="form_item">
           <div className="label">Name</div>
-          <input name='content' type="text" placeholder='Enter title' />
+          <input
+            onInput={onInput}
+            name='content'
+            type="text"
+            placeholder='Enter you name'
+            required
+            pattern={'abc'}
+          />
         </div>
 
         <div className="form_item">
@@ -32,14 +48,14 @@ function Index() {
         </div>
       </form>
 
-      <ul className='_04_list'>
-      {posts.map((post) => (
-        <div key={post.title} className='_04_item'>
-          <h2>{post.title}</h2>
-          <p>{post.content}</p>
-        </div>
-      ))}
-    </ul>
+      <ul className='_07_list'>
+        {posts.map((post, index) => (
+          <div key={`${post.title}-${index}`} className='_07_item'>
+            <h2>{post.title}</h2>
+            <p>{post.content}</p>
+          </div>
+        ))}
+      </ul>
     </div>
   )
 }

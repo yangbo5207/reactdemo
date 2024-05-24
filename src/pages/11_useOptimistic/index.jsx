@@ -1,47 +1,47 @@
-import { useState } from 'react'
-import './index.css'
+import { useOptimistic, useState, useRef } from "react";
+import { deliverMessage } from "./actions.js";
 
-function Index() {
-  const [posts, setPosts] = useState([])
-  function formAction(formdata) {
-    const data = {
-      title: formdata.get('title'),
-      content: formdata.get('content')
-    }
-    if (data.title && data.content) {
-      setPosts([...posts, data])
-    }
+function Thread({ messages, sendMessage }) {
+  const formRef = useRef();
+  async function formAction(formData) {
+    addOptimisticMessage(formData.get("message"));
+    formRef.current.reset();
+    await sendMessage(formData);
   }
+  const [optimisticMessages, addOptimisticMessage] = useOptimistic(
+    messages,
+    (state, newMessage) => [
+      ...state,
+      {
+        text: newMessage,
+        sending: true
+      }
+    ]
+  );
+
   return (
-    <div>
-      <div>基础的表单提交案例</div>
-
-      <form action={formAction}>
-        <div className="form_item">
-          <div className="label">Title</div>
-          <input name='title' type="text" placeholder='请输入' />
-        </div>
-        
-        <div className="form_item">
-          <div className="label">Name</div>
-          <input name='content' type="text" placeholder='Enter title' />
-        </div>
-
-        <div className="form_item">
-          <button className='primary' type='submit'>Submit</button>
-        </div>
+    <>
+      <form action={formAction} ref={formRef}>
+        <input type="text" name="message" placeholder="Hello!" />
+        <button type="submit">Send</button>
       </form>
-
-      <ul className='_04_list'>
-      {posts.map((post) => (
-        <div key={post.title} className='_04_item'>
-          <h2>{post.title}</h2>
-          <p>{post.content}</p>
+      {optimisticMessages.map((message, index) => (
+        <div key={index}>
+          {message.text}
+          {!!message.sending && <small> (Sending...)</small>}
         </div>
       ))}
-    </ul>
-    </div>
-  )
+    </>
+  );
 }
 
-export default Index
+export default function App() {
+  const [messages, setMessages] = useState([
+    { text: "Hello there!", sending: false, key: 1 }
+  ]);
+  async function sendMessage(formData) {
+    const sentMessage = await deliverMessage(formData.get("message"));
+    setMessages((messages) => [...messages, { text: sentMessage }]);
+  }
+  return <Thread messages={messages} sendMessage={sendMessage} />;
+}
