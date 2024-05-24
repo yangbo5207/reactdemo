@@ -29,7 +29,6 @@ function Index() {
         title='React19 all solution'
         onSubmit={addToCart}
       />
-
       <CartList cart={carts} />
     </div>
   )
