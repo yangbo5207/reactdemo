@@ -69,6 +69,18 @@ export const navigation = [{
   name: 'useOptimistic()',
   component: lazy(() => import('./pages/11_useOptimistic'))
 },{
+  path: 'use/11_0',
+  name: 'useOptimistic() demo01',
+  component: lazy(() => import('./pages/11_useOptimistic_demo1'))
+},{
+  path: 'use/11_1',
+  name: 'useOptimistic() demo2',
+  component: lazy(() => import('./pages/11_useOptimistic_demo2'))
+},{
+  path: 'use/11_2',
+  name: 'useOptimistic() demo3',
+  component: lazy(() => import('./pages/11_useOptimistic_demo3'))
+},{
   path: 'use/12',
   name: 'async transition',
   component: lazy(() => import('./pages/12_async_transition'))

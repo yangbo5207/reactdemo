@@ -1,8 +1,9 @@
-import { useOptimistic, useState, useRef } from "react";
+import { useOptimistic, useState, useTransition, useRef } from "react";
 import { deliverMessage } from "./actions.js";
 import s from './index.module.css'
 
 export default function Index() {
+  const [isPending, startTransition] = useTransition()
   const [messages, setMessages] = useState([]);
   const [optimisticMessages, addOptimisticMessage] = useOptimistic(
     messages,
@@ -18,10 +19,12 @@ export default function Index() {
 
   async function formAction(formData) {
     let newMessage = formData.get("message")
+    form.current.reset()
     addOptimisticMessage(newMessage);
-    form.current.reset();
-    let message = await deliverMessage(newMessage);
-    setMessages([...messages, {text: message}])
+    startTransition(async () => {
+      let message = await deliverMessage(newMessage);
+      setMessages((messages) => [...messages, {text: message}])
+    })
   }
 
   return (
@@ -30,7 +33,7 @@ export default function Index() {
         <input
           type="text"
           name="message"
-          placeholder="enter your message"
+          placeholder="Hello!"
         />
         <button
           type="submit"

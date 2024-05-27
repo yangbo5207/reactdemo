@@ -1,21 +1,21 @@
-import {useActionState} from 'react'
+import {useActionState, useState} from 'react'
 import {useFormStatus} from 'react-dom'
 
-function BookItem({id, title, onSubmit}) {
-  console.log('xxxhelowl223234')
-  async function action(pre, formData) {
-    const id = formData.get('id')
-    const title = formData.get('title')
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        onSubmit({id, title, count: 0})
-        resolve()
-      }, 300)
-    })
-    return pre + 1
-  }
+async function action(cur, formData, onSubmit) {
+  const id = formData.get('id')
+  const title = formData.get('title')
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      onSubmit({id, title, count: cur + 1})
+      resolve()
+    }, 300)
+  })
+  return cur + 1
+}
 
-  const [count, formAction] = useActionState(action, 0)
+function BookItem({id, title, onSubmit}) {
+  const [count, formAction] = useActionState(
+    (cur, formData) => action(cur, formData, onSubmit), 0)
 
   return (
     <form action={formAction}>

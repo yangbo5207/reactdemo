@@ -7,6 +7,10 @@ form {
   border-radius: 8px;
 }
 
+#form {
+  display: flex;
+}
+
 .form_item {
   margin: 20px 0;
 }
