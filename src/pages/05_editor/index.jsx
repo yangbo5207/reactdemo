@@ -21,7 +21,6 @@ function EditorPage() {
       <div id='editor_container'>   
       </div>
     </div>
-    
   )
 }
 

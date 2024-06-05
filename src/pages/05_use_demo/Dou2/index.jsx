@@ -1,4 +1,4 @@
-import {use, Suspense, useState, useRef, useEffect} from 'react'
+import {use, Suspense, useState, useRef, useTransition} from 'react'
 import './index.css'
 
 const getApi = async () => {
@@ -11,6 +11,7 @@ var tabs = ['首页', '视频', '探索']
 export default function Index() {
   const [promise, setPromise] = useState(getApi)
   const [current, setCurrent] = useState(0)
+  const [isPending, startTransition] = useTransition()
 
   var __switchHandler = (index) => {
     setCurrent(index)
@@ -24,24 +25,30 @@ export default function Index() {
         {tabs.map((item, index) => (
           <button 
             id='btn_05_item' 
-            className={current == index ? 'active' : ''}
+            className={current === index ? 'active' : ''}
             onClick={() => __switchHandler(index)}
             key={item}
+            disabled={isPending}
           >{item}</button>
         ))}
         
         <Suspense fallback={<div className='_05_a_value_item'>Loading...</div>}>
-          <Item api={promise} />
+          <Item api={promise} pending={isPending} />
         </Suspense>
       </div>
     </div>
   )
 }
 
-const Item = ({api}) => {
+const Item = ({api, pending}) => {
   const joke = api ? use(api) : {value: 'nothing'}
 
   return (
-    <div className='_05_a_value_item'>{joke.value}</div>
+    <div
+      className='_05_a_value_item'
+      style={{opacity: pending ? 0.6 : 1}}
+    >
+      {joke.value}
+    </div>
   )
 }

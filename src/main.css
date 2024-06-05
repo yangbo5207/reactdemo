@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button {
+  @apply rounded-md border border-solid border-transparent py-2 px-4 text-sm font-medium bg-gray-100
+    cursor-pointer transition
+}
+
+button:hover {
+  @apply bg-gray-200
+}

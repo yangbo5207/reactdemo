@@ -32,9 +32,9 @@ function App() {
           index === 0 ?
             <Route key={item.path} index element={<item.component />} /> : 
             <Route key={item.path} path={item.path} element={
-              // <Suspense fallback={<div>loading...</div>}>
+              <Suspense fallback={<div>loading...</div>}>
                 <item.component />
-              // </Suspense>
+              </Suspense>
             } />
         ))}
         <Route path="*" element={<div>nothing</div>} />
@@ -44,3 +44,4 @@ function App() {
 }
 
 export default App
+

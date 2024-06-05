@@ -9,6 +9,10 @@ export const navigation = [{
   name: 'react motion',
   component: lazy(() => import('./pages/00_motion'))
 }, {
+  path: 'router/suspense',
+  name: '路由跳转',
+  component: lazy(() => import('./pages/00_router_suspense'))
+}, {
   path: 'use/01',
   name: 'use(promise) 01',
   component: lazy(() => import('./pages/01_use_demo'))
@@ -116,4 +120,66 @@ export const navigation = [{
   path: 'use/20',
   name: 'ref 更改',
   component: lazy(() => import('./pages/20_ref'))
+},{
+  path: 'tailwind/demo01',
+  name: 'tailwind 初体验',
+  component: lazy(() => import('./pages/tailwindemo01'))
 }]
+
+
+function init() {
+  document.body.innerHTML = App()
+}
+
+function App() {
+  return `<div>
+    <h1>hello world</h1>
+    ${Page1()}
+  </div>`
+}
+
+var Page1Fiber = {
+  count: undefined
+}
+
+function useState(value) {
+  if (Page1Fiber.count === undefined) {
+    Page1Fiber.count = value
+  }
+  function set(value) {
+    console.log('inner: ', value)
+    Page1Fiber.count = value
+    init()
+  }
+  return [Page1Fiber.count, set]
+}
+
+function Page1() {
+  const [count, setCount] = useState(0)
+  console.log(count)
+  function clickhandler() {
+    setCount(count + 1)
+  }
+  window.clickhandler = clickhandler
+  return `<div>
+    hello Page1
+    <div>xxxx3</div>
+    <div>xxxx</div>
+    <div>count: ${count}</div>
+    <button onclick="clickhandler()">递增</button>
+    ${Comp1(1, 2, 'xxo')}
+  </div>`
+}
+
+function Comp1(a, b, c) {
+  return `<div>
+    <div>hello comp, ${a}</div>
+    <h2>${b}</h2>
+    <h3>${c}</h3>
+  </div>`
+}
+
+// 渲染原理
+// 1、初始化
+// 2、更新的时候，如何渲染  angular - signal：只更新其中一部分  2、再次初始化
+// 缺点：函数式：相同的输入，相同输出
