@@ -1,32 +1,57 @@
-import {useState} from 'react'
-import {motion} from 'framer-motion'
-import s from './index.module.css'
-import Editor, { DiffEditor, useMonaco, loader } from '@monaco-editor/react';
-import {useNavigate} from 'react-router-dom'
+import {Sandpack} from '@codesandbox/sandpack-react'
 
-function Motion() {
-  const [x, setX] = useState(0)
-  function __handler() {
-    setX(x === 100 ? 0 : 100)
-  }
+import test from './test.jsx?raw'
+import Motion from './test.jsx'
 
-  function onInput() {
-    console.log('____')
-  }
+import maincssraw from './main.css?raw'
 
-  function onChange() {
-    console.log('xxx')
-  }
+import User from './use.jsx'
+import user_ras from './use.jsx?raw'
 
+function App() {
   return (
     <div>
-      <motion.div id={s.box1} animate={{x: x}} />
-      <button onClick={__handler}>点击动画</button>
-      <input type="text" onInput={onInput} onChange={onChange} />
-      <Editor height="300px" width="300px" defaultLanguage="markdown" placeholder="xxhelx" />
+      <Motion />
+      <div className='mt-5'>
+        <Sandpack
+          template="react"
+          options={{
+            externalResources: ["https://cdn.tailwindcss.com"]
+          }}
+          customSetup={{
+            dependencies: {
+              'framer-motion' : 'latest',
+              'autoprefixer': 'latest'
+            }
+          }}
+          files={{
+            'App.js': test,
+            'main.css': maincssraw
+          }}
+        />
+
+        <Sandpack
+          template="react"
+          options={{
+            externalResources: ["https://cdn.tailwindcss.com"],
+            layout: 'none',
+            wrapContent: true,
+            editorHeight: 'auto',
+            readOnly: true
+          }}
+          customSetup={{
+            dependencies: {
+              "react": "19.0.0-rc-915b914b3a-20240515",
+              "react-dom": "19.0.0-rc-915b914b3a-20240515",
+            }
+          }}
+          files={{
+            'App.js': user_ras
+          }}
+        />
+      </div>
     </div>
   )
 }
 
-export default Motion;
-
+export default App;

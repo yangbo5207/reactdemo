@@ -37,10 +37,6 @@ export const navigation = [{
   name: 'use(promise) 05',
   component: lazy(() => import('./pages/05_use_demo'))
 },{
-  path: 'use/05_markdown',
-  name: 'react markdown',
-  component: lazy(() => import('./pages/05_markdown'))
-},{
   path: 'use/05_editor',
   name: 'react editor',
   component: lazy(() => import('./pages/05_editor'))

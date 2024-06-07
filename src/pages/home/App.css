@@ -4,6 +4,13 @@
   padding: 2rem;
   text-align: center;
 }
+.orange {
+  background-color: orange;
+}
+
+.red {
+  background-color: #f44336;
+}
 
 .logo {
   height: 6em;
