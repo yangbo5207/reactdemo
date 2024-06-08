@@ -13,7 +13,7 @@ export default function NavHeader() {
   const modal = useRef(null)
 
   return (
-    <header className='sticky top-0 flex justify-between border-b border-slate-200 min-w-[320px]'>
+    <header className='fixed z-50 top-0 flex justify-between border-b border-slate-200 min-w-[320px] bg-white bg-opacity-70 backdrop-blur-sm w-full'>
       <div className='pl-6 h-16 flex items-center md:pl-10 transition-all'>
         <ActiveLink className='flex items-center' to='/'>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
@@ -112,7 +112,6 @@ export default function NavHeader() {
               </svg>
             </div>
           </ActiveLink>
-
         </div>
 
         <div className='flex items-center text-gray-700 bg-white px-8 py-5 transition hover:bg-amber-100'>

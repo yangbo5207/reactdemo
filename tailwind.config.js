@@ -17,6 +17,32 @@ module.exports = {
       },
     },
     extend: {
+      textColor: {
+        skin: {
+          base: 'var(--color-text-base)',
+          muted: 'var(--color-text-muted)',
+          inverted: 'var(--color-text-inverted)',
+        }
+      },
+      backgroundColor: {
+        skin: {
+          fill: 'var(--color-fill)',
+          'button-accent': 'var(--color-button-accent)',
+          'button-accent-hover': 'var(--color-button-accent-hover)',
+          'button-muted': ({opacityValue}) => {
+            console.log(opacityValue)
+            if (opacityValue !== undefined) {
+              return `rgba(var(--color-button-muted), ${opacityValue})`
+            }
+            return `rgb(var(--color-button-muted))`
+          },
+        }
+      },
+      gradientColorStops: {
+        skin: {
+          hue: 'var(--color-fill)',
+        }
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -51,11 +77,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
         "accordion-down": {

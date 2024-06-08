@@ -10,3 +10,34 @@ button {
 button:hover {
   @apply bg-gray-200
 }
+
+@layer base {
+  :root {
+    --color-text-base: #FFF;
+    --color-text-muted: #c7d2f7;
+    --color-text-inverted: #4f46e5;
+    --color-fill: #4338ca;
+    --color-button-accent: #FFF;
+    --color-button-accent-hover: #eef2ff;
+    --color-button-muted: 99, 102, 241;
+  }
+  .theme-swiss {
+    --color-text-base: #FFF;
+    --color-text-muted: #fecaca;
+    --color-text-inverted: #dc2626;
+    --color-fill: #b91c1c;
+    --color-button-accent: #FFF;
+    --color-button-accent-hover: #fef2f2;
+    --color-button-muted: 239, 68, 68;
+  }
+  
+  .theme-neon {
+    --color-text-base: #111802;
+    --color-text-muted: #2fc306;
+    --color-text-inverted: #ebfacc;
+    --color-fill: #b3ff17;
+    --color-button-accent: #243403;
+    --color-button-accent-hover: #374f05;
+    --color-button-muted: 212, 255, 122;
+  }
+}

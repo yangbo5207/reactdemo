@@ -31,9 +31,7 @@ function Layou2t() {
   return (
     <div>
       <NavHeader />
-      <div id='playground'>
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   )
 }
@@ -58,73 +56,3 @@ function App() {
 }
 
 export default App
-
-
-const arr = [
-    {
-      name: 'Tom1',
-      desc: 'sdfsdfsfdsfdsdfsfxxx',
-      selected: false,
-    },
-    {
-      name: 'Tom2',
-      desc: 'sdfsdfsfdsfdsdfsf222',
-      selected: false,
-    },
-    {
-      name: 'Tom3',
-      desc: 'sdfsdfsfdsfdsdfsfddd',
-      selected: false,
-    },
-    {
-      name: 'Tom4',
-      desc: 'sdfsdfsfdsfdsdfsfaaa',
-      selected: false,
-    },
-    {
-      name: 'Tom5',
-      desc: 'sdfsdfsfdsfdsdfsffff',
-      selected: false,
-    },
-  ]
-
-// 数据是否对 UI 有直接影响
-function Demo() {
-  const [arr, setArr] = useState([])
-
-  function onsubmit(e) {
-    e.preventDefault()
-    console.log(e)
-    var formdata = new FormData(e.target)
-    arr.push({
-      name: formdata.get('name'),
-      email: formdata.get('email'),
-      key: performance.now().toString()
-    })
-    setArr([...arr])
-    e.target.reset()
-  }
-
-  return (
-    <div>
-      <form onSubmit={onsubmit}>
-        <input type="text" name='name' placeholder="enter your name" />
-        <input type="text" name='email' placeholder="enter your email" />
-        <button type='submit'>提交</button>
-      </form>
-
-      <div>
-        <div>
-          {arr.map((item, index) => (
-            <div key={item.key}>
-              <div>name: {item.name}</div>
-              <div>name: {item.email}</div>
-              <button>删除</button>
-              <button>标记</button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
