@@ -3,6 +3,7 @@ import ButtonText from './case/Button.jsx?raw'
 import apiText from './case/api.js?raw'
 import SkeletonText from './case/Skeleton.jsx?raw'
 import htmlText from './case/index.html?raw'
+import MessageText from './case/Message.jsx?raw'
 
 import Article from './article.mdx'
 
@@ -11,6 +12,7 @@ import Playground from "components/Playground/index";
 const files = {
   'App.js': AppText,
   'api.js': apiText,
+  'Message.jsx': MessageText,
   'Button.jsx': ButtonText,
   'Skeleton.jsx': SkeletonText,
   '/public/index.html': htmlText

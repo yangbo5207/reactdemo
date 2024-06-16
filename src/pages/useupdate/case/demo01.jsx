@@ -1,22 +1,33 @@
-import {use, Suspense} from 'react'
+import {use, useState, Suspense} from 'react'
 import Message from './Message'
-
-const _api3 = () => {
-  return new Promise(resolve => {
-    resolve({ value: 'React does not preserve any state for renders that got suspended before they were able to mount for the first time. When the component has loaded, React will retry rendering the suspended tree from scratch.' })
-  })
-}
+import Skeleton from './Skeleton'
+import Button from './Button'
+import {getMessage} from './api'
 
 export default function Demo01() {
-  const promise = _api3()
+  const [promise, update] = useState(null)
+
+  function __handler() {
+    update(getMessage())
+  }
+
   return (
-    <Suspense fallback=''>
-      <Content promise={promise} />
-    </Suspense>
+    <>
+      <div className='text-right mb-4'>
+        <Button onClick={__handler}>更新数据</Button>
+      </div>
+      <Suspense fallback={<Skeleton />}>
+        <Content promise={promise} />
+      </Suspense>
+    </>
   )
 }
 
 function Content(props) {
+  if (!props.promise) {
+    return <Message message='' />
+  }
+
   const {value} = use(props.promise)
   return (
     <Message message={value} />

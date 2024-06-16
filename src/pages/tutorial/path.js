@@ -30,7 +30,7 @@ export const navigation = [{
   component: lazy(() => import('../usesuspense/index.jsx'))
 }, {
   path: 'use/update',
-  name: '5、初始化并更新数据',
+  name: '5、更新数据',
   component: lazy(() => import('../useupdate/index.jsx'))
 }, {
   path: 'use/02',
