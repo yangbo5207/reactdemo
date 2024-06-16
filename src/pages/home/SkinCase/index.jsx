@@ -5,15 +5,17 @@ import btncode from './Button.jsx?raw'
 import Case from './case.jsx'
 
 function App() {
+  console.log('xxx home')
   return (
     <div>
       <div className='mt-5'>
         <Sandpack
           template="react"
           options={{
-            externalResources: ["https://cdn.tailwindcss.com"],
+            externalResources: ["https://cdn.tailwindcss.com", "https://rsms.me/inter/inter.css"],
             // layout: 'none',
-            wrapContent: false
+            wrapContent: false,
+            editorHeight: 'auto',
           }}
           customSetup={{
             dependencies: {

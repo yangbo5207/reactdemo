@@ -7,7 +7,7 @@ function Motion() {
 
   function __handler() {
     startTransition(() => {
-      navigate('/use/01')
+      navigate('/tutorial/use/01')
     })
   }
 

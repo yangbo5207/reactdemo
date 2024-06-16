@@ -7,7 +7,7 @@ export default function Skin() {
   const cls = `relative ${skin} bg-skin-fill overflow-hidden rounded`
 
   return (
-    <div className='my-8 border border-gray-150 rounded px-8'>
+    <div className='my-8 border border-gray-150 rounded px-8 pb-8'>
       <div className='flex justify-center'>
         <div onClick={() => setSkin('')} className='my-6 mx-2 h-6 w-6 rounded bg-indigo-500 cursor-pointer'></div>
         <div onClick={() => setSkin('theme-swiss')} className='my-6 mx-2 h-6 w-6 rounded bg-red-600 cursor-pointer'></div>
@@ -21,13 +21,23 @@ export default function Skin() {
           <h2 className='font-extrabold text-skin-base text-4xl transition'>
             <span>广告位招租</span>
           </h2>
-          <p className='mt-4 text-lg leading-6 text-skin-muted transition'>
-            近日华为官方正式预告新机系列会改名为 Pura 70，并在 4 月 18 日正式宣布先锋计划突击开卖，不少粉丝日前到华为门市捕捉营业一刻，深怕Pura 70系列会如Mate 60系列般限量突袭。
+          <p className='mt-4 text-md text-left text-skin-muted transition'>
+
+          </p>
+
+          <p className='mt-4 text-md text-left text-skin-muted transition'>
+            推荐
+          </p>
+          <p className='mt-4 text-md text-left text-skin-muted transition'>
+            单一模式、依赖注入、依赖倒置、开闭原则、策略模式、并发模式，一网打尽。
+          </p>
+          <p className='mt-4 text-md text-left text-skin-muted transition'>
+            更加详细的介绍
           </p>
           <div className='mt-10 max-w-sm mx-auto sm:max-w-one sm:flex sm:justify-center'>
             <div className='space-y-0 mx-auto inline-grid grid-cols-2 gap-5'>
-              <a className='transition text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md shadow-lg px-8' href="#">了解详情</a>
-              <a className='transition text-skin-base bg-skin-button-muted hover:bg-opacity-70 flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-lg shadow-sm px-8' href="#">引导关注</a>
+              <a className='transition text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md shadow-lg px-8' href="#">联系方式</a>
+              <a className='transition text-skin-base bg-skin-button-muted hover:bg-opacity-70 flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-lg shadow-sm px-8' href="#">了解更多</a>
             </div>
           </div>
         </div>

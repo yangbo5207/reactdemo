@@ -1,6 +1,7 @@
 import ActiveLink from "../../components/ActiveLink.jsx";
-import {useState, useRef} from 'react'
+import {useState, useRef, useEffect} from 'react'
 import Modal from '../../components/Modal'
+import Avatar from './avatar'
 
 const links = [
   {path: 'tutorial', text: '教程'},
@@ -10,7 +11,10 @@ const links = [
 
 export default function NavHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   const modal = useRef(null)
+
+
 
   return (
     <header className='fixed z-50 top-0 flex justify-between border-b border-slate-200 min-w-[320px] bg-white bg-opacity-70 backdrop-blur-sm w-full'>
@@ -52,6 +56,9 @@ export default function NavHeader() {
 
           <div className='ml-1 text-sm text-blue-50'>激活码</div>
         </ActiveLink>
+
+        <Avatar />
+
       </div>
 
       <div className='md:hidden flex items-center pr-6 text-gray-700' onClick={() => modal.current.show()}>

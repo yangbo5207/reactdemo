@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -9,6 +11,14 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    fsizes: {
+      12: '12px',
+      14: '14px',
+      16: '16px',
+      18: '18px',
+      24: '24px',
+      32: '32px',
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -24,7 +34,15 @@ module.exports = {
           inverted: 'var(--color-text-inverted)',
         }
       },
+
       backgroundColor: {
+        heise: {
+          0: 'rgba(0, 0, 0, 0)',
+          1: 'rgba(0, 0, 0, 0.1)',
+          2: 'rgba(0, 0, 0, 0.2)',
+          3: 'rgba(0, 0, 0, 0.3)',
+          4: 'rgba(0, 0, 0, 0.4)',
+        },
         skin: {
           fill: 'var(--color-fill)',
           'button-accent': 'var(--color-button-accent)',
@@ -94,5 +112,33 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(({addBase, theme}) => {
+      addBase({
+        'button': { color: theme('colors.orange.700') }
+      })
+    }),
+    plugin(({addComponents, theme}) => {
+      addComponents({
+        '.card': {
+          display: 'inline-block',
+          padding: '1rem',
+          border: '1px solid',
+          borderRadius: '4px',
+          borderColor: theme('colors.red.400'),
+          margin: '1rem'
+        }
+      })
+    }),
+    plugin(({matchUtilities, theme}) => {
+      matchUtilities({
+        fsize: (value) => ({
+          fontSize: value
+        })
+      }, {
+        values: theme('fsizes')
+      })
+    })
+  ],
 }

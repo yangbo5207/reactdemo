@@ -1,21 +1,21 @@
-import { useState } from 'react'
-import Button from 'components/Button'
 import Skin from './Skin'
 import Background from './background'
 import Block from './block'
 import SkinCase from "pages/home/SkinCase/index";
+import Gisucs from '@giscus/react'
+import { useLocation, useOutlet } from "react-router-dom";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className='relative pt-16'>
       <Background />
 
       <div className='max-w-[1050px] mx-auto'>
+
         <div className="mt-20 max-w-[750px]">
-          <h2 className='text-[20px] font-bold'>React 19 全解</h2>
+          <h2 className='text-lg font-bold'>React 19 全解</h2>
+
           <p className="mt-4 text-gray-500 leading-6 text-md">
             全网第一本系统学习 React 19 的专栏。本专栏在公众号「这波能反杀」首发，受到了大量粉丝的喜爱。专栏中包含大量实践案例，深入检出，理论结合实践为大家分享 React19 的学习。
           </p>
@@ -35,7 +35,6 @@ function App() {
               <span>关注公众号</span>
             </a>
           </div>
-
         </div>
 
         <div className="mt-20 max-w-[750px]">
@@ -80,6 +79,25 @@ function App() {
           <div className='w-[200px] h-32 border rounded-xl'>x</div>
           <div className='w-[200px] h-32 border rounded-xl'>x</div>
         </div>
+
+        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>评论区</div>
+
+        <Gisucs
+          repo='yangbo5207/react19feature'
+          repoId='R_kgDOMGiHOw'
+          category='General'
+          categoryId='DIC_kwDOMGiHO84Cf8dR'
+          maping='pathname'
+          term='欢迎道友'
+          strict='0'
+          reactionsEnabled='1'
+          emitMetadata="1"
+          inputPosition="top"
+          lang="zh-CN"
+          loading="lazy"
+          crossorigin="anonymous"
+          async
+        />
 
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
         <div className='flex justify-between pb-10'>

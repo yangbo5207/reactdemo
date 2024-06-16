@@ -1,31 +1,14 @@
 import {Suspense} from 'react'
 import {Routes, Route, Outlet} from 'react-router-dom'
-import ActiveLink from './components/ActiveLink'
-import {navigation} from './path'
+import {navigation} from 'pages/tutorial/path.js'
 import {useState} from 'react'
 import './App.css'
 
 import NavHeader from "./pages/NavHeader/index.jsx";
 
-function Layout() {
-  return (
-    <div id='wrapper'>
-      <nav id='side_nav'>
-        <h2>React 19</h2>
-        <ul id='side_ul'>
-          {navigation.map((item, index) => (
-            <li key={item.path}>
-              <ActiveLink activeName='active' to={`/${item.path}`}>{item.name}</ActiveLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div id='playground'>
-        <Outlet />
-      </div>
-    </div>
-  );
-}
+import Home from 'pages/home'
+import Tutorial from './pages/tutorial'
+
 
 function Layou2t() {
   return (
@@ -40,15 +23,16 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Layou2t />}>
-        {navigation.map((item, index) => (
-          index === 0 ?
-            <Route key={item.path} index element={<item.component />} /> : 
-            <Route key={item.path} path={item.path} element={
-              <Suspense fallback={<div>loading...</div>}>
+        <Route index element={<Home />} />
+        <Route path='tutorial' element={<Tutorial />}>
+          {navigation.filter((item) => !!item.path).map((item ,i) => (
+            <Route key={item.path} path={item.path} index={i === 0} element={
+              <Suspense fallback={<div></div>}>
                 <item.component />
               </Suspense>
             } />
-        ))}
+          ))}
+        </Route>
         <Route path="*" element={<div>nothing</div>} />
       </Route>
     </Routes>
