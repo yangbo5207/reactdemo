@@ -30,8 +30,28 @@ export const navigation = [{
   component: lazy(() => import('../usesuspense/index.jsx'))
 }, {
   path: 'use/update',
-  name: '5、更新数据',
+  name: '5、点击更新数据',
   component: lazy(() => import('../useupdate/index.jsx'))
+}, {
+  path: 'use/initialize',
+  name: '6、初始化请求并更新',
+  component: lazy(() => import('../useInitializeUpdate/index.jsx'))
+}, {
+  path: 'use/updatetolist',
+  name: '7、请求并新增到列表',
+  component: lazy(() => import('../useUpdatetoList/index.jsx'))
+}, {
+  path: 'use/loadmore',
+  name: '8、分页列表加载更多',
+  component: lazy(() => import('../loadmore/index.jsx'))
+}, {
+  path: 'use/search',
+  name: '9、搜索',
+  component: lazy(() => import('../search/index.jsx'))
+}, {
+  path: 'use/react16',
+  name: '9、在 React 16 中使用',
+  component: lazy(() => import('../usewithreact16/index.jsx'))
 }, {
   path: 'use/02',
   name: '4、use(promise) 02',
