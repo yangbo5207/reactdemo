@@ -22,16 +22,6 @@ html {
   top: 0;
 }
 
-input[type=text] {
-  display: block;
-  outline: none;
-  text-indent: 16px;
-  width: 100%;
-  height: 36px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-}
-
 #side_nav h2 {
   padding-left: 30px;
 }

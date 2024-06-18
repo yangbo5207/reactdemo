@@ -49,13 +49,28 @@ export const navigation = [{
   name: '9、搜索',
   component: lazy(() => import('../search/index.jsx'))
 }, {
-  path: 'use/react16',
-  name: '9、在 React 16 中使用',
-  component: lazy(() => import('../usewithreact16/index.jsx'))
+  path: 'use/tabs',
+  name: '10、tab 简单切换',
+  component: lazy(() => import('../tabs/index.jsx')),
+  label: '1'
 }, {
-  path: 'use/02',
-  name: '4、use(promise) 02',
-  component: lazy(() => import('../02_use_demo/index.jsx'))
+  path: 'use/tabshard',
+  name: '11、tab 缓存切换',
+  component: lazy(() => import('../tabshard/index.jsx')),
+  label: '2'
+}, {
+  path: 'use/fromchildren',
+  name: '11、父级获取数据',
+  component: lazy(() => import('../tabs/index.jsx')),
+  label: '3'
+}, {
+  path: 'use/nest',
+  name: '12、Suspense 嵌套',
+  component: lazy(() => import('../tabs/index.jsx'))
+}, {
+  path: 'use/react16',
+  name: '13、在低版本中使用',
+  component: lazy(() => import('../usewithreact16/index.jsx'))
 }, {
   type: 'tip',
   name: 'use promise'

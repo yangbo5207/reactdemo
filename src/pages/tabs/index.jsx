@@ -4,6 +4,7 @@ import SkeletonText from './case/Skeleton.jsx?raw'
 import htmlText from './case/index.html?raw'
 import ListText from './case/List.jsx?raw'
 import InputText from './case/Input.jsx?raw'
+import TabsText from './case/Tabs.jsx?raw'
 
 import Article from './article.mdx'
 
@@ -13,7 +14,7 @@ const files = {
   'App.js': AppText,
   'api.js': apiText,
   'List.jsx': ListText,
-  'Input.jsx': InputText,
+  'Tabs.jsx': TabsText,
   'Skeleton.jsx': SkeletonText,
   '/public/index.html': htmlText
 }
