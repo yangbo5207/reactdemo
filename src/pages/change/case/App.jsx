@@ -1,6 +1,7 @@
 import {Suspense, useState, useTransition} from 'react'
 import Message from './Message'
 import Button from './Button'
+import Skeleton from './Skeleton'
 import {getApi} from './api'
 
 export default function App() {
@@ -15,17 +16,13 @@ export default function App() {
 
   return (
     <div>
-      <div className='text-xs border-b border-gray-100 py-2 mb-4 text-gray-500'>
-        案例演示：点击按钮更新数据
-      </div>
       <Button onClick={__clickToGetMessage} disabled={isPending}>
         点击更新
       </Button>
-      <div className='my-4 border p-4 rounded text-sm leading-6 border-gray-200'>
-        <Suspense fallback={<div>loading...</div>}>
-          <Message response={response} isPending={isPending} />
-        </Suspense>
-      </div>
+
+      <Suspense fallback={<Skeleton />}>
+        <Message response={response} isPending={isPending} />
+      </Suspense>
     </div>
   )
 }

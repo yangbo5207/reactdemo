@@ -1,3 +1,6 @@
+import Cardruntime from "components/Cardruntime";
+import Demo01 from './case/Demo01'
+
 ## *0*
 **序**
 
@@ -81,24 +84,27 @@ React 19 之前，React 高手与普通开发者之间，开发的项目无论�
 首先我们需要定义一个 API 用于请求数据。
 
 ```ts
-const api = async () => {
-  const res = await fetch('https://api.chucknorris.io/jokes/random')
-  return res.json()
+export const getApi = async () => {
+  await fetch(url, requestOptions)
+  const i = Math.floor(Math.random() * 10) % 5
+  return {
+    value: random[i]
+  }
 }
 ```
+
+需要注意的是，本案例中的 api 都使用的是模拟接口，许多数据无任何业务描述，仅用于呈现 UI 的显示和变化。因此写法会与实际开发过程中稍有差异。
 
 然后创建一个函数组件，并执行该 api
 
 ```jsx
-export default function Index() {
-  const __api = api()
+export default function App() {
+  const promise = getApi()
+
   return (
-    <div>
-      <div id='tips'>初始化时，自动获取一条数据内容</div>
-      <Suspense fallback={<div>loading...</div>}>
-        <Message api={__api} />
-      </Suspense>
-    </div>
+    <Suspense fallback={<Skeleton />}>
+      <Message response={promise} />
+    </Suspense>
   )
 }
 ```
@@ -107,14 +113,19 @@ export default function Index() {
 
 ```jsx
 const Message = (props) => {
-  const content = use(props.api)
+  const {response} = props
+  const content = use(response)
   return (
-    <div>
-      <div>{content.value}</div>
+    <div className='text-sm leading-6 transition border border-blue-100 shadow rounded-md p-4 w-full mt-4'>
+      {content.value}
     </div>
   )
 }
 ```
+
+演示效果如下
+
+<Cardruntime reload><Demo01 /></Cardruntime>
 
 大家可以自行感受一下新的开发方式与以前基于 `useEffect` 请求数据有什么不同之处。我在右侧案例演示中，还提供了更完整更具代表性的案例。大家可以先瞄一眼体会一下。案例代码有对应的完整演示效果，你可以通过修改代码观察案例的变化。
 
