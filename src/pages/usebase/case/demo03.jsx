@@ -19,9 +19,6 @@ export default function Index() {
       <div>
         {show ? <Demo03 /> : <Skeleton />}
       </div>
-      <div className='mt-4 text-right'>
-        <Button signal onClick={__handler}>Reload</Button>
-      </div>
     </Suspense>
   )
 }

@@ -21,7 +21,7 @@ const files = {
   'api.js': apiText,
   'Button.jsx': ButtonText,
   'Skeleton.jsx': SkeletonText,
-  '/public/index.html': htmlText,
+  '/public/index.html': {code: htmlText, hidden: true},
 }
 
 function code({className, ...properties}) {

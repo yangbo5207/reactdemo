@@ -14,8 +14,9 @@ import Demo01 from "./case/demo01";
 ```javascript
 // api.js
 export const getMessage = async () => {
-  const res = await fetch('https://api.chucknorris.io/jokes/random')
-  return res.json()
+  await fetch(url, requestOptions)
+  const i = Math.floor(Math.random() * 10) % 5
+  return {value: random[i], id: getUuid()}
 }
 ```
 

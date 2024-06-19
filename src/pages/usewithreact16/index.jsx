@@ -27,7 +27,7 @@ const files = {
   'Userinfo.jsx': UserinfoText,
   'Button.jsx': ButtonText,
   'Skeleton.jsx': SkeletonText,
-  '/public/index.html': htmlText
+  '/public/index.html': {code: htmlText, hidden: true}
 }
 
 function code({className, ...properties}) {
@@ -79,7 +79,6 @@ function App() {
                 "react": "16.14.0",
                 // "react": "experimental",
                 "react-dom": "16.14.0",
-                // "react-dom": "experimental",
                 'tailwind-merge': 'latest',
                 'clsx': 'latest',
               },

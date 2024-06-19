@@ -19,7 +19,7 @@ export const navigation = [{
   component: lazy(() => import('../create/index.jsx'))
 }, {
   type: 'tip',
-  name: '最重要的 hook：use'
+  name: 'use(promise)'
 }, {
   path: 'use/base',
   name: '3、use 基础知识',
@@ -73,7 +73,7 @@ export const navigation = [{
   component: lazy(() => import('../usewithreact16/index.jsx'))
 }, {
   type: 'tip',
-  name: 'use promise'
+  name: 'use(context)'
 }, {
   path: 'use/03',
   name: '5、use(promise) 03',

@@ -5,7 +5,7 @@ const Userinfo = (props) => {
   const username = unescape((props.username || '').replace(/\\u/gi,'%u'));
   const index = props.index || 0;
 
-  let base = 'flex border border-blue-100 p-4 rounded-md my-4'
+  let base = 'flex border border-blue-100 p-4 rounded-md my-4 items-start'
 
   return (
     <div className={base}>
