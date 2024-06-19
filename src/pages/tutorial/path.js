@@ -60,16 +60,16 @@ export const navigation = [{
   label: '2'
 }, {
   path: 'use/fromchildren',
-  name: '11、父级获取数据',
-  component: lazy(() => import('../tabs/index.jsx')),
+  name: '12、父级获取数据',
+  component: lazy(() => import('../tabscount/index.jsx')),
   label: '3'
 }, {
   path: 'use/nest',
-  name: '12、Suspense 嵌套',
-  component: lazy(() => import('../tabs/index.jsx'))
+  name: '13、Suspense 嵌套',
+  component: lazy(() => import('../usenest/index.jsx'))
 }, {
   path: 'use/react16',
-  name: '13、在低版本中使用',
+  name: '14、在低版本中使用',
   component: lazy(() => import('../usewithreact16/index.jsx'))
 }, {
   type: 'tip',

@@ -1,24 +1,41 @@
-import {useState, Suspense} from 'react'
-import Skeleton from './Skeleton'
-import {fetchListWithCancel} from './api'
-import List from './List'
-import Input from './Input'
+import {useState, Suspense, useRef} from 'react'
+import Tabs from './Tabs'
 
-export default function Demo01() {
-  const [promise, update] = useState(() => fetchListWithCancel(10))
+import Account from './Account'
+import Search from './Search'
 
-  function __inputChange(e) {
-    promise.cancel()
-    const len = e.target.value.length % 10
-    update(fetchListWithCancel(len))
+const tabs = [
+  { name: 'My Account', href: '#', current: true, element: Account },
+  { name: 'Company', href: '#', current: false, element: Account },
+  { name: 'Team Members', href: '#', current: false, element: Account },
+  { name: 'Billing', href: '#', current: false, element: Search },
+]
+
+export default function Example() {
+  const [current, switchToSelected] = useState(0)
+  const map = useRef(new Set([tabs[current]]))
+
+  function __handler(index) {
+    tabs[current].current = false
+    tabs[index].current = true
+
+    const item = tabs[index]
+    if (!map.current.has(item)) {
+      map.current.add(item)
+    }
+
+    switchToSelected(index)
   }
+
+  let arr = Array.from(map.current)
 
   return (
     <div>
-      <Input onChange={__inputChange} placeholder='Enter something' />
-      <Suspense fallback={<Skeleton />}>
-        <List promise={promise} />
-      </Suspense>
+      <Tabs tabs={tabs} onSwitch={__handler} />
+
+      {arr.map((item, index) => (
+        <item.element selected={item.current} key={`z-${index}`}/>
+      ))}
     </div>
   )
 }
