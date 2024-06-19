@@ -19,25 +19,20 @@ export default function Skin() {
         <div className='absolute inset-0 bg-gradient-to-br from-skin-hue via-skin-hue to-transparent opacity-90 transition'></div>
         <div className='relative max-w-2xl mx-auto text-center py-16 px-8'>
           <h2 className='font-extrabold text-skin-base text-4xl transition'>
-            <span>广告位招租</span>
+            <span>极客时间、掘金买课优惠</span>
           </h2>
           <p className='mt-4 text-md text-left text-skin-muted transition'>
-
+            官方的课程返现全部归还，需要从网站 coursesub.top 或者公众号「课程减减」通过邀请链接进行下单，购买后添加客服微信发送课程名确认后即可收到红包。
           </p>
 
           <p className='mt-4 text-md text-left text-skin-muted transition'>
-            推荐
+            同时可叠加极客时间的优惠券或者学生半价优惠，618 极客时间全场 6 折优惠最后几天，可以按需囤课。
           </p>
-          <p className='mt-4 text-md text-left text-skin-muted transition'>
-            单一模式、依赖注入、依赖倒置、开闭原则、策略模式、并发模式，一网打尽。
-          </p>
-          <p className='mt-4 text-md text-left text-skin-muted transition'>
-            更加详细的介绍
-          </p>
+
           <div className='mt-10 max-w-sm mx-auto sm:max-w-one sm:flex sm:justify-center'>
             <div className='space-y-0 mx-auto inline-grid grid-cols-2 gap-5'>
-              <a className='transition text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md shadow-lg px-8' href="#">联系方式</a>
-              <a className='transition text-skin-base bg-skin-button-muted hover:bg-opacity-70 flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-lg shadow-sm px-8' href="#">了解更多</a>
+              <a className='transition text-skin-inverted bg-skin-button-accent hover:bg-skin-button-accent-hover flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md shadow-lg px-8' href="https://coursesub.top/?key=react">去选课</a>
+              <a className='transition text-skin-base bg-skin-button-muted hover:bg-opacity-70 flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-lg shadow-sm px-8' href="https://mp.weixin.qq.com/s?__biz=MzUyMjkwNTgwOA==&mid=2247485923&idx=1&sn=0710d33fd1e1287e10f88bd4139e0a0e&chksm=f9c5f85cceb2714a585567f21751ae703f8ba80519a7a089746079a05c4f916c962fe81332d1#rd">详细规则</a>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ const Message = (props) => {
   const {isPending, response} = props
   const content = use(response)
   return (
-    <div style={{opacity: isPending ? 0.5 : 1}}>
+    <div className='transition' style={{opacity: isPending ? 0.5 : 1}}>
       {content.value}
     </div>
   )

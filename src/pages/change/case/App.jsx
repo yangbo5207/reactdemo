@@ -1,7 +1,7 @@
 import {Suspense, useState, useTransition} from 'react'
 import Message from './Message'
 import Button from './Button'
-import {getApi} from './api.js'
+import {getApi} from './api'
 
 export default function App() {
   const [response, setApi] = useState(getApi)

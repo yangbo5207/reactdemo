@@ -5,7 +5,7 @@ import btncode from './Button.jsx?raw'
 import Case from './case.jsx'
 
 function App() {
-  console.log('xxx home')
+
   return (
     <div>
       <div className='mt-5'>

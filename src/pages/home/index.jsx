@@ -69,6 +69,7 @@ function App() {
         <SkinCase />
 
         <p className='mt-10'>所见即所得。所有的案例都会在线展示，可操作交互查看最终成品。如下皮肤切换案例所示</p>
+
         <Skin />
 
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>其他作品</div>
