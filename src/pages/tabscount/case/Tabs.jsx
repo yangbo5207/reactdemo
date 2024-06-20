@@ -25,7 +25,7 @@ export default function Tabs({tabs, onSwitch}) {
                 <span
                   className={classNames(
                     tab.current ? 'bg-indigo-100 text-indigo-600' : 'bg-gray-100 text-gray-900',
-                    'ml-3 hidden rounded-full px-2.5 py-0.5 text-xs font-medium md:inline-block',
+                    'ml-3 rounded-full px-2.5 py-0.5 text-xs font-medium inline-block',
                   )}
                 >
                   {tab.count}

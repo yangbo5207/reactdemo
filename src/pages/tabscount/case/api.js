@@ -11,6 +11,7 @@ export const fetchListWithCancel = (number) => {
       `https://randomuser.me/api/?results=${number}&inc=name,gender,email,nat,picture&noinfo`,
       {signal}
     ).then(res => {
+      localStorage.setItem('modal', 'xxx')
       resolve(res.json())
     }).catch(() => {
       console.log('接口成功取消！')
@@ -24,3 +25,4 @@ export const fetchListWithCancel = (number) => {
   }
   return promise
 }
+
