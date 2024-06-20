@@ -1,9 +1,7 @@
 import AppText from './case/index.jsx?raw'
 import apiText from './case/api.js?raw'
 import SkeletonText from './case/Skeleton.jsx?raw'
-import htmlText from './case/index.html?raw'
 import ListText from './case/List.jsx?raw'
-import InputText from './case/Input.jsx?raw'
 import TabsText from './case/Tabs.jsx?raw'
 
 import Article from './article.mdx'
@@ -16,7 +14,6 @@ const files = {
   'List.jsx': ListText,
   'Tabs.jsx': TabsText,
   'Skeleton.jsx': SkeletonText,
-  '/public/index.html': htmlText
 }
 
 function App() {

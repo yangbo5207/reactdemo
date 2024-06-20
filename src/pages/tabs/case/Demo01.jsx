@@ -1,8 +1,5 @@
 import {useState, Suspense} from 'react'
-import Skeleton from './Skeleton'
-import {fetchListWithCancel} from './api'
 import Tabs from './Tabs'
-import List from './List'
 
 const tabs = [
   { name: 'My Account', href: '#', current: true },
@@ -10,7 +7,6 @@ const tabs = [
   { name: 'Team Members', href: '#', current: false },
   { name: 'Billing', href: '#', current: false },
 ]
-
 
 export default function Example() {
   const [current, switchToSelected] = useState(0)

@@ -7,7 +7,7 @@ export default function Preview(props) {
         </svg>
         <div className='ml-2 text-sm'>预览</div>
       </div>
-      <div className='flex-1 p-4'>
+      <div className='sp-editor-wrapper flex-1 p-4'>
         {props.children}
       </div>
     </div>

@@ -33,7 +33,10 @@ export default function Tabs({tabs, onSwitch}) {
                 'rounded-md px-3 py-2 text-sm font-medium',
               )}
               aria-current={tab.current ? 'page' : undefined}
-              onClick={() => onSwitch(i)}
+              onClick={(e) => {
+                e.preventDefault();
+                onSwitch(i)
+              }}
             >
               {tab.name}
             </a>

@@ -17,7 +17,6 @@ export default function Example() {
   const [promise, update] = useState(() => fetchListWithCancel(5))
 
   function __handler(index) {
-    console.log(index)
     tabs[current].current = false
     tabs[index].current = true
     switchToSelected(index)
