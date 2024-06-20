@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import mdx from '@mdx-js/rollup'
 import react from '@vitejs/plugin-react'
-import requireTransform from 'vite-plugin-require-transform' // 1. 引入插件
 import tailwindcss from  "tailwindcss"
 import autoprefixer from "autoprefixer"
 import path from 'path'
@@ -18,10 +17,7 @@ export default defineConfig({
         ],
       },
     }),
-    mdx(),
-    requireTransform({
-      fileRegex: /.js$|.jsx$/,
-  }),
+    mdx()
   ],
   css: {
     modules: {

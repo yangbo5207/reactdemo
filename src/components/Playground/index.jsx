@@ -6,6 +6,8 @@ import Preview from "components/Preview.jsx";
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
+import html from './index.html?raw'
+
 import './index.css'
 
 function code({className, ...properties}) {
@@ -59,7 +61,10 @@ function App(props) {
                 'clsx': 'latest',
               },
             }}
-            files={files}
+            files={{
+              ...files,
+              '/public/index.html': {code: html, hidden: true},
+            }}
           >
             <SandpackLayout>
               <SandpackCodeEditor/>

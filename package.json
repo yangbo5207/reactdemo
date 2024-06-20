@@ -1,11 +1,13 @@
 {
-  "name": "vite-project",
+  "name": "react19",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "homepage": "https://yangbo5207.github.io/react19/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -31,6 +33,7 @@
     "clsx": "^2.1.1",
     "eslint-plugin-react-compiler": "0.0.0-experimental-c8b3f72-20240517",
     "framer-motion": "^11.2.5",
+    "gh-pages": "^6.1.1",
     "react": "19.0.0-rc-915b914b3a-20240515",
     "react-dom": "19.0.0-rc-915b914b3a-20240515",
     "react-editor-js": "^2.1.0",
@@ -40,8 +43,7 @@
     "remark-gfm": "^4.0.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-require-transform": "^1.0.21"
+    "vite-plugin-eslint": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/compat": "^1.0.1",

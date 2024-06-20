@@ -3,7 +3,6 @@ import api from './case/api.js?raw'
 import Message from './case/Message.jsx?raw'
 import Skeleton from './case/Skeleton.jsx?raw'
 import Button from './case/Button.jsx?raw'
-import html from './case/index.html?raw'
 
 import Article from './article.mdx'
 
@@ -14,8 +13,7 @@ const files = {
   'api.js': api,
   'Message.jsx': Message,
   'Skeleton.jsx': Skeleton,
-  'Button.jsx': Button,
-  '/public/index.html': {code: html, hidden: true}
+  'Button.jsx': Button
 }
 
 function Entry() {

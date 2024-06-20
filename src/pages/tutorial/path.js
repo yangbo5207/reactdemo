@@ -1,4 +1,4 @@
-import {lazy} from 'react'
+import React from 'react'
 
 // 前言 1. 并发模式 2. compiler  3. use promise  4. use context   5. form Action  6. useOptimistic
 
@@ -8,184 +8,184 @@ export const navigation = [{
 }, {
   path: 'index',
   name: '1、开发方式变革',
-  component: lazy(() => import('../change/index.jsx'))
+  component: React.lazy(() => import('../change/index.jsx'))
 }, {
   path: 'layers',
   name: '2、学习的三个层次',
-  component: lazy(() => import('../layers/index.jsx'))
+  component: React.lazy(() => import('../layers/index.jsx'))
 }, {
   path: 'create',
   name: '3、创建项目',
-  component: lazy(() => import('../create/index.jsx'))
+  component: React.lazy(() => import('../create/index.jsx'))
 }, {
   type: 'tip',
   name: 'use(promise)'
 }, {
   path: 'use/base',
   name: '3、use 基础知识',
-  component: lazy(() => import('../usebase/index.jsx'))
+  component: React.lazy(() => import('../usebase/index.jsx'))
 }, {
   path: 'use/suspense',
   name: '4、Suspense',
-  component: lazy(() => import('../usesuspense/index.jsx'))
+  component: React.lazy(() => import('../usesuspense/index.jsx'))
 }, {
   path: 'use/update',
   name: '5、点击更新数据',
-  component: lazy(() => import('../useupdate/index.jsx'))
+  component: React.lazy(() => import('../useupdate/index.jsx'))
 }, {
   path: 'use/initialize',
   name: '6、初始化请求并更新',
-  component: lazy(() => import('../useInitializeUpdate/index.jsx'))
+  component: React.lazy(() => import('../useInitializeUpdate/index.jsx'))
 }, {
   path: 'use/updatetolist',
   name: '7、请求并新增到列表',
-  component: lazy(() => import('../useUpdatetoList/index.jsx'))
+  component: React.lazy(() => import('../useUpdatetoList/index.jsx'))
 }, {
   path: 'use/loadmore',
   name: '8、分页列表加载更多',
-  component: lazy(() => import('../loadmore/index.jsx'))
+  component: React.lazy(() => import('../loadmore/index.jsx'))
 }, {
   path: 'use/search',
   name: '9、搜索',
-  component: lazy(() => import('../search/index.jsx'))
+  component: React.lazy(() => import('../search/index.jsx'))
 }, {
   path: 'use/tabs',
   name: '10、tab 简单切换',
-  component: lazy(() => import('../tabs/index.jsx')),
+  component: React.lazy(() => import('../tabs/index.jsx')),
   label: '1'
 }, {
   path: 'use/tabshard',
   name: '11、tab 缓存切换',
-  component: lazy(() => import('../tabshard/index.jsx')),
+  component: React.lazy(() => import('../tabshard/index.jsx')),
   label: '2'
 }, {
   path: 'use/fromchildren',
   name: '12、父级获取数据',
-  component: lazy(() => import('../tabscount/index.jsx')),
+  component: React.lazy(() => import('../tabscount/index.jsx')),
   label: '3'
 }, {
   path: 'use/nest',
   name: '13、Suspense 嵌套',
-  component: lazy(() => import('../usenest/index.jsx'))
+  component: React.lazy(() => import('../usenest/index.jsx'))
 }, {
   path: 'use/react16',
   name: '14、在低版本中使用',
-  component: lazy(() => import('../usewithreact16/index.jsx'))
+  component: React.lazy(() => import('../usewithreact16/index.jsx'))
 }, {
   type: 'tip',
   name: 'use(context)'
 }, {
   path: 'use/03',
   name: '5、use(promise) 03',
-  component: lazy(() => import('../03_use_demo/index.jsx'))
+  component: React.lazy(() => import('../03_use_demo/index.jsx'))
 },{
   path: 'use/03_1',
   name: '6、use(promise) 03_update',
-  component: lazy(() => import('../03_use_demo_update/index.jsx'))
+  component: React.lazy(() => import('../03_use_demo_update/index.jsx'))
 }, {
   path: 'use/04',
   name: '7、use(promise) 04',
-  component: lazy(() => import('../04_use_demo/index.jsx'))
+  component: React.lazy(() => import('../04_use_demo/index.jsx'))
 }, {
   path: 'use/05',
   name: '8、use(promise) 05',
-  component: lazy(() => import('../05_use_demo/index.jsx'))
+  component: React.lazy(() => import('../05_use_demo/index.jsx'))
 },{
   path: 'use/05_editor',
   name: '9、react editor',
-  component: lazy(() => import('../05_editor/index.jsx'))
+  component: React.lazy(() => import('../05_editor/index.jsx'))
 },{
   path: 'use/05_suspense',
   name: '10、suspense',
-  component: lazy(() => import('../05_suspense/index.jsx'))
+  component: React.lazy(() => import('../05_suspense/index.jsx'))
 },, {
   type: 'tip',
   name: 'use context'
 }, {
   path: 'use/06',
   name: '11、use(context) 01',
-  component: lazy(() => import('../06_use_context/index.jsx'))
+  component: React.lazy(() => import('../06_use_context/index.jsx'))
 }, {
   type: 'tip',
   name: 'form action'
 },{
   path: 'use/07',
   name: 'form Action 01',
-  component: lazy(() => import('../07_action_demo/index.jsx'))
+  component: React.lazy(() => import('../07_action_demo/index.jsx'))
 },{
   path: 'use/08',
   name: 'form Action 02',
-  component: lazy(() => import('../08_action_demo/index.jsx'))
+  component: React.lazy(() => import('../08_action_demo/index.jsx'))
 },{
   path: 'use/09',
   name: 'useFormStatus()',
-  component: lazy(() => import('../09_useFormStatus/index.jsx'))
+  component: React.lazy(() => import('../09_useFormStatus/index.jsx'))
 },{
   path: 'use/10',
   name: 'useForm(Action)State',
-  component: lazy(() => import('../10_useFormState/index.jsx'))
+  component: React.lazy(() => import('../10_useFormState/index.jsx'))
 }, {
   type: 'tip',
   name: 'useOptimistic'
 },{
   path: 'use/11',
   name: 'useOptimistic()',
-  component: lazy(() => import('../11_useOptimistic/index.jsx'))
+  component: React.lazy(() => import('../11_useOptimistic/index.jsx'))
 },{
   path: 'use/11_0',
   name: 'useOptimistic() demo01',
-  component: lazy(() => import('../11_useOptimistic_demo1/index.jsx'))
+  component: React.lazy(() => import('../11_useOptimistic_demo1/index.jsx'))
 },{
   path: 'use/11_1',
   name: 'useOptimistic() demo2',
-  component: lazy(() => import('../11_useOptimistic_demo2/index.jsx'))
+  component: React.lazy(() => import('../11_useOptimistic_demo2/index.jsx'))
 },{
   path: 'use/11_2',
   name: 'useOptimistic() demo3',
-  component: lazy(() => import('../11_useOptimistic_demo3/index.jsx'))
+  component: React.lazy(() => import('../11_useOptimistic_demo3/index.jsx'))
 },{
   path: 'use/12',
   name: 'async transition',
-  component: lazy(() => import('../12_async_transition/index.jsx'))
+  component: React.lazy(() => import('../12_async_transition/index.jsx'))
 },{
   path: 'use/13',
   name: '增强的 ref',
-  component: lazy(() => import('../13_ref/index.jsx'))
+  component: React.lazy(() => import('../13_ref/index.jsx'))
 },{
   path: 'use/14',
   name: 'useDeferredValue',
-  component: lazy(() => import('../14_useDeferredValue/index.jsx'))
+  component: React.lazy(() => import('../14_useDeferredValue/index.jsx'))
 }, {
   type: 'tip',
   name: 'Compiler'
 }, {
   path: 'use/1500',
   name: 'Compiler case 00',
-  component: lazy(() => import('../15_compiler_00/index.jsx'))
+  component: React.lazy(() => import('../15_compiler_00/index.jsx'))
 },{
   path: 'use/1501',
   name: 'Compiler case 01',
-  component: lazy(() => import('../16_compiler_01/index.jsx'))
+  component: React.lazy(() => import('../16_compiler_01/index.jsx'))
 },{
   path: 'use/1502',
   name: 'Compiler case 02',
-  component: lazy(() => import('../17_compiler_02/index.jsx'))
+  component: React.lazy(() => import('../17_compiler_02/index.jsx'))
 },{
   path: 'use/1503',
   name: 'Compiler case 03',
-  component: lazy(() => import('../18_compiler_03/index.jsx'))
+  component: React.lazy(() => import('../18_compiler_03/index.jsx'))
 },{
   path: 'use/1504',
   name: 'useDeferredValue',
-  component: lazy(() => import('../19_deferredValue/index.jsx'))
+  component: React.lazy(() => import('../19_deferredValue/index.jsx'))
 },{
   path: 'use/20',
   name: 'ref 更改',
-  component: lazy(() => import('../20_ref/index.jsx'))
+  component: React.lazy(() => import('../20_ref/index.jsx'))
 },{
   path: 'tailwind/demo01',
   name: 'tailwind 初体验',
-  component: lazy(() => import('../tailwindemo01/index.jsx'))
+  component: React.lazy(() => import('../tailwindemo01/index.jsx'))
 }]
 
 

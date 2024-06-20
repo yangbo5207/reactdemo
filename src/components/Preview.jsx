@@ -10,7 +10,6 @@ export default function Preview(props) {
       <div className='flex-1 p-4'>
         {props.children}
       </div>
-
     </div>
   )
 }

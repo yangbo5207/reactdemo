@@ -1,7 +1,7 @@
 import Skin from './Skin'
 import Background from './background'
 import Block from './block'
-import SkinCase from "pages/home/SkinCase/index";
+import ButtonCase from "pages/home/case/index";
 import Gisucs from '@giscus/react'
 import { useLocation, useOutlet } from "react-router-dom";
 import './App.css'
@@ -65,8 +65,10 @@ function App() {
 
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>案例展示方式</div>
 
-        <p>沉浸式学习体验。通过可在线编辑的案例，你能获得沉浸式的学习体验</p>
-        <SkinCase />
+        <p className='mb-4'>沉浸式学习体验。通过可在线编辑的案例，你能获得沉浸式的学习体验</p>
+
+        <ButtonCase />
+
 
         <p className='mt-10'>所见即所得。所有的案例都会在线展示，可操作交互查看最终成品。如下皮肤切换案例所示</p>
 
