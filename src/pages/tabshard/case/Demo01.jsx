@@ -1,8 +1,5 @@
-  import {useState, Suspense, useRef} from 'react'
-import Skeleton from './Skeleton'
-import {fetchListWithCancel} from './api'
+import {useState, Suspense, useRef} from 'react'
 import Tabs from './Tabs'
-import List from './List'
 
 import Account from './Account'
 import Search from './Search'
