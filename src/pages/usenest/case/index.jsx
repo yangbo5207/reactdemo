@@ -1,38 +1,37 @@
-import {useState, Suspense} from 'react'
+import {use, useState, Suspense} from 'react'
 import Skeleton from './Skeleton'
-import {fetchListWithCancel} from './api'
-import Tabs from './Tabs'
+import {fetchList} from './api'
 import List from './List'
 
-const tabs = [
-  { name: 'My Account', href: '#', current: true },
-  { name: 'Company', href: '#', current: false },
-  { name: 'Team Members', href: '#', current: false },
-  { name: 'Billing', href: '#', current: false },
-]
-
-
 export default function Example() {
-  const [current, switchToSelected] = useState(0)
-  const [promise, update] = useState(() => fetchListWithCancel(5))
-
-  function __handler(index) {
-    console.log(index)
-    tabs[current].current = false
-    tabs[index].current = true
-    switchToSelected(index)
-
-    promise.cancel()
-    const len = Math.floor(Math.random() * 10)
-    update(fetchListWithCancel(len))
-  }
-
+  const [promise, update] = useState(() => fetchList(3))
   return (
     <div>
-      <Tabs tabs={tabs} onSwitch={__handler} />
+      <Suspense fallback={<Skeleton type='card' />}>
+        <AccountUse promise={promise} />
+      </Suspense>
+    </div>
+  )
+}
 
-      <Suspense fallback={<Skeleton />}>
-        <List promise={promise} />
+function AccountUse(props) {
+  const {results} = use(props.promise)
+  const [promise, update] = useState(() => fetchList(5))
+  return (
+    <div className='border border-blue-100 shadow rounded-md p-4 w-full mt-4'>
+      <div className='flex space-x-4'>
+        {results.map((item, index) => (
+          <div className="flex-1 overflow-hidden" key={`z-${index}`}>
+            <div className='rounded-md h-32 overflow-hidden bg-cover bg-no-repeat bg-center' style={{backgroundImage: `url(${item.picture.large})`}}></div>
+            <div className="mt-4 font-bold">{item.name.last}</div>
+            <div className="mt-1 text-gray-400 text-sm">{item.email}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-8 text-gray-400 text-sm">Account users</div>
+      <Suspense fallback={<Skeleton/>}>
+        <List promise={promise}/>
       </Suspense>
     </div>
   )

@@ -1,7 +1,6 @@
 import { use } from 'react';
 export default function CurrentList({promise}) {
   const {results} = use(promise)
-  console.log('我会执行几次呢')
   return (
     <div>
       {results.map((item, i) => (
