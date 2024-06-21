@@ -75,10 +75,22 @@ export const navigation = [{
   type: 'tip',
   name: 'use(context)'
 }, {
-  path: 'use/03',
-  name: '5、use(promise) 03',
-  component: React.lazy(() => import('../03_use_demo/index.jsx'))
-},{
+  path: 'use/ref',
+  name: '15、ref 调整',
+  component: React.lazy(() => import('../contextref/index.jsx'))
+}, {
+  path: 'use/modal',
+  name: '16、自定义弹窗组件',
+  component: React.lazy(() => import('../tabshard/index.jsx'))
+}, {
+  path: 'use/contextmodify',
+  name: '17、弹窗中更改内容',
+  component: React.lazy(() => import('../tabshard/index.jsx'))
+}, {
+  path: 'use/skinswitch',
+  name: '18、简单皮肤切换',
+  component: React.lazy(() => import('../tabshard/index.jsx'))
+}, {
   path: 'use/03_1',
   name: '6、use(promise) 03_update',
   component: React.lazy(() => import('../03_use_demo_update/index.jsx'))
