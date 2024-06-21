@@ -81,11 +81,11 @@ export const navigation = [{
 }, {
   path: 'use/modal',
   name: '16、自定义弹窗组件',
-  component: React.lazy(() => import('../tabshard/index.jsx'))
+  component: React.lazy(() => import('../contextmodal/index.jsx'))
 }, {
   path: 'use/contextmodify',
   name: '17、弹窗中更改内容',
-  component: React.lazy(() => import('../tabshard/index.jsx'))
+  component: React.lazy(() => import('../contextmodify/index.jsx'))
 }, {
   path: 'use/skinswitch',
   name: '18、简单皮肤切换',

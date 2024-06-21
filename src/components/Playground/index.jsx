@@ -18,7 +18,7 @@ function code({className, ...properties}) {
 }
 
 function App(props) {
-  const {renderArticle, files} = props
+  const {renderArticle, files, hidePreview} = props
   return (
     <div>
       <div className='mt-5 md:flex'>
@@ -68,9 +68,11 @@ function App(props) {
           >
             <SandpackLayout>
               <SandpackCodeEditor/>
-              <Preview>
-                <SandpackPreview/>
-              </Preview>
+              {!hidePreview && (
+                <Preview>
+                  <SandpackPreview/>
+                </Preview>
+              )}
             </SandpackLayout>
           </SandpackProvider>
         </div>
