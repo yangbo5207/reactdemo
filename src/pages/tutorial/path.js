@@ -102,16 +102,19 @@ export const navigation = [{
   name: '20、useTransition',
   component: React.lazy(() => import('../useTransition/index.jsx'))
 }, {
-  path: 'use/05',
-  name: '8、use(promise) 05',
-  component: React.lazy(() => import('../05_use_demo/index.jsx'))
+  type: 'tip',
+  name: 'Compiler'
+}, {
+  path: 'use/importwith19',
+  name: '21、React 19 中引入',
+  component: React.lazy(() => import('../compilerimport19/index.jsx'))
 },{
-  path: 'use/05_editor',
-  name: '9、react editor',
+  path: 'use/importwithlower',
+  name: '22、低版本中引入',
   component: React.lazy(() => import('../05_editor/index.jsx'))
 },{
-  path: 'use/05_suspense',
-  name: '10、suspense',
+  path: 'use/compilerbase',
+  name: '23、Compiler 原理',
   component: React.lazy(() => import('../05_suspense/index.jsx'))
 }, {
   path: 'use/06',

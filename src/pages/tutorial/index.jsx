@@ -40,7 +40,7 @@ export default function Tutorial() {
 
           {navigation.map((item, index) => {
             if (item.type === 'tip') {
-              return <div className='mx-2 text-sm px-4 text-gray-400 first:pt-0 pb-4 pt-8' key={item.name}>
+              return <div className='mx-2 text-sm px-4 text-gray-400 first:pt-0 pb-4 pt-8' key={`z-${index}`}>
                 {item.name}
               </div>
             }
