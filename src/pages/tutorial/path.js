@@ -98,9 +98,9 @@ export const navigation = [{
   name: '19、useDeferredValue',
   component: React.lazy(() => import('../deferred/index.jsx'))
 }, {
-  path: 'use/04',
-  name: '7、use(promise) 04',
-  component: React.lazy(() => import('../04_use_demo/index.jsx'))
+  path: 'use/transition',
+  name: '20、useTransition',
+  component: React.lazy(() => import('../useTransition/index.jsx'))
 }, {
   path: 'use/05',
   name: '8、use(promise) 05',
