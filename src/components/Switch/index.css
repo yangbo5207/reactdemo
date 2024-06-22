@@ -1,0 +1,22 @@
+@layer switch {
+  .left {
+    --bg-color: rgba(0, 0, 0, 0.1);
+    --x: 0;
+  }
+  
+  .right {
+    --bg-color: rgba(0, 0, 0, 0.9);
+    --x: 24px;
+  }
+}
+
+.switch {
+  @apply p-[1px] border w-14 rounded-full cursor-pointer transition;
+  background-color: var(--bg-color);
+}
+
+.switch .circle {
+  @apply rounded-full w-6 h-6 transition;
+  background-color: white;
+  transform: translateX(var(--x));
+}

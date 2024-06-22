@@ -88,12 +88,11 @@ export const navigation = [{
   component: React.lazy(() => import('../contextmodify/index.jsx'))
 }, {
   path: 'use/skinswitch',
-  name: '18、简单皮肤切换',
-  component: React.lazy(() => import('../tabshard/index.jsx'))
+  name: '18、皮肤切换次数',
+  component: React.lazy(() => import('../contextcount/index.jsx'))
 }, {
-  path: 'use/03_1',
-  name: '6、use(promise) 03_update',
-  component: React.lazy(() => import('../03_use_demo_update/index.jsx'))
+  type: 'tip',
+  name: '并发 API'
 }, {
   path: 'use/04',
   name: '7、use(promise) 04',
@@ -110,9 +109,6 @@ export const navigation = [{
   path: 'use/05_suspense',
   name: '10、suspense',
   component: React.lazy(() => import('../05_suspense/index.jsx'))
-},, {
-  type: 'tip',
-  name: 'use context'
 }, {
   path: 'use/06',
   name: '11、use(context) 01',

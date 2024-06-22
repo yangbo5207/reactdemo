@@ -1,0 +1,17 @@
+@layer context_count {
+  .theme-dark {
+    --text-color: rgba(255, 255, 255, 0.8);
+    --bg-color: rgba(0, 0, 0, 0.8);
+    --border-color: rgba(0, 0, 0, 0.1);
+  }
+  .theme-light {
+    --text-color: rgba(0, 0, 0, 0.88);
+    --bg-color: rgba(0, 0, 0, 0.02);
+    --border-color: rgba(0, 0, 0, 0.1);
+  }
+}
+.context-card {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
