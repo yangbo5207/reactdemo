@@ -1,21 +1,43 @@
-import { useRef } from 'react'
+import { use } from 'react'
 import Dialog from 'components/Dialog'
+import {Context} from './context.jsx'
 
-export default function Editor() {
-  const dialog = useRef(null)
+export default function Editor(props) {
+  const {ref, ...other} = props
+  const {task, updateTask} = use(Context)
+
+  function __inputchange(e) {
+    updateTask({
+      ...task,
+      content: e.target.value,
+    })
+  }
+
   return (
-    <div className='flex justify-between'>
-      <button
-        onClick={() => dialog.current.show()}
-        className='ml-3'
-      >点击我，显示对话框组件</button>
-      <Dialog ref={dialog} title='Message For You' onSure={() => dialog.current.close()}>
-        <strong className='text-red-500'>React 19</strong> 是全网学习体验最好的小册，没有之一。它能帮助你快速领悟到 React 的独特的开发魅力，你将会感受到更快的学习速度，更高效的开发速度，更专业的开发思维。
-        <div className='mt-4'>
-          <img src='https://images.unsplash.com/photo-1485856407642-7f9ba0268b51?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt=''/>
-        </div>
+    <Dialog ref={ref} {...other} onSure={() => ref.current.close()}>
+      <div className='flex items-center'>
+        <div className='w-20'>name</div>
+        <div className='flex-1 p-2 text-sm font-bold'>{task.task}</div>
+      </div>
 
-      </Dialog>
-    </div>
+      <div className='flex items-center mt-4'>
+        <div className='w-20'>content</div>
+        <input
+          value={task.content}
+          className='flex-1 border rounded-md p-2 text-sm'
+          onChange={__inputchange}
+        />
+      </div>
+
+      <div className='flex items-center mt-4'>
+        <div className='w-20'>status</div>
+        <div className='flex-1 p-2 text-sm text-green-500'>{task.status}</div>
+      </div>
+
+      <div className='flex items-center mt-4'>
+        <div className='w-20'>Priority</div>
+        <div className='flex-1 p-2 text-sm text-red-500'>{task.priority}</div>
+      </div>
+    </Dialog>
   )
 }

@@ -1,6 +1,7 @@
 import Entry from './case/index.jsx?raw'
-import Dialog from 'components/Dialog?raw'
-import Modal from 'components/Modal?raw'
+import context from './case/context.jsx?raw'
+import task from './case/task.jsx?raw'
+import editor from './case/editor.jsx?raw'
 
 import Article from './article.mdx'
 
@@ -8,8 +9,9 @@ import Playground from "components/Playground/index";
 
 const files = {
   'App.js': Entry,
-  'Dialog.jsx': Dialog,
-  'Modal.jsx': Modal
+  'context.jsx': context,
+  'task.jsx': task,
+  'editor.jsx': editor,
 }
 
 function App() {

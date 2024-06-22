@@ -1,19 +1,22 @@
-import { useRef } from 'react'
-import Modal from 'components/Modal'
+import { useRef, use } from 'react'
+import Editor from './editor'
+import {Context} from './context'
 
-export default function Task() {
-  const modal = useRef(null)
+export default function Demo03() {
+  const editor = useRef(null)
+  const {task} = use(Context)
+
   return (
-    <div className='flex justify-between'>
+    <div className='flex items-center border-t pt-4'>
+      <div className='font-bold'>{task.task}</div>
+      <div className='flex-1 mx-3 line-clamp-1'>{task.content}</div>
+      <div className='text-green-500'>{task.status}</div>
+
       <button
-        onClick={() => modal.current.show()}
+        onClick={() => editor.current.show()}
         className='ml-3'
-      >点击弹窗显示</button>
-      <Modal ref={modal}>
-        <div className='bg-white p-4 max-w-xl mt-48 mx-auto rounded'>
-          这是一个小弹窗
-        </div>
-      </Modal>
+      >edit</button>
+      <Editor ref={editor} title='Editor' />
     </div>
   )
 }
