@@ -94,6 +94,10 @@ export const navigation = [{
   type: 'tip',
   name: '并发 API'
 }, {
+  path: 'use/deferred',
+  name: '19、useDeferredValue',
+  component: React.lazy(() => import('../deferred/index.jsx'))
+}, {
   path: 'use/04',
   name: '7、use(promise) 04',
   component: React.lazy(() => import('../04_use_demo/index.jsx'))
