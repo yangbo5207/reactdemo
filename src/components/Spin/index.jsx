@@ -8,12 +8,8 @@ export default function Index(props) {
   const [display, setDisplay] = useState(false)
 
   useEffect(() => {
-    if (loading) {
-      setShow(true)
-      setDisplay(true)
-    } else {
-      setShow(false)
-    }
+    if (loading) { setShow(true); setDisplay(true)
+    } else { setShow(false) }
   }, [loading]);
 
   const base = 'spin flex items-center justify-center top-0 bg-white bg-opacity-50'

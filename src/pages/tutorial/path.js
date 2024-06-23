@@ -111,7 +111,7 @@ export const navigation = [{
 },{
   path: 'use/importwithlower',
   name: '22、低版本中引入',
-  component: React.lazy(() => import('../05_editor/index.jsx'))
+  component: React.lazy(() => import('../compilerimportlower/index.jsx'))
 },{
   path: 'use/compilerbase',
   name: '23、Compiler 原理',
