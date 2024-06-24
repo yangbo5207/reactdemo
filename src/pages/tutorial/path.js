@@ -116,6 +116,14 @@ export const navigation = [{
   path: 'use/compilerbase',
   name: '23、Compiler 编译原理',
   component: React.lazy(() => import('../compilerbase/index.jsx'))
+},{
+  path: 'use/compilercount',
+  name: '24、收益分析-递增',
+  component: React.lazy(() => import('../compilercounter/index.jsx'))
+},{
+  path: 'use/compilerexpensive',
+  name: '25、收益分析-耗时子组件',
+  component: React.lazy(() => import('../compilerexpensive/index.jsx'))
 }, {
   path: 'use/06',
   name: '11、use(context) 01',
