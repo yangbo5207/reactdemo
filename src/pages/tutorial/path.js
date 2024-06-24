@@ -114,8 +114,8 @@ export const navigation = [{
   component: React.lazy(() => import('../compilerimportlower/index.jsx'))
 },{
   path: 'use/compilerbase',
-  name: '23、Compiler 原理',
-  component: React.lazy(() => import('../05_suspense/index.jsx'))
+  name: '23、Compiler 编译原理',
+  component: React.lazy(() => import('../compilerbase/index.jsx'))
 }, {
   path: 'use/06',
   name: '11、use(context) 01',

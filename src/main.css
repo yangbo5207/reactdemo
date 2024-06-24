@@ -80,6 +80,10 @@ button:hover {
   .keep pre div:has(> code.language-error) span {
     @apply !text-red-500
   }
+  
+  .keep a {
+    @apply underline text-blue-700;
+  }
 
   
   .keep h1 {
