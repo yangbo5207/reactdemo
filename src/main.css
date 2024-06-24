@@ -81,7 +81,7 @@ button:hover {
     @apply !text-red-500
   }
   
-  .keep a {
+  .keep p a {
     @apply underline text-blue-700;
   }
 

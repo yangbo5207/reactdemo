@@ -7,6 +7,8 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import html from './index.html?raw'
+import maincss from './styles.css?raw'
+import entry from './entry.js?raw'
 
 import './index.css'
 
@@ -54,6 +56,7 @@ function App(props) {
               editorHeight: 'auto'
             }}
             customSetup={{
+              // entry: '/index.js',
               dependencies: {
                 "react": "19.0.0-rc-dfd30974ab-20240613",
                 "react-dom": "19.0.0-rc-dfd30974ab-20240613",
@@ -64,6 +67,8 @@ function App(props) {
             files={{
               ...files,
               '/public/index.html': {code: html, hidden: true},
+              'index.js': {code: entry, hidden: true},
+              'styles.css': {code: maincss, hidden: true}
             }}
           >
             <SandpackLayout>

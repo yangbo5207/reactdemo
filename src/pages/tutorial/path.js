@@ -124,6 +124,10 @@ export const navigation = [{
   path: 'use/compilerexpensive',
   name: '25、收益分析-耗时子组件',
   component: React.lazy(() => import('../compilerexpensive/index.jsx'))
+},{
+  path: 'use/compilertabs',
+  name: '26、收益分析-tabs',
+  component: React.lazy(() => import('../compilertabs/index.jsx'))
 }, {
   path: 'use/06',
   name: '11、use(context) 01',
