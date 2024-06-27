@@ -113,25 +113,25 @@ export const navigation = [{
   name: '22、低版本中引入',
   component: React.lazy(() => import('../compilerimportlower/index.jsx'))
 },{
+  path: 'use/importwithwebpack',
+  name: '23、webpack中引入',
+  component: React.lazy(() => import('../compilerimportwebpack/index.jsx'))
+},{
   path: 'use/compilerbase',
-  name: '23、Compiler 编译原理',
+  name: '24、Compiler 编译原理',
   component: React.lazy(() => import('../compilerbase/index.jsx'))
 },{
   path: 'use/compilercount',
-  name: '24、收益分析-递增',
+  name: '25、收益分析-递增',
   component: React.lazy(() => import('../compilercounter/index.jsx'))
 },{
   path: 'use/compilerexpensive',
-  name: '25、收益分析-耗时子组件',
+  name: '26、收益分析-耗时子组件',
   component: React.lazy(() => import('../compilerexpensive/index.jsx'))
 },{
   path: 'use/compilertabs',
-  name: '26、收益分析-tabs',
+  name: '27、收益分析-tabs',
   component: React.lazy(() => import('../compilertabs/index.jsx'))
-}, {
-  path: 'use/06',
-  name: '11、use(context) 01',
-  component: React.lazy(() => import('../06_use_context/index.jsx'))
 }, {
   type: 'tip',
   name: 'form action'
@@ -139,80 +139,6 @@ export const navigation = [{
   path: 'use/07',
   name: 'form Action 01',
   component: React.lazy(() => import('../07_action_demo/index.jsx'))
-},{
-  path: 'use/08',
-  name: 'form Action 02',
-  component: React.lazy(() => import('../08_action_demo/index.jsx'))
-},{
-  path: 'use/09',
-  name: 'useFormStatus()',
-  component: React.lazy(() => import('../09_useFormStatus/index.jsx'))
-},{
-  path: 'use/10',
-  name: 'useForm(Action)State',
-  component: React.lazy(() => import('../10_useFormState/index.jsx'))
-}, {
-  type: 'tip',
-  name: 'useOptimistic'
-},{
-  path: 'use/11',
-  name: 'useOptimistic()',
-  component: React.lazy(() => import('../11_useOptimistic/index.jsx'))
-},{
-  path: 'use/11_0',
-  name: 'useOptimistic() demo01',
-  component: React.lazy(() => import('../11_useOptimistic_demo1/index.jsx'))
-},{
-  path: 'use/11_1',
-  name: 'useOptimistic() demo2',
-  component: React.lazy(() => import('../11_useOptimistic_demo2/index.jsx'))
-},{
-  path: 'use/11_2',
-  name: 'useOptimistic() demo3',
-  component: React.lazy(() => import('../11_useOptimistic_demo3/index.jsx'))
-},{
-  path: 'use/12',
-  name: 'async transition',
-  component: React.lazy(() => import('../12_async_transition/index.jsx'))
-},{
-  path: 'use/13',
-  name: '增强的 ref',
-  component: React.lazy(() => import('../13_ref/index.jsx'))
-},{
-  path: 'use/14',
-  name: 'useDeferredValue',
-  component: React.lazy(() => import('../14_useDeferredValue/index.jsx'))
-}, {
-  type: 'tip',
-  name: 'Compiler'
-}, {
-  path: 'use/1500',
-  name: 'Compiler case 00',
-  component: React.lazy(() => import('../15_compiler_00/index.jsx'))
-},{
-  path: 'use/1501',
-  name: 'Compiler case 01',
-  component: React.lazy(() => import('../16_compiler_01/index.jsx'))
-},{
-  path: 'use/1502',
-  name: 'Compiler case 02',
-  component: React.lazy(() => import('../17_compiler_02/index.jsx'))
-},{
-  path: 'use/1503',
-  name: 'Compiler case 03',
-  component: React.lazy(() => import('../18_compiler_03/index.jsx'))
-},{
-  path: 'use/1504',
-  name: 'useDeferredValue',
-  component: React.lazy(() => import('../19_deferredValue/index.jsx'))
-},{
-  path: 'use/20',
-  name: 'ref 更改',
-  component: React.lazy(() => import('../20_ref/index.jsx'))
-},{
-  path: 'tailwind/demo01',
-  name: 'tailwind 初体验',
-  component: React.lazy(() => import('../tailwindemo01/index.jsx'))
 }]
 
 

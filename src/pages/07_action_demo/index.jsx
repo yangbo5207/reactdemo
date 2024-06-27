@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Input from 'components/Input'
 import './index.css'
 
 function Index() {
@@ -7,44 +8,17 @@ function Index() {
   function action(data) {
     const title = data.get('title')
     const content = data.get('content')
-
-    if (title && content) {
-      setPosts([...posts, {title, content}])
-    }
+    setPosts([...posts, {title, content}])
   }
-  function onInput(event) {
-    let input = event.target
-    console.log(input.validity)
-    if (input.validity.valid) {
-      console.log('xxxxx', input.validity)
-    }
-  }
-
 
   return (
-    <div>
-      <div>基础的表单提交案例</div>
-
+    <div className='border p-4 rounded-xl'>
       <form action={action}>
-        <div className="form_item">
-          <div className="label">Title</div>
-          <input name='title' type="text" placeholder='Enter title' required />
-        </div>
-        
-        <div className="form_item">
-          <div className="label">Name</div>
-          <input
-            onInput={onInput}
-            name='content'
-            type="text"
-            placeholder='Enter you name'
-            required
-            pattern={'abc'}
-          />
-        </div>
+        <Input label='Name' name='title' placeholder='Enter Title' required pattern='[0-9]{6}' />
+        <Input label='Content' name='content' placeholder='please input your content' required />
 
-        <div className="form_item">
-          <button className='primary' type='submit'>Submit</button>
+        <div className='flex justify-end'>
+          <button type='submit'>Submit</button>
         </div>
       </form>
 
