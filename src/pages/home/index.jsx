@@ -1,12 +1,22 @@
+import {useRef} from 'react'
 import Skin from './Skin'
 import Background from './background'
 import Block from './block'
 import ButtonCase from "pages/home/case/index";
 import Gisucs from '@giscus/react'
-import { useLocation, useOutlet } from "react-router-dom";
+import {Link} from 'react-router-dom'
+import Dialog from "components/Dialog";
+import ercode from '/src/assets/ercode.png'
+
 import './App.css'
 
+
 function App() {
+  const dialog = useRef(null)
+  function __viewclick(e) {
+    e.preventDefault()
+    dialog.current.show()
+  }
   return (
     <div className='relative pt-16'>
       <Background />
@@ -17,23 +27,26 @@ function App() {
           <h2 className='text-lg font-bold'>React 19 全解</h2>
 
           <p className="mt-4 text-gray-500 leading-6 text-md">
-            全网第一本系统学习 React 19 的专栏。本专栏在公众号「这波能反杀」首发，受到了大量粉丝的喜爱。专栏中包含大量实践案例，深入检出，理论结合实践为大家分享 React19 的学习。
+            全网第一本系统学习 React 19 的专栏。本专栏在公众号「这波能反杀」首发，受到了大量粉丝的喜爱。专栏中包含大量实践案例，深入简出，理论结合实践为大家分享 React19 的学习。
           </p>
           <p className="text-md mt-4 text-gray-500 leading-6">
             React19 在开发体验和性能上都有大幅度的提升，值得每一位 React 开发者学习，赶紧行动吧。
           </p>
 
           <div className='mt-8'>
-            <a href="#" className='inline-flex items-center px-5 py-2 bg-gray-800 hover:bg-gray-900 text-white text-sm rounded-full'>
+            <Link to='tutorial/index' className='inline-flex items-center px-5 py-2 bg-gray-800 hover:bg-gray-900 text-white text-sm rounded-full'>
               <span className='mr-2'>快速开始</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
               </svg>
-            </a>
+            </Link>
 
-            <a href="#" className='inline-flex px-4 py-2 text-gray-600 ring-1 ring-gray-200 text-sm rounded-full ml-4'>
+            <a onClick={__viewclick} href="" className='inline-flex px-4 py-2 text-gray-600 ring-1 ring-gray-200 text-sm rounded-full ml-4'>
               <span>关注公众号</span>
             </a>
+            <Dialog ref={dialog} title='Follow me!'>
+              <img src={ercode} alt=''/>
+            </Dialog>
           </div>
         </div>
 
@@ -70,9 +83,18 @@ function App() {
         <ButtonCase />
 
 
-        <p className='mt-10'>所见即所得。所有的案例都会在线展示，可操作交互查看最终成品。如下皮肤切换案例所示</p>
+        <p className='mt-10 flex items-center'>
+          所见即所得。所有案例直接渲染，可操作、可交互。例如：点击按钮，切换皮肤
+          <span
+            className="animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center ml-4">
+            <svg className="w-6 h-6 text-violet-500" fill="none" strokeLinecap="round" strokeLinejoin="round"
+                 strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </span>
+        </p>
 
-        <Skin />
+        <Skin/>
 
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>其他作品</div>
 

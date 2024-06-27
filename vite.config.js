@@ -3,6 +3,7 @@ import mdx from '@mdx-js/rollup'
 import react from '@vitejs/plugin-react'
 import tailwindcss from  "tailwindcss"
 import autoprefixer from "autoprefixer"
+import { visualizer } from "rollup-plugin-visualizer";
 import path from 'path'
 
 const ReactCompilerConfig = { /* ... */ };
@@ -17,7 +18,11 @@ export default defineConfig({
         ],
       },
     }),
-    mdx()
+    mdx(),
+    visualizer({
+      emitFile: true,
+      filename: "stats.html",
+    }),
   ],
   css: {
     modules: {

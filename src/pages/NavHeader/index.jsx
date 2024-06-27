@@ -2,6 +2,8 @@ import ActiveLink from "../../components/ActiveLink.jsx";
 import {useState, useRef, useEffect} from 'react'
 import Modal from '../../components/Modal'
 import Avatar from './avatar'
+import Button_qun from "pages/NavHeader/Button_qun.jsx";
+import Button_code from "pages/NavHeader/Button_code.jsx";
 
 const links = [
   {path: 'tutorial', text: '教程'},
@@ -13,8 +15,6 @@ export default function NavHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const modal = useRef(null)
-
-
 
   return (
     <header className='fixed z-50 top-0 flex justify-between border-b border-slate-200 min-w-[320px] bg-white bg-opacity-70 backdrop-blur-sm w-full'>
@@ -34,31 +34,22 @@ export default function NavHeader() {
           ))}
         </div>
 
-        <div className='hidden md:flex text-xs m-8 rounded-full bg-red-100 py-2 px-4 text-red-400 transition hover:bg-red-300 hover:text-red-700 cursor-pointer'>
+        <a
+          className='hidden md:flex text-xs m-8 rounded-full bg-red-100 py-2 px-4 text-red-400 transition hover:bg-red-300 hover:text-red-700 cursor-pointer'
+          href='https://appxw863qeq2150.h5.xiaoeknow.com/p/decorate/homepage?entry=2&entry_type=2002&share_user_id=u_626bf7dfafe72_zLCXc4Qr0O&wework_share_customer_id=u_626bf7dfafe72_zLCXc4Qr0O'
+          target='_blank'
+        >
           推荐：JavaScript 核心进阶
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4 ml-2">
             <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clipRule="evenodd" />
           </svg>
-        </div>
+        </a>
       </div>
 
       <div className='hidden md:flex h-16 items-center pr-6 text-gray-500'>
-        <ActiveLink className='flex items-center' to='/'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-          </svg>
-          <div className='ml-1 text-sm'>交流群</div>
-        </ActiveLink>
-        <ActiveLink className='flex items-center ml-4 bg-gray-900 px-4 py-2 rounded-full' to='/'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 text-blue-50">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-          </svg>
-
-          <div className='ml-1 text-sm text-blue-50'>激活码</div>
-        </ActiveLink>
-
+        <Button_qun alt='交流群' />
+        <Button_code alt='激活码' />
         <Avatar />
-
       </div>
 
       <div className='md:hidden flex items-center pr-6 text-gray-700' onClick={() => modal.current.show()}>

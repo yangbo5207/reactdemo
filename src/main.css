@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-button {
-  @apply rounded-md border border-solid border-transparent py-2 px-4 text-sm font-medium bg-gray-100
-    cursor-pointer transition
-}
-
-button:hover {
-  @apply bg-gray-200
-}
-
 @layer base {
   :root {
     --color-text-base: #FFF;
@@ -41,6 +32,16 @@ button:hover {
     --color-button-muted: 212, 255, 122;
   }
 }
+
+button {
+  @apply rounded-md border border-solid border-transparent py-2 px-4 text-sm font-medium bg-gray-100
+  cursor-pointer transition
+}
+
+button:hover {
+  @apply bg-gray-200
+}
+
 
 @layer base {
   .keep p,
@@ -118,4 +119,8 @@ button:hover {
     @apply inline-block font-normal;
     content: '__';
   }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

@@ -1,5 +1,6 @@
 import {SandpackProvider, SandpackLayout, SandpackCodeEditor, SandpackPreview} from '@codesandbox/sandpack-react'
 import Gisucs from '@giscus/react'
+import EnterCode from './code'
 import { githubLight } from "@codesandbox/sandpack-themes";
 import Preview from "components/Preview.jsx";
 
@@ -9,6 +10,8 @@ import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import html from './index.html?raw'
 import maincss from './styles.css?raw'
 import entry from './entry.js?raw'
+
+import {democode} from "components/Playground/activecode.js";
 
 import './index.css'
 
@@ -21,11 +24,15 @@ function code({className, ...properties}) {
 
 function App(props) {
   const {renderArticle, files, hidePreview} = props
+
+  const z = localStorage.getItem('active_code')
+  const auth = z === democode
+
   return (
     <div>
       <div className='mt-5 md:flex'>
         <div className='md:w-[40%] pr-4 keep'>
-          {renderArticle(code)}
+          {z ? renderArticle(code) : <EnterCode />}
 
           <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
 
