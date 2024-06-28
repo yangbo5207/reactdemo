@@ -22,7 +22,7 @@ export default function EnterCode() {
             <h3 className="text-sm font-medium text-yellow-800">Attention needed</h3>
             <div className="mt-2 text-sm text-yellow-700">
               <p>
-                你还未输入激活码，或者激活码以过期，请重新输入即可访问
+                你还未输入激活码，或者激活码已过期，请重新输入即可访问
               </p>
             </div>
           </div>

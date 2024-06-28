@@ -1,7 +1,7 @@
 import {Suspense} from 'react'
 import {Routes, Route, Outlet} from 'react-router-dom'
 import {navigation} from 'pages/tutorial/path.js'
-import {useState} from 'react'
+import PageLoading from 'components/PageLoading'
 import './App.css'
 
 import NavHeader from "./pages/NavHeader/index.jsx";
@@ -27,7 +27,7 @@ function App() {
         <Route path='tutorial' element={<Tutorial />}>
           {navigation.filter((item) => !!item.path).map((item ,i) => (
             <Route key={item.path} path={item.path} index={i === 0} element={
-              <Suspense fallback={<div></div>}>
+              <Suspense fallback={<PageLoading />}>
                 <item.component />
               </Suspense>
             } />
