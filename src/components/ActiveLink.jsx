@@ -14,7 +14,7 @@ function ActiveLink({ children, className = '', activeName, to, activeStyle, onC
 
   function __handler(e) {
     if (!!match) e.preventDefault()
-    onClick && onClick()
+    onClick && onClick(e)
   }
 
   return (

@@ -6,7 +6,8 @@ import {useRef} from "react";
 export default function ButtonCode() {
   const dialog = useRef(null)
 
-  function __clickhandler() {
+  function __clickhandler(e) {
+    e.preventDefault()
     dialog.current.show();
   }
 

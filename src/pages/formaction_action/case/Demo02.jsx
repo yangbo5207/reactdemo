@@ -1,56 +1,27 @@
-import { useState } from 'react'
-import Input from 'components/Input'
-import './index.css'
+import { useState, useRef } from 'react'
+import Modal from './Modal'
+import getUuid from "@/utils/uuid.js";
 
-function Index() {
-  const [posts, setPosts] = useState([])
 
-  function action(data) {
-    const title = data.get('title')
-    const content = data.get('content')
-    setPosts([...posts, {title, content}])
+export default function Table() {
+  const modal = useRef(null)
+
+  const [revenues, setRevenues] = useState([{
+    id: getUuid(),
+    name: 'Logo redesign',
+    desc: 'New logo and digital asset playbook.',
+    hours: '20.0',
+    rate: '100.00',
+  }])
+
+  function __onChange(data) {
+    setRevenues([...revenues, data])
   }
 
-  return (
-    <div className='border p-4 rounded-xl w-[400px]'>
-      <form action={action}>
-        <Input label='Name' name='title' placeholder='Enter Title' required pattern='[0-9]{6}' />
-        <Input label='Content' name='content' placeholder='please input your content' required />
+  const subtotal = revenues.reduce((pre, cur) => {
+    return pre + cur.hours * cur.rate
+  }, 0)
 
-        <div className='flex justify-end'>
-          <button type='submit'>Submit</button>
-        </div>
-      </form>
-
-      <ul className='_07_list'>
-        {posts.map((post, index) => (
-          <div key={`${post.title}-${index}`} className='_07_item'>
-            <h2>{post.title}</h2>
-            <p>{post.content}</p>
-          </div>
-        ))}
-      </ul>
-      <Example />
-    </div>
-  )
-}
-
-export default Index
-
-
-const projects = [
-  {
-    id: 1,
-    name: 'Logo redesign',
-    description: 'New logo and digital asset playbook.',
-    hours: '20.0',
-    rate: '$100.00',
-    price: '$2,000.00',
-  },
-  // More projects...
-]
-
-function Example() {
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
@@ -62,14 +33,11 @@ function Example() {
           </p>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-          <button
-            type="button"
-            className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Print
-          </button>
+          <button className='primary' onClick={() => modal.current.show()}>Add</button>
         </div>
       </div>
+      <Modal ref={modal} onChange={__onChange} />
+
       <div className="-mx-4 mt-8 flow-root sm:mx-0">
         <table className="min-w-full">
           <colgroup>
@@ -101,15 +69,15 @@ function Example() {
           </tr>
           </thead>
           <tbody>
-          {projects.map((project) => (
+          {revenues.map((project) => (
             <tr key={project.id} className="border-b border-gray-200">
               <td className="max-w-0 py-5 pl-4 pr-3 text-sm sm:pl-0">
                 <div className="font-medium text-gray-900">{project.name}</div>
-                <div className="mt-1 truncate text-gray-500">{project.description}</div>
+                <div className="mt-1 truncate text-gray-500">{project.desc}</div>
               </td>
               <td className="hidden px-3 py-5 text-right text-sm text-gray-500 sm:table-cell">{project.hours}</td>
-              <td className="hidden px-3 py-5 text-right text-sm text-gray-500 sm:table-cell">{project.rate}</td>
-              <td className="py-5 pl-3 pr-4 text-right text-sm text-gray-500 sm:pr-0">{project.price}</td>
+              <td className="hidden px-3 py-5 text-right text-sm text-gray-500 sm:table-cell">${project.rate}</td>
+              <td className="py-5 pl-3 pr-4 text-right text-sm text-gray-500 sm:pr-0">${project.hours * project.rate}</td>
             </tr>
           ))}
           </tbody>
@@ -125,7 +93,7 @@ function Example() {
             <th scope="row" className="pl-4 pr-3 pt-6 text-left text-sm font-normal text-gray-500 sm:hidden">
               Subtotal
             </th>
-            <td className="pl-3 pr-4 pt-6 text-right text-sm text-gray-500 sm:pr-0">$8,800.00</td>
+            <td className="pl-3 pr-4 pt-6 text-right text-sm text-gray-500 sm:pr-0">${subtotal}</td>
           </tr>
           <tr>
             <th
@@ -138,7 +106,7 @@ function Example() {
             <th scope="row" className="pl-4 pr-3 pt-4 text-left text-sm font-normal text-gray-500 sm:hidden">
               Tax
             </th>
-            <td className="pl-3 pr-4 pt-4 text-right text-sm text-gray-500 sm:pr-0">$1,760.00</td>
+            <td className="pl-3 pr-4 pt-4 text-right text-sm text-gray-500 sm:pr-0">$1760.00</td>
           </tr>
           <tr>
             <th
@@ -151,7 +119,7 @@ function Example() {
             <th scope="row" className="pl-4 pr-3 pt-4 text-left text-sm font-semibold text-gray-900 sm:hidden">
               Total
             </th>
-            <td className="pl-3 pr-4 pt-4 text-right text-sm font-semibold text-gray-900 sm:pr-0">$10,560.00</td>
+            <td className="pl-3 pr-4 pt-4 text-right text-sm font-semibold text-gray-900 sm:pr-0">${subtotal - 1760}</td>
           </tr>
           </tfoot>
         </table>

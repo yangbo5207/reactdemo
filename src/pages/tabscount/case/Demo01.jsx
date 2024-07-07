@@ -18,7 +18,10 @@ export default function Example() {
   const [tabs, changeTabs] = useState(config)
 
   function __handler(index) {
-    tabs[current].current = false
+    tabs.forEach(item => {
+      item.current = false
+    })
+    
     tabs[index].current = true
     switchToSelected(index)
     changeTabs([...tabs])

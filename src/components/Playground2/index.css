@@ -1,0 +1,26 @@
+.sp-wrapper {
+  height: 100%;
+}
+
+.sp-layout {
+  height: 100%;
+  display: flex;
+}
+
+.sp-resize-handler {
+  display: none;
+}
+
+.sp-editor {
+  height: 100%!important;
+  overflow-y: auto!important;
+  
+  --sp-font-lineHeight: 24px;
+}
+.sp-421664233 {
+  --sp-font-size: 12px;
+}
+
+.sp-editor-wrapper .sp-preview {
+  height: 100%!important;
+}

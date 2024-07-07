@@ -105,3 +105,8 @@ div {
   font-size: 14px;
   margin: 20px 0 20px;
 }
+
+
+.center {
+  @apply flex items-center justify-center;
+}

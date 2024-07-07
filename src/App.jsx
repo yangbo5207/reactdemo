@@ -13,7 +13,7 @@ import Tutorial from './pages/tutorial'
 function Layou2t() {
   return (
     <div>
-      <NavHeader />
+      <NavHeader className='line' />
       <Outlet />
     </div>
   )

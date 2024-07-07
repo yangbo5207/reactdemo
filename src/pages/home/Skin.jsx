@@ -22,11 +22,7 @@ export default function Skin() {
             <span>极客时间、掘金买课优惠</span>
           </h2>
           <p className='mt-4 text-md text-left text-skin-muted transition'>
-            官方的课程返现全部归还，需要从网站 coursesub.top 或者公众号「课程减减」通过邀请链接进行下单，购买后添加客服微信发送课程名确认后即可收到红包。
-          </p>
-
-          <p className='mt-4 text-md text-left text-skin-muted transition'>
-            同时可叠加极客时间的优惠券或者学生半价优惠，618 极客时间全场 6 折优惠最后几天，可以按需囤课。
+            官方的课程返现全部归还，需要从网站 coursesub.top 或者公众号「课程减减」通过邀请链接进行下单，购买后添加客服微信发送课程名确认后即可收到红包，可正常使用极客时间的优惠券或者学生半价优惠。
           </p>
 
           <div className='mt-10 max-w-sm mx-auto sm:max-w-one sm:flex sm:justify-center'>

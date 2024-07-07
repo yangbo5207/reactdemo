@@ -136,60 +136,15 @@ export const navigation = [{
   type: 'tip',
   name: 'form action'
 },{
-  path: 'use/07',
-  name: 'form Action 01',
-  component: React.lazy(() => import('../07_action_demo/index.jsx'))
+  path: 'formaction/base',
+  name: 'form 基础',
+  component: React.lazy(() => import('../formaction_base/index.jsx'))
+}, {
+  path: 'formaction/formdata',
+  name: 'FormData 基础',
+  component: React.lazy(() => import('../formaction_formdata/index.jsx'))
+}, {
+  path: 'formaction/action',
+  name: 'form action',
+  component: React.lazy(() => import('../formaction_action/index.jsx'))
 }]
-
-
-function init() {
-  document.body.innerHTML = App()
-}
-
-function App() {
-  return `<div>
-    <h1>hello world</h1>
-    ${Page1()}
-  </div>`
-}
-
-var Page1Fiber = {
-  count: undefined
-}
-
-function useState(value) {
-  if (Page1Fiber.count === undefined) {
-    Page1Fiber.count = value
-  }
-  function set(value) {
-    console.log('inner: ', value)
-    Page1Fiber.count = value
-    init()
-  }
-  return [Page1Fiber.count, set]
-}
-
-function Page1() {
-  const [count, setCount] = useState(0)
-  console.log(count)
-  function clickhandler() {
-    setCount(count + 1)
-  }
-  window.clickhandler = clickhandler
-  return `<div>
-    hello Page1
-    <div>xxxx3</div>
-    <div>xxxx</div>
-    <div>count: ${count}</div>
-    <button onclick="clickhandler()">递增</button>
-    ${Comp1(1, 2, 'xxo')}
-  </div>`
-}
-
-function Comp1(a, b, c) {
-  return `<div>
-    <div>hello comp, ${a}</div>
-    <h2>${b}</h2>
-    <h3>${c}</h3>
-  </div>`
-}

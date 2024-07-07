@@ -56,7 +56,7 @@ function getScroll(w, top) {
 }
 
 export default function Dialog(props) {
-  const {title, onClose, children, onSure, onCancel, ref} = props
+  const {title, onClose, children, onSure, onCancel, ref, footer} = props
   const [show, setShow] = useState(false)
   const [display, setDisplay] = useState(false)
   const wrapperRef = useRef(null)
@@ -131,9 +131,12 @@ export default function Dialog(props) {
           <section className="leading-6">
             {children}
           </section>
-          <footer className="text-end mt-4">
-            <Button primary onClick={sureClickHander}>确认</Button>
-          </footer>
+          {footer || (
+            <footer className="text-end mt-4">
+              <Button primary onClick={sureClickHander}>确认</Button>
+            </footer>
+          )}
+
         </div>
       ) : null}
     </Modal>

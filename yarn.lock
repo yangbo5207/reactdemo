@@ -782,6 +782,20 @@
     source-map "^0.7.0"
     vfile "^6.0.0"
 
+"@monaco-editor/loader@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@monaco-editor/loader/-/loader-1.4.0.tgz#f08227057331ec890fa1e903912a5b711a2ad558"
+  integrity sha512-00ioBig0x642hytVspPl7DbQyaSWRaolYie/UFNjoTdvoKPzo6xrXLhTk9ixgIKcLH5b5vDOjVNiGyY+uDCUlg==
+  dependencies:
+    state-local "^1.0.6"
+
+"@monaco-editor/react@^4.6.0":
+  version "4.6.0"
+  resolved "https://registry.npmjs.org/@monaco-editor/react/-/react-4.6.0.tgz#bcc68671e358a21c3814566b865a54b191e24119"
+  integrity sha512-RFkU9/i7cN2bsq/iTkurMWOEErmYcY6JiQI3Jn+WeR/FGISH8JbHERjpS9oRuSOPvDMJI0Z8nJeKkbOs9sBYQw==
+  dependencies:
+    "@monaco-editor/loader" "^1.4.0"
+
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
   version "5.1.1-v1"
   resolved "https://registry.npmjs.org/@nicolo-ribaudo/eslint-scope-5-internals/-/eslint-scope-5-internals-5.1.1-v1.tgz#dbf733a965ca47b1973177dc0bb6c889edcfb129"
@@ -4418,6 +4432,11 @@ space-separated-tokens@^2.0.0:
   version "2.0.2"
   resolved "https://registry.npmjs.org/space-separated-tokens/-/space-separated-tokens-2.0.2.tgz#1ecd9d2350a3844572c3f4a312bceb018348859f"
   integrity sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==
+
+state-local@^1.0.6:
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/state-local/-/state-local-1.0.7.tgz#da50211d07f05748d53009bee46307a37db386d5"
+  integrity sha512-HTEHMNieakEnoe33shBYcZ7NX83ACUjCu8c40iOGEZsngj9zRnkqS9j1pqQPXwobB0ZcVTk27REb7COQ0UR59w==
 
 static-browser-server@1.0.3:
   version "1.0.3"

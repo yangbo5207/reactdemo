@@ -9,21 +9,8 @@ input {
   outline: none;
 }
 
-input:invalid {
-  border: 1px solid red;
-}
-
-.msg_required {
-  transition: all 0.3s;
-  opacity: 0;
-}
-
 .input {
   position: relative;
-}
-
-.input:has(>input:invalid:required) .msg_required {
-  opacity: 1;
 }
 
 .input:has(>input):after {
@@ -52,18 +39,14 @@ input:invalid {
   background-color: #4dbf2a;
 }
 
-/*input:invalid:required:after {*/
-/*  content: "此项为必填项";*/
-/*}*/
+input:invalid:required:after {
+ content: "此项为必填项";
+}
 
-/*input[type="email"]:invalid:after {*/
-/*  content: "请输入有效的电子邮件地址";*/
-/*}*/
+input[type="email"]:invalid:after {
+ content: "请输入有效的电子邮件地址";
+}
 
-/*input[type="number"]:invalid:after {*/
-/*  content: "请输入数字";*/
-/*}*/
-
-/*textarea:invalid:required:after {*/
-/*  content: "此项为必填项";*/
-/*}*/
+input[type="number"]:invalid:after {
+ content: "请输入数字";
+}
