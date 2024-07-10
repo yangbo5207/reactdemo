@@ -45,34 +45,35 @@ button:hover {
 
 @layer base {
   .keep p,
-  .keep li
-  {
+  .keep li {
     @apply text-[14px] text-gray-700 my-5 tracking-wider leading-8
   }
   .keep li {
     @apply my-4 border border-gray-100 leading-6 rounded-md px-4 py-3 text-[13px] border-b-cyan-300 relative;
   }
   .keep pre:not(.sp-pristine) {
-    @apply my-4 text-sm border rounded-md overflow-hidden;
+    @apply my-4 text-sm rounded-md overflow-hidden border border-gray-100 p-1;
   }
-  .keep pre:not(.sp-pristine):before {
+  /* .keep pre:not(.sp-pristine):before {
     @apply content-['代码'] block bg-no-repeat pl-10 border-b py-2 bg-gray-100 text-gray-500;
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0icmdiKDEwNywgMTE0LCAxMjgpIiBjbGFzcz0ic2l6ZS02Ij4KICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik0xNy4yNSA2Ljc1IDIyLjUgMTJsLTUuMjUgNS4yNW0tMTAuNSAwTDEuNSAxMmw1LjI1LTUuMjVtNy41LTMtNC41IDE2LjUiIC8+Cjwvc3ZnPgo=');
     background-size: 1.25rem;
     background-position: 0.75rem center;
-  }
+  } */
   .keep pre:not(.sp-pristine) div:first-child {
-    @apply !bg-white !p-4 rounded-md leading-6;
+    @apply !bg-gray-50 !p-4 rounded-md leading-6;
   }
   /* 处理红色类型的异常提示 */
   .keep pre:has(> div > code.language-error) {
-    @apply border-red-300;
+    @apply border-red-200 p-0;
   }
   .keep pre:has(> div > code.language-error):before {
-    @apply content-['Error'] bg-red-100 border-red-300 text-red-500;
+    @apply content-['Error'] bg-red-100 text-red-500 block bg-no-repeat py-2 pl-10;
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0icmdiKDIzOSwgNjgsIDY4KSIgY2xhc3M9InNpemUtNiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMTIgOXYzLjc1bS05LjMwMyAzLjM3NmMtLjg2NiAxLjUuMjE3IDMuMzc0IDEuOTQ4IDMuMzc0aDE0LjcxYzEuNzMgMCAyLjgxMy0xLjg3NCAxLjk0OC0zLjM3NEwxMy45NDkgMy4zNzhjLS44NjYtMS41LTMuMDMyLTEuNS0zLjg5OCAwTDIuNjk3IDE2LjEyNlpNMTIgMTUuNzVoLjAwN3YuMDA4SDEydi0uMDA4WiIgLz4KPC9zdmc+Cg==');
+    background-size: 1.25rem;
+    background-position: 0.75rem center;
   }
-  .keep pre div:has(> code.language-error) {
+  .keep pre:not(.sp-pristine) div:first-child:has(> code.language-error) {
     @apply !bg-white !text-red-500
   }
   .keep pre div:has(> code.language-error) code {
@@ -97,11 +98,16 @@ button:hover {
     @apply text-green-600 mt-0 text-center mb-10;
     color: orangered;
   }
+
+  /* blockquote 普通提示 */
   .keep blockquote {
-    @apply bg-blue-50 px-4 my-5 py-0.5 rounded border-l-4 border-blue-300 leading-6;
+    @apply bg-blue-50 px-4 my-5 py-0.5 rounded leading-6;
+  }
+  .keep blockquote:before {
+    @apply content-['i'] w-5 h-5 text-white bg-blue-500 flex items-center justify-center rounded-full mt-4
   }
   .keep blockquote p {
-    @apply my-3;
+    @apply mt-3 mb-4 text-gray-600;
     font-size: 13px;
   }
   .keep p code {

@@ -26,14 +26,14 @@ function App() {
         <Route index element={<Home />} />
         <Route path='tutorial' element={<Tutorial />}>
           {navigation.filter((item) => !!item.path).map((item ,i) => (
-            <Route key={item.path} path={item.path} index={i === 0} element={
+            <Route key={item.path} path={item.path} element={
               <Suspense fallback={<PageLoading />}>
                 <item.component />
               </Suspense>
             } />
           ))}
         </Route>
-        <Route path="*" element={<div>nothing</div>} />
+        <Route path="*" element={<div>nothingsdfsdfsdf</div>} />
       </Route>
     </Routes>
   )

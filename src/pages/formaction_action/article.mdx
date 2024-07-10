@@ -4,6 +4,7 @@ import Demo01 from './case/Demo01'
 import Demo02 from './case/Demo02'
 
 import Modaltext from './case/Modal.jsx?raw'
+import Demo02text from './case/Demo02.jsx?raw'
 
 import {SandpackProvider, SandpackLayout, SandpackCodeEditor, SandpackPreview} from '@codesandbox/sandpack-react'
 
@@ -85,5 +86,8 @@ function __onSubmit(e) {
 
 
 <CodeEditor files={{
-  'Modal.jsx': Modaltext
-}} />
+    'index.jsx': Demo02text,
+    'Modal.jsx': Modaltext,
+  }}
+  activeFile={'index.jsx'}
+/>

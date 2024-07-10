@@ -1,18 +1,19 @@
 import { SandpackProvider, SandpackLayout, SandpackCodeEditor, SandpackPreview } from '@codesandbox/sandpack-react'
 import { githubLight } from "@codesandbox/sandpack-themes";
 
-export default function CodeEditor({files}) {
+export default function CodeEditor({files, activeFile}) {
   return (
     <SandpackProvider
       template='react'
       options={{
-        editorHeight: 'auto'
+        editorHeight: 'auto',
+        activeFile
       }}
       theme={githubLight}
       files={files}
     >
       <SandpackLayout>
-        <SandpackCodeEditor editorHeight='auto' />
+        <SandpackCodeEditor />
       </SandpackLayout>
     </SandpackProvider>
   )

@@ -19,7 +19,7 @@ export default function Tutorial() {
     if (location.pathname === '/tutorial') {
       navigate('index')
     }
-  }, [])
+  }, [pathname])
 
   return (
     <div className='pt-16 flex'>
