@@ -21,7 +21,7 @@ function App() {
     <div className='relative pt-16'>
       <Background />
 
-      <div className='max-w-[1050px] mx-auto'>
+      <div className='max-w-[1050px] mx-auto px-4'>
 
         <div className="mt-20 max-w-[750px]">
           <h2 className='text-lg font-bold'>React 19 全解</h2>
@@ -70,9 +70,11 @@ function App() {
 
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>主要内容</div>
 
-        <div className='flex justify-between'>
+        <div className='flex justify-between flex-col md:flex-row items-center'>
           <Block title='Compiler' desc='你可以不再使用 memo、useMemo、useCallback 来优化你的项目性能，大幅度提高开发体验' />
+          <div className='w-2 h-2'></div>
           <Block title='新的架构思路' desc='并发模式变得更加实用，得益于并发模式的成熟，我们将可以使用新的架构思路构思我的项目' />
+          <div className='w-2 h-2'></div>
           <Block title='新的交互方式' desc='React 在人机交互的开发体验上做了很多努力和尝试，他们将在这个版本中得以体现' />
         </div>
 

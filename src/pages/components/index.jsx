@@ -1,7 +1,7 @@
 import {useRef, useReducer, useEffect} from 'react'
 import {useOutlet, useLocation, useNavigate} from 'react-router-dom'
 import ActiveLink from 'components/ActiveLink'
-import {navigation} from 'pages/tutorial/path.js'
+import {compath} from './path.js'
 import Tag from 'components/Tag'
 
 export default function Tutorial() {
@@ -16,8 +16,8 @@ export default function Tutorial() {
   }
 
   useEffect(() => {
-    if (location.pathname === '/tutorial') {
-      navigate('index')
+    if (location.pathname === '/component') {
+      navigate('button')
     }
   }, [pathname])
 
@@ -38,7 +38,7 @@ export default function Tutorial() {
         </div>
         <ul className='border-r h-[calc(100vh_-_9rem_-_35px)] overflow-y-auto pb-8'>
 
-          {navigation.map((item, index) => {
+          {compath.map((item, index) => {
             if (item.type === 'tip') {
               return <div className='mx-2 text-sm px-4 text-gray-400 first:pt-0 pb-4 pt-8' key={`z-${index}`}>
                 {item.name}

@@ -1,5 +1,5 @@
 import Input from 'components/Input'
-import {democode} from './activecode.js'
+import {democode} from 'components/Playground/activecode.js'
 
 export default function EnterCode() {
   function __submit(e) {

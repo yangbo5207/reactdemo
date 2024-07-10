@@ -1,0 +1,69 @@
+import Cardruntime from "components/Cardruntime";
+import Button from 'components/Button'
+import Buttontext from 'components/Button/index.jsx?raw'
+import CodeFinder from 'components/CodeFinder'
+
+基础使用
+
+```html
+<Button>hello button</Button>
+```
+
+<div>
+  <Button>hello button</Button>
+</div>
+
+类型
+
+```html
+<Button danger>Danger</Button>
+<Button primary>Primary</Button>
+<Button success>Success</Button>
+<Button signal>Signal</Button>
+```
+
+<Cardruntime>
+  <div className="mt-4 flex justify-around">
+    <Button danger>Danger</Button>
+    <Button primary>Primary</Button>
+    <Button success>Success</Button>
+    <Button signal>Signal</Button>
+  </div>
+</Cardruntime>
+
+
+大小
+
+```html
+<Button danger sm className="mr-4">Danger</Button>
+<Button danger className="mr-4">Danger</Button>
+<Button danger lg>Danger</Button>
+```
+
+<Cardruntime>
+  <div className="mt-4">
+    <Button danger sm className="mr-4">Danger</Button>
+    <Button danger className="mr-4">Danger</Button>
+    <Button danger lg>Danger</Button>
+  </div>
+  <div className="mt-4">
+    <Button success lg className="mr-4">Success</Button>
+    <Button success className="mr-4">Success</Button>
+    <Button success sm>Success</Button>
+  </div>
+  <div className="mt-4">
+    <Button primary sm className="mr-4">Primary</Button>
+    <Button primary className="mr-4">Primary</Button>
+    <Button primary lg>Primary</Button>
+  </div>
+  <div className="mt-4">
+    <Button signal lg className="mr-4">Signal</Button>
+    <Button signal className="mr-4">Signal</Button>
+    <Button signal sm>Signal</Button>
+  </div>
+</Cardruntime>
+
+完整源码
+
+
+<CodeFinder files={{'index.jsx': Buttontext}} activeFile='index.jsx' />

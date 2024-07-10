@@ -1,4 +1,4 @@
-import Gisucs from '@giscus/react'
+import Giscus from '@giscus/react'
 import EnterCode from './code'
 
 import SyntaxHighlighter from 'react-syntax-highlighter'
@@ -14,32 +14,35 @@ function code({className, ...properties}) {
 }
 
 function App(props) {
-  const {renderArticle} = props
+  const {renderArticle, isAuth, isGiscus = true} = props
 
   const z = localStorage.getItem('active_code')
-  const auth = z === democode
+  const auth = isAuth ? z === democode : true
 
   return (
     <div className='pr-4 keep max-w-[700px] mx-auto'>
-      {z ? renderArticle(code) : <EnterCode />}
+      {auth ? renderArticle(code) : <EnterCode />}
 
-      <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
-
-      <Gisucs
-        repo='yangbo5207/react19feature'
-        repoId='R_kgDOMGiHOw'
-        category='General'
-        categoryId='DIC_kwDOMGiHO84Cf8dR'
-        maping='pathname'
-        term='欢迎道友'
-        strict='0'
-        reactionsEnabled='1'
-        emitMetadata="1"
-        inputPosition="top"
-        lang="zh-CN"
-        crossorigin="anonymous"
-        async
-      />
+      {isGiscus && (
+        <>
+          <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
+          <Giscus
+            repo='yangbo5207/react19feature'
+            repoId='R_kgDOMGiHOw'
+            category='General'
+            categoryId='DIC_kwDOMGiHO84Cf8dR'
+            maping='pathname'
+            term='欢迎道友'
+            strict='0'
+            reactionsEnabled='1'
+            emitMetadata="1"
+            inputPosition="top"
+            lang="zh-CN"
+            crossorigin="anonymous"
+            async
+          />
+        </>
+      )}
     </div>
   )
 }
