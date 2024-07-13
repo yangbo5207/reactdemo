@@ -1,0 +1,4 @@
+import{j as n,c as s}from"./index-WxVCoI3R.js";import{C as c}from"./Cardruntime-CkAYSVvf.js";import{I as p}from"./activecode-B_nYYbD8.js";import{A as i}from"./index-Duxin1EB.js";import"./atom-one-light-CeVHWIu6.js";function r(t){const e={code:"code",p:"p",pre:"pre",...t.components};return n.jsxs(n.Fragment,{children:[n.jsx(e.p,{children:"Input 基础使用"}),`
+`,n.jsx(e.pre,{children:n.jsx(e.code,{className:"language-html",children:`<Input placeholder="请输入任意内容" />
+`})}),`
+`,n.jsx(c,{children:n.jsx(p,{placeholder:"请输入任意内容"})})]})}function m(t={}){const{wrapper:e}=t.components||{};return e?n.jsx(e,{...t,children:n.jsx(r,{...t})}):r(t)}function j(){const t=s.c(1);let e;return t[0]===Symbol.for("react.memo_cache_sentinel")?(e=n.jsx(i,{renderArticle:o=>n.jsx(m,{components:{code:o}}),isGiscus:!1}),t[0]=e):e=t[0],e}export{j as default};
