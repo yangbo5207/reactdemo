@@ -1,5 +1,6 @@
 const plugin = require('tailwindcss/plugin')
 
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -9,7 +10,6 @@ module.exports = {
     './app/**/*.{js,jsx}',
     './src/**/*.{js,jsx}',
   ],
-  prefix: "",
   theme: {
     fsizes: {
       12: '12px',

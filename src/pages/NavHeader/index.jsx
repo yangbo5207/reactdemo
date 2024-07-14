@@ -28,7 +28,7 @@ export default function NavHeader() {
 
         <div className='hidden md:block'>
           {links.map((link, index) => (
-            <ActiveLink to={link.path} className='ml-8 text-gray-500' activeStyle={{color: '#000'}} key={link.path}>
+            <ActiveLink to={link.path} className='ml-8 text-gray-500' end={false} activeName='text-gray-900' key={link.path}>
               {link.text}
             </ActiveLink>
           ))}

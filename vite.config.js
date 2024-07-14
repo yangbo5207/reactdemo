@@ -14,7 +14,7 @@ export default defineConfig({
     react({
       babel: {
         plugins: [
-          ["babel-plugin-react-compiler", ReactCompilerConfig],
+          // ["babel-plugin-react-compiler", ReactCompilerConfig],
         ],
       },
     }),
