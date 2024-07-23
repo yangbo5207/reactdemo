@@ -8,8 +8,9 @@ import {Link} from 'react-router-dom'
 import Dialog from "components/Dialog";
 import ercode from '/src/assets/ercode.png'
 
-import './App.css'
+import Playground3 from 'components/Playground3';
 
+import './App.css'
 
 function App() {
   const dialog = useRef(null)
@@ -22,15 +23,14 @@ function App() {
       <Background />
 
       <div className='max-w-[1050px] mx-auto px-4'>
-
         <div className="mt-20 max-w-[750px]">
           <h2 className='text-lg font-bold'>React 19 全解</h2>
 
-          <p className="mt-4 text-gray-500 leading-6 text-md">
+          <p className="mt-4 text-gray-500 leading-8 text-md">
             全网第一本系统学习 React 19 的专栏。本专栏在公众号「这波能反杀」首发，受到了大量粉丝的喜爱。专栏中包含大量实践案例，深入简出，理论结合实践为大家分享 React19 的学习。
           </p>
-          <p className="text-md mt-4 text-gray-500 leading-6">
-            React19 在开发体验和性能上都有大幅度的提升，值得每一位 React 开发者学习，赶紧行动吧。
+          <p className="text-md mt-4 text-gray-500 leading-8">
+            React19 为开发者带来了新的开发理念，这又是一次开发方式上的一次变革。并且在开发体验和性能上都有大幅度的提升，值得每一位 React 开发者学习，赶紧行动吧。
           </p>
 
           <div className='mt-8'>
@@ -51,7 +51,7 @@ function App() {
         </div>
 
         <div className="mt-20 max-w-[750px]">
-          <h2 className='text-[20px] font-bold'>学前准备</h2>
+          <h2 className='text-lg font-bold'>学前准备</h2>
           <div className='flex items-center text-gray-600 mt-8'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
@@ -63,7 +63,14 @@ function App() {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
             </svg>
-            <div className='ml-2'>对 React 之前的版本有一定的熟悉</div>
+            <div className='ml-2'>熟悉异步请求，熟悉 fetch 与 Promise</div>
+          </div>
+
+          <div className='flex items-center text-gray-600 mt-4'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+            <div className='ml-2'>熟悉 React 之前的版本的使用</div>
           </div>
         </div>
 
@@ -71,18 +78,14 @@ function App() {
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>主要内容</div>
 
         <div className='flex justify-between flex-col md:flex-row items-center'>
-          <Block title='Compiler' desc='你可以不再使用 memo、useMemo、useCallback 来优化你的项目性能，大幅度提高开发体验' />
-          <div className='w-2 h-2'></div>
-          <Block title='新的架构思路' desc='并发模式变得更加实用，得益于并发模式的成熟，我们将可以使用新的架构思路构思我的项目' />
-          <div className='w-2 h-2'></div>
-          <Block title='新的交互方式' desc='React 在人机交互的开发体验上做了很多努力和尝试，他们将在这个版本中得以体现' />
+          <Block title='Compiler' path='./tutorial/use/importwith19' desc='你可以不再使用 memo、useMemo、useCallback 来优化你的项目性能，大幅度提高开发体验' />
+          <div className='w-4 h-4 md:hidden'></div>
+          <Block title='新的架构思路' path='./tutorial/index' desc='并发模式变得更加实用，得益于并发模式的成熟，我们将可以使用新的架构思路构思我的项目' />
+          <div className='w-4 h-4 md:hidden'></div>
+          <Block title='新的交互方式' path='./tutorial/use/base' desc='React 在人机交互的开发体验上做了很多努力和尝试，他们将在这个版本中得以体现' />
         </div>
 
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>案例展示方式</div>
-
-        <p className='mb-4'>沉浸式学习体验。通过可在线编辑的案例，你能获得沉浸式的学习体验</p>
-
-        <ButtonCase />
 
 
         <p className='mt-10 flex items-center'>
@@ -97,6 +100,11 @@ function App() {
         </p>
 
         <Skin/>
+
+        <p className='mb-4'>沉浸式学习体验。通过可在线编辑的案例，你能获得沉浸式的学习体验</p>
+
+        <ButtonCase />
+
 
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>其他作品</div>
 

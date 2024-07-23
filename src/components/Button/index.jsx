@@ -5,8 +5,8 @@ document.documentElement.style.fontSize = '14px'
 // 本组件只是一个简单的 UI 组件，学习时无需多过关注
 
 export default function Button(props) {
-  const {className, primary, danger, sm, lg, signal, success, ...other} = props
-  const base = 'rounded-md border border-transparent font-medium cursor-pointer transition relative'
+  const {className, primary, danger, sm, lg, signal, success, ghost, rect, ...other} = props
+  const base = 'rounded-md border border-transparent font-medium cursor-pointer transition relative text-gray-600'
 
   // type
   const normal = 'bg-gray-100 hover:bg-gray-200'
@@ -20,10 +20,12 @@ export default function Button(props) {
     ['bg-red-500 text-white hover:bg-red-600']: danger,
     ['bg-green-500 text-white hover:bg-green-600']: success,
     ['text-sky-500 bg-white border border-sky-300 hover:bg-sky-50']: signal,
+    ['bg-transparent border-transparent hover:bg-gray-100']: ghost,
 
     // size
     ['text-xs py-1.5 px-3']: sm,
     ['text-lg py-2 px-6']: lg,
+    ['w-8 h-8 p-0']: rect,
   }, className))
 
   return (

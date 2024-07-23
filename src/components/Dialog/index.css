@@ -1,5 +1,6 @@
 .dialog-wrapper {
   max-width: 520px;
+  width: 90%;
   background-color: #FFF;
   margin: 80px auto;
   border-radius: 8px;

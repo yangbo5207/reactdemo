@@ -2,7 +2,6 @@ import {Suspense} from 'react'
 import {Routes, Route, Outlet} from 'react-router-dom'
 
 import PageLoading from 'components/PageLoading'
-import './App.css'
 
 import NavHeader from "./pages/NavHeader/index.jsx";
 

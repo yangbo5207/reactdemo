@@ -114,11 +114,6 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    plugin(({addBase, theme}) => {
-      addBase({
-        'button': { color: theme('colors.orange.700') }
-      })
-    }),
     plugin(({addComponents, theme}) => {
       addComponents({
         '.card': {

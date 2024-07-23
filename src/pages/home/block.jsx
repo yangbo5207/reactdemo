@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from 'react'
 
-export default function Block({title, desc = ''}) {
+export default function Block({title, desc = '', path, icon}) {
   const [pos, setPos] = useState({x: 0, y: 0});
   const ref = useRef(null)
 
@@ -66,7 +66,7 @@ export default function Block({title, desc = ''}) {
           </svg>
         </div>
         <h3 className="mt-4 text-sm font-semibold leading-7 text-zinc-900 dark:text-white">
-          <a href="/contacts">
+          <a href={path}>
             <span className="absolute inset-0 rounded-2xl"></span>
             {_title}
           </a>

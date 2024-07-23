@@ -7,6 +7,7 @@ import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import {democode} from "components/Playground/activecode.js";
 
 function code({className, ...properties}) {
+  console.log(properties)
   const match = /language-(\w+)/.exec(className || '')
   return match
     ? <SyntaxHighlighter language={match[1]} PreTag="div" {...properties} style={atomOneLight} />
