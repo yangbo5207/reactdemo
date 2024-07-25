@@ -41,6 +41,7 @@ import ActionBase from '../formaction_base'
 import FormDataBase from '../formaction_formdata'
 import FormAction from '../formaction_action'
 import UseFormStatus from '../formaction_useformstatus'
+import UseActionState from '../formaction_useactionstate'
 
 export const navigation = [{
   type: 'tip',
@@ -191,4 +192,8 @@ export const navigation = [{
   path: 'formaction/useformstatus',
   name: 'useFormStatus',
   component: UseFormStatus
+}, {
+  path: 'formaction/useactionstate',
+  name: 'useActionState',
+  component: UseActionState
 }]
