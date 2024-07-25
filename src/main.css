@@ -134,8 +134,8 @@ button:hover {
   }
 
 
-  .keepx pre {
-    @apply text-sm overflow-hidden p-1;
+  .keepx pre:not(.sp-pristine) {
+    @apply my-0 text-sm border-transparent overflow-hidden;
   }
   /* .keep pre:not(.sp-pristine):before {
     @apply content-['代码'] block bg-no-repeat pl-10 border-b py-2 bg-gray-100 text-gray-500;
@@ -143,8 +143,8 @@ button:hover {
     background-size: 1.25rem;
     background-position: 0.75rem center;
   } */
-  .keepx pre div:first-child {
-    @apply !bg-white !p-4 rounded-md leading-6;
+  .keepx pre:not(.sp-pristine) div:first-child {
+    @apply !bg-white !p-3 rounded-md leading-6;
   }
 }
 

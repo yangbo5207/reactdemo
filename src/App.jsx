@@ -12,7 +12,6 @@ import {navigation} from 'pages/tutorial/path.js'
 import Components from './pages/components'
 import {compath} from 'pages/components/path.js'
 
-
 function Layou2t() {
   return (
     <div>
