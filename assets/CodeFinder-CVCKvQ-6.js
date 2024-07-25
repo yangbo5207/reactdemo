@@ -1,1 +1,0 @@
-import{j as t}from"./index-BxXbnW9e.js";import{a,b as e,c as i}from"./index-BEsnAH_r.js";import{g as s}from"./index-DMQVh9lL.js";function m({files:o,activeFile:r}){return t.jsx(a,{template:"react",options:{editorHeight:"auto",activeFile:r},theme:s,files:o,children:t.jsx(e,{children:t.jsx(i,{})})})}export{m as C};
