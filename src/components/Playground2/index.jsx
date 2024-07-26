@@ -17,7 +17,7 @@ function code({className, ...properties}) {
 }
 
 function App(props) {
-  const {renderArticle, isAuth, isGiscus = true} = props
+  const {renderArticle, isAuth = true, isGiscus = true} = props
 
   const z = localStorage.getItem('active_code')
   const auth = isAuth ? z === democode : true

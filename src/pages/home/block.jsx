@@ -1,6 +1,7 @@
 import {useState, useEffect, useRef} from 'react'
+import clsx from 'clsx'
 
-export default function Block({title, desc = '', path, icon}) {
+export default function Block({title, desc = '', path, icon, className}) {
   const [pos, setPos] = useState({x: 0, y: 0});
   const ref = useRef(null)
 
@@ -25,8 +26,12 @@ export default function Block({title, desc = '', path, icon}) {
 
   const maskImage = `radial-gradient(180px at ${pos.x}px ${pos.y}px, white, transparent)`
 
+  const base = 'group relative flex rounded-2xl bg-zinc-50 transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5'
+
+  const cls = clsx(base, className)
+
   return (
-    <div ref={ref} className="w-[320px] group relative flex rounded-2xl bg-zinc-50 transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5">
+    <div ref={ref} className={cls}>
       <div className="pointer-events-none">
         <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
           <svg aria-hidden="true" className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/[0.02] stroke-black/5 dark:fill-white/1 dark:stroke-white/2.5">

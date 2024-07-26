@@ -52,7 +52,7 @@ button:hover {
     @apply my-4 border border-gray-100 leading-6 rounded-md px-4 py-3 text-[13px] border-b-cyan-300 relative;
   }
   .keep pre:not(.sp-pristine) {
-    @apply my-4 text-sm rounded-md overflow-hidden border border-gray-100 p-1;
+    @apply my-4 text-sm rounded-md overflow-hidden border border-slate-200 p-1;
   }
   /* .keep pre:not(.sp-pristine):before {
     @apply content-['代码'] block bg-no-repeat pl-10 border-b py-2 bg-gray-100 text-gray-500;
@@ -61,7 +61,7 @@ button:hover {
     background-position: 0.75rem center;
   } */
   .keep pre:not(.sp-pristine) div:first-child {
-    @apply !bg-gray-50 !p-4 rounded-md leading-6;
+    @apply !bg-white !p-4 rounded-md leading-7;
   }
   /* 处理红色类型的异常提示 */
   .keep pre:has(> div > code.language-error) {
@@ -144,7 +144,7 @@ button:hover {
     background-position: 0.75rem center;
   } */
   .keepx pre:not(.sp-pristine) div:first-child {
-    @apply !bg-white !p-3 rounded-md leading-6;
+    @apply !bg-white !p-3 rounded-md leading-7;
   }
 }
 

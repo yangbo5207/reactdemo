@@ -7,6 +7,7 @@ import Gisucs from '@giscus/react'
 import {Link} from 'react-router-dom'
 import Dialog from "components/Dialog";
 import ercode from '/src/assets/ercode.png'
+import MiniBlock from "./MiniBlock";
 
 import './App.css'
 
@@ -75,12 +76,25 @@ function App() {
 
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>主要内容</div>
 
-        <div className='flex justify-between flex-col md:flex-row items-center'>
-          <Block title='Compiler' path='./tutorial/use/importwith19' desc='你可以不再使用 memo、useMemo、useCallback 来优化你的项目性能，大幅度提高开发体验' />
-          <div className='w-4 h-4 md:hidden'></div>
-          <Block title='新的架构思路' path='./tutorial/index' desc='并发模式变得更加实用，得益于并发模式的成熟，我们将可以使用新的架构思路构思我的项目' />
-          <div className='w-4 h-4 md:hidden'></div>
-          <Block title='新的交互方式' path='./tutorial/use/base' desc='React 在人机交互的开发体验上做了很多努力和尝试，他们将在这个版本中得以体现' />
+        <div className='flex items-stretch md:justify-between flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0'>
+          <Block
+            title='Compiler'
+            path='./tutorial/use/importwith19'
+            desc='你可以不再使用 memo、useMemo、useCallback 来优化你的项目性能，大幅度提高开发体验'
+            className='flex-1'
+          />
+          <Block
+            title='新的架构思路'
+            path='./tutorial/index'
+            desc='并发模式变得更加实用，得益于并发模式的成熟，我们将可以使用新的架构思路构思我的项目'
+            className='flex-1'
+          />
+          <Block
+            title='新的交互方式'
+            path='./tutorial/use/base'
+            desc='React 在人机交互的开发体验上做了很多努力和尝试，他们将在这个版本中得以体现'
+            className='flex-1'
+          />
         </div>
 
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>案例展示方式</div>
@@ -104,16 +118,30 @@ function App() {
         <ButtonCase />
 
 
-        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>其他作品</div>
+        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>其他课程</div>
 
-        <div className='flex justify-between'>
-          <div className='w-[200px] h-32 border rounded-xl'>x</div>
-          <div className='w-[200px] h-32 border rounded-xl'>x</div>
-          <div className='w-[200px] h-32 border rounded-xl'>x</div>
-          <div className='w-[200px] h-32 border rounded-xl'>x</div>
+        <div className='flex justify-between flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6'>
+          <MiniBlock
+            title='私人面试指导'
+            desc='前端专家：这波能反杀，为您提供全网最专业的面试辅导，结合个人目标与工作经验，时长 2 ~ 3 小时，一次沟通，解决所有问题'
+            href='https://appxw863qeq2150.h5.xiaoeknow.com/v1/goods/goods_detail/course_2YWwycNZDt3u59naEs57g0gGa0H?'
+            className='flex-1'
+          />
+          <MiniBlock
+            title='keepCoder'
+            desc='资深前端进阶通道，1V1深度沟通辅导，聚焦学习方法，深挖知识体系，深挖应用场景，凝聚核心竞争力'
+            href='https://www.yuque.com/coreadvance/ar2my1/apk8cr'
+            className='flex-1 bg-orange-100 border-orange-300'
+          />
+          <MiniBlock
+            title='keepCharts'
+            desc='聚焦技术深度，手写基于 Canvas 的渲染引擎，并在此基础之上实现可视化图表等应用层库，打造自己牢不可破的核心竞争力'
+            href='https://www.yuque.com/coreadvance/ar2my1/em5rrk6p1umptsxw'
+            className='flex-1 bg-green-200 border-green-600'
+          />
         </div>
 
-        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>评论区</div>
+        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
 
         <Gisucs
           repo='yangbo5207/react19feature'

@@ -19,23 +19,32 @@ function code({className, ...properties}) {
 }
 
 function App(props) {
-  const {renderArticle, files, caseRender} = props
+  const {renderArticle, files, caseRender, isAuth = true} = props
 
   const z = localStorage.getItem('active_code')
-  const auth = z === democode
+  const auth = isAuth ? z === democode : true
 
-  return (
-    <div className='md:flex h-[calc(100vh_-_8rem)] overflow-hidden mx-auto w-full max-w-[1244px]'>
-      <div className='md:flex-1 h-full overflow-scroll md:pr-4 keep w-full max-w-[768px]'>
+  let content = <EnterCode/>
 
+  if (auth) {
+    content = (
+      <>
         {caseRender ? (
           <Cardruntime reload className='mt-0'>{caseRender}</Cardruntime>
         ) : null}
         <div className='md:hidden'>
           <Codepack files={files} className='h-full rounded-md border-gray-200'/>
         </div>
+        {renderArticle(code)}
+      </>
+    )
+  }
 
-        {z ? renderArticle(code) : <EnterCode/>}
+  return (
+    <div className='md:flex h-[calc(100vh_-_8rem)] overflow-hidden mx-auto w-full max-w-[1244px]'>
+      <div className='md:flex-1 h-full overflow-scroll md:pr-4 keep w-full max-w-[768px]'>
+
+        {content}
 
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
 
