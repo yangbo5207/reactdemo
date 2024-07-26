@@ -6,6 +6,7 @@ import ButtonCaseRaw from './ButtonCase?raw';
 import Button from 'components/Button'
 import ButtonRaw from 'components/Button/index.jsx?raw'
 import { useState } from 'react';
+import clsx from 'clsx'
 
 SyntaxHighlighter.registerLanguage('javascript', js)
 
@@ -15,7 +16,7 @@ const defiles = {
 }
 
 export default function Codepack(props) {
-  const {files = defiles, caseRender, active = 0} = props
+  const {files = defiles, caseRender, active = 0, className} = props
   const titles = Object.keys(files)
 
   const [currentCode, updateCurrentCode] = useState(titles[active])
@@ -24,10 +25,13 @@ export default function Codepack(props) {
     updateCurrentCode(titles[i])
   }
 
+  const base = 'border border-gray-100 flex bg-white keepx flex-col-reverse sm:flex-row'
+  const cls = clsx(base, className)
+
   return (
-    <div className='border border-gray-100 flex bg-white keepx flex-col-reverse sm:flex-row'>
-      <div className='overflow-hidden flex-1'>
-        <div className='flex border-b border-gray-100'>
+    <div className={cls}>
+      <div className='overflow-scroll flex-1 relative'>
+        <div className='flex border-b border-gray-100 sticky top-0 bg-white'>
           {titles.map((title, i) => (
             <Button key={title} ghost onClick={() => __switch(i)} className={currentCode === title ? 'text-green-500' : ''}>
               {title}

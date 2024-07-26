@@ -1,12 +1,10 @@
 import Cardruntime from "components/Cardruntime";
-import CodeEditor from 'components/CodeFinder'
+import Codepack from "components/Codepack";
 import Demo01 from './case/Demo01'
 import Demo02 from './case/Demo02'
 
 import Modaltext from './case/Modal.jsx?raw'
 import Demo02text from './case/Demo02.jsx?raw'
-
-import {SandpackProvider, SandpackLayout, SandpackCodeEditor, SandpackPreview} from '@codesandbox/sandpack-react'
 
 React 19 在表单上提供了更多充满想象空间的 API，它们用好了非常爽，不过一个麻烦的事情是如果你通过自学，想要透彻理解并找到最佳实践可能会非常困难。
 
@@ -85,9 +83,8 @@ function __onSubmit(e) {
 完整代码如下
 
 
-<CodeEditor files={{
-    'index.jsx': Demo02text,
-    'Modal.jsx': Modaltext,
-  }}
-  activeFile={'index.jsx'}
+<Codepack files={{
+  'index.jsx': Demo02text,
+  'Modal.jsx': Modaltext,
+}}
 />

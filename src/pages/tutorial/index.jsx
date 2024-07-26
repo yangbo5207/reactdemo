@@ -23,7 +23,7 @@ export default function Tutorial() {
   }, [pathname])
 
   return (
-    <div className='pt-16 flex'>
+    <div className='pt-16 md:flex'>
       <Button signal className='fixed bottom-6 right-6 z-40 md:hidden' onClick={() => modal.current.show()}>目录</Button>
       <Modal ref={modal} onClose={() => modal.current.close()}>
         <div className='bg-white h-full py-4 overflow-scroll'>
@@ -47,7 +47,7 @@ export default function Tutorial() {
           <SideNav />
         </ul>
       </nav>
-      <div className='w-full md:w-[calc(100vw_-_15rem)] p-8 min-h-[calc(100vh_-_5rem)] box-border'>
+      <div className='md:flex-1 md:w-[calc(100vw_-_15rem)] p-8 min-h-[calc(100vh_-_5rem)] box-border'>
         {/*<Outlet />*/}
         {Array.from(pageMap.current).map(([key, component]) => (
           <div key={key} style={{display: pathname === key ? 'block' : 'none'}}>

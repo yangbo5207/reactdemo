@@ -1,4 +1,4 @@
-import {SandpackProvider, SandpackLayout, SandpackCodeEditor, SandpackPreview} from '@codesandbox/sandpack-react'
+import Playground from "components/Playground";
 import Gisucs from '@giscus/react'
 import githubLight from 'utils/githubLight'
 import Preview from "components/Preview.jsx";
@@ -24,69 +24,14 @@ const files = {
   'Userinfo.jsx': UserinfoText,
   'Button.jsx': ButtonText,
   'Skeleton.jsx': SkeletonText,
-  '/public/index.html': {code: htmlText, hidden: true}
 }
 
-
+// 需要展示
 import Case from './case'
 
 function App() {
   return (
-    <div>
-      <div className='mt-5 md:flex'>
-        <div className='md:w-[40%] pr-4 keep'>
-          <Article />
-
-          <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
-
-          <Gisucs
-            repo='yangbo5207/react19feature'
-            repoId='R_kgDOMGiHOw'
-            category='General'
-            categoryId='DIC_kwDOMGiHO84Cf8dR'
-            maping='pathname'
-            term='欢迎道友'
-            strict='0'
-            reactionsEnabled='1'
-            emitMetadata="1"
-            inputPosition="top"
-            lang="zh-CN"
-            crossorigin="anonymous"
-            async
-          />
-        </div>
-        <div className='md:w-[60%] sticky top-[8rem] h-[calc(100vh_-_8rem-35px)] overflow-y-auto'>
-          <SandpackProvider
-            template="react"
-            theme={githubLight}
-            options={{
-              externalResources: [
-                "https://cdn.tailwindcss.com"
-              ],
-              editorHeight: 'auto'
-            }}
-            customSetup={{
-              dependencies: {
-                "react": "16.14.0",
-                // "react": "experimental",
-                "react-dom": "16.14.0",
-                'tailwind-merge': 'latest',
-                'clsx': 'latest',
-              },
-            }}
-            files={files}
-          >
-            <SandpackLayout>
-              <SandpackCodeEditor/>
-              <Preview>
-                <SandpackPreview/>
-              </Preview>
-            </SandpackLayout>
-          </SandpackProvider>
-        </div>
-
-      </div>
-    </div>
+    <Playground files={files} renderArticle={(code) => <Article components={{code}} />} />
   )
 }
 
