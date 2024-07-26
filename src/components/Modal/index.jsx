@@ -9,8 +9,15 @@ export default function Modal(props) {
   const [display, setDisplay] = useState(false)
 
   useImperativeHandle(ref, () => ({
-    show: () => { setShow(true); setDisplay(true) },
-    close: () => { setShow(false) }
+    show: () => {
+      setShow(true);
+      document.body.style.overflow = 'hidden'
+      setDisplay(true)
+    },
+    close: () => {
+      document.body.style.overflow = 'visible'
+      setShow(false)
+    }
   }))
 
   const cls = clsx(s.modal, {

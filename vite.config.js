@@ -20,8 +20,11 @@ export default defineConfig({
     }),
     mdx(),
     visualizer({
+      gzipSize: true,
       emitFile: true,
+      brotliSize: false,
       filename: "stats.html",
+      open: true
     }),
   ],
   css: {
@@ -40,6 +43,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
       'components': path.resolve(__dirname, './src/components'),
       'pages': path.resolve(__dirname, './src/pages'),
+      'utils': path.resolve(__dirname, './src/utils'),
     }
   }
 })

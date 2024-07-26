@@ -1,11 +1,12 @@
 import {SandpackProvider, SandpackLayout, SandpackCodeEditor, SandpackPreview} from '@codesandbox/sandpack-react'
 import Gisucs from '@giscus/react'
 import EnterCode from './code'
-import { githubLight } from "@codesandbox/sandpack-themes";
+import githubLight from 'utils/githubLight'
 import Preview from "components/Preview.jsx";
 
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {Light as SyntaxHighlighter} from 'react-syntax-highlighter'
+import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
+import atomOneLight from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light'
 
 import html from './index.html?raw'
 import maincss from './styles.css?raw'
@@ -14,6 +15,8 @@ import entry from './entry.js?raw'
 import {democode} from "components/Playground/activecode.js";
 
 import './index.css'
+
+SyntaxHighlighter.registerLanguage('javascript', js)
 
 function code({className, ...properties}) {
   const match = /language-(\w+)/.exec(className || '')
@@ -31,7 +34,7 @@ function App(props) {
   return (
     <div>
       <div className='mt-5 md:flex'>
-        <div className='md:w-[40%] pr-4 keep'>
+        <div className='md:w-[40%] md:pr-4 keep'>
           {z ? renderArticle(code) : <EnterCode />}
 
           <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>

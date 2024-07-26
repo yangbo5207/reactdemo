@@ -43,9 +43,9 @@ export default function Tutorial() {
             <div className='text-gray-500'>React@19.0.0-rc</div>
           </div>
         </div>
-          <ul className='border-r h-[calc(100vh_-_9rem_-_35px)] overflow-y-auto pb-8'>
-            <SideNav />
-          </ul>
+        <ul className='border-r h-[calc(100vh_-_9rem_-_35px)] overflow-y-auto pb-8'>
+          <SideNav />
+        </ul>
       </nav>
       <div className='w-full md:w-[calc(100vw_-_15rem)] p-8 min-h-[calc(100vh_-_5rem)] box-border'>
         {/*<Outlet />*/}

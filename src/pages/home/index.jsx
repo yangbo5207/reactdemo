@@ -8,8 +8,6 @@ import {Link} from 'react-router-dom'
 import Dialog from "components/Dialog";
 import ercode from '/src/assets/ercode.png'
 
-import Playground3 from 'components/Playground3';
-
 import './App.css'
 
 function App() {

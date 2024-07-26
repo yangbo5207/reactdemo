@@ -2,7 +2,7 @@ import Cardruntime from "components/Cardruntime";
 import Demo01 from './case/Demo01'
 import Demo02 from './case/Demo02'
 
-import Playground3 from "components/Playground3";
+import Codepack from "components/Codepack";
 import actionsRaw from './case/actions.js?raw'
 import Demo01Raw from './case/Demo01.jsx?raw'
 import Demo02Raw from './case/Demo02.jsx?raw'
@@ -45,7 +45,7 @@ export default function Demo01() {
 
 这里一个比较好玩的事情是，我们可以把 `formAction` 函数定义到组件外面去。
 
-<Playground3 files={{Demo01: Demo01Raw, 'actions.js': actionsRaw}} />
+<Codepack files={{Demo01: Demo01Raw, 'actions.js': actionsRaw}} />
 
 
 有了这个特性的支持，我们就可以非常方便的利用它来实现一些上传逻辑。不过一个小小的需求就是，点击提交之后，接口请求的过程中，我们希望按钮处于禁用状态，那应该怎么办呢？
@@ -101,7 +101,7 @@ method 表示我们在提交时，所采用的请求方式，默认值为 `get`�
 
 代码非常的简单，如下所示
 
-<Playground3 files={{Demo02: Demo02Raw, 'SubmitButton': SubmitButtonRaw, 'actions.js': actionsRaw}} active='1' />
+<Codepack files={{Demo02: Demo02Raw, 'SubmitButton': SubmitButtonRaw, 'actions.js': actionsRaw}} active='1' />
 
 ## 4
 **案例二：提交时禁止输入内容**
@@ -147,7 +147,7 @@ function Input2({required, name}) {
   <Demo02 />
 </Cardruntime>
 
-<Playground3 files={{Demo03: Demo02Raw, Input: InputRaw, 'SubmitButton': SubmitButtonRaw, 'actions.js': actionsRaw}} active='1' />
+<Codepack files={{Demo03: Demo02Raw, Input: InputRaw, 'SubmitButton': SubmitButtonRaw, 'actions.js': actionsRaw}} active='1' />
 
 ## 5
 **总结**

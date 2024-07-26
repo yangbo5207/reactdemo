@@ -1,17 +1,20 @@
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {Light as SyntaxHighlighter} from 'react-syntax-highlighter'
+import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
+import atomOneLight from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light'
 
 import ButtonCaseRaw from './ButtonCase?raw';
 import Button from 'components/Button'
 import ButtonRaw from 'components/Button/index.jsx?raw'
 import { useState } from 'react';
 
+SyntaxHighlighter.registerLanguage('javascript', js)
+
 const defiles = {
   'ButtonCase': ButtonCaseRaw,
   'Button': ButtonRaw,
 }
 
-export default function Playground3(props) {
+export default function Codepack(props) {
   const {files = defiles, caseRender, active = 0} = props
   const titles = Object.keys(files)
 

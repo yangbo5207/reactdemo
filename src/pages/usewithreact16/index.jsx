@@ -1,6 +1,6 @@
 import {SandpackProvider, SandpackLayout, SandpackCodeEditor, SandpackPreview} from '@codesandbox/sandpack-react'
 import Gisucs from '@giscus/react'
-import { githubLight } from "@codesandbox/sandpack-themes";
+import githubLight from 'utils/githubLight'
 import Preview from "components/Preview.jsx";
 
 import AppText from './case/index.jsx?raw'
@@ -11,9 +11,6 @@ import htmlText from './case/index.html?raw'
 import UserinfoText from './case/Userinfo.jsx?raw'
 import IndexText from './case/main.jsx?raw'
 import UseText from './case/use.js?raw'
-
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import Article from './article.mdx'
 
@@ -30,12 +27,6 @@ const files = {
   '/public/index.html': {code: htmlText, hidden: true}
 }
 
-function code({className, ...properties}) {
-  const match = /language-(\w+)/.exec(className || '')
-  return match
-    ? <SyntaxHighlighter language={match[1]} PreTag="div" {...properties} style={atomOneLight} />
-    : <code className={className} {...properties} />
-}
 
 import Case from './case'
 
@@ -44,7 +35,7 @@ function App() {
     <div>
       <div className='mt-5 md:flex'>
         <div className='md:w-[40%] pr-4 keep'>
-          <Article components={{code}} />
+          <Article />
 
           <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
 

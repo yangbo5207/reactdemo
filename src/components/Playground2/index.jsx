@@ -1,10 +1,13 @@
 import Giscus from '@giscus/react'
 import EnterCode from './code'
 
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {Light as SyntaxHighlighter} from 'react-syntax-highlighter'
+import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
+import atomOneLight from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light'
 
 import {democode} from "components/Playground/activecode.js";
+
+SyntaxHighlighter.registerLanguage('javascript', js)
 
 function code({className, ...properties}) {
   const match = /language-(\w+)/.exec(className || '')
@@ -20,7 +23,7 @@ function App(props) {
   const auth = isAuth ? z === democode : true
 
   return (
-    <div className='pr-4 keep max-w-[700px] mx-auto'>
+    <div className='keep max-w-[700px] mx-auto'>
       {auth ? renderArticle(code) : <EnterCode />}
 
       {isGiscus && (

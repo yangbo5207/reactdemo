@@ -1,5 +1,5 @@
 import { SandpackProvider, SandpackLayout, SandpackCodeEditor } from '@codesandbox/sandpack-react'
-import { githubLight } from "@codesandbox/sandpack-themes";
+import githubLight from 'utils/githubLight'
 
 export default function CodeEditor({files, activeFile}) {
   return (

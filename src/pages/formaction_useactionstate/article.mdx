@@ -2,7 +2,7 @@ import Cardruntime from "components/Cardruntime";
 import Demo01 from './case/Demo01'
 import Demo02 from './case/Demo02'
 
-import Playground3 from "components/Playground3";
+import Codepack from "components/Codepack";
 import actionsRaw from './case/actions.js?raw'
 import Demo02Raw from './case/Demo02.jsx?raw'
 import SubmitButtonRaw from './case/SubmitButton.jsx?raw'
@@ -56,7 +56,7 @@ export default function Demo01() {
 </Cardruntime>
 
 
-<Playground3 files={{Demo02: Demo02Raw, BookItem: BookItemRaw, 'actions.js': actionsRaw, SubmitButton: SubmitButtonRaw, List: ListRaw }} />
+<Codepack files={{Demo02: Demo02Raw, BookItem: BookItemRaw, 'actions.js': actionsRaw, SubmitButton: SubmitButtonRaw, List: ListRaw }} />
 
 
 > 在 next.js 中使用时，我们可以把 action 单独执行服务端的逻辑，从而轻松做到客户端组件与服务端组件的交互。上面案例中的 `actions.js` 则表示服务端的代码
