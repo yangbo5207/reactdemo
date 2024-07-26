@@ -7,6 +7,7 @@ import atomOneLight from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one
 
 import {democode} from "components/Playground/activecode.js";
 import Codepack from "components/Codepack/index.jsx";
+import Cardruntime from "components/Cardruntime.jsx";
 
 SyntaxHighlighter.registerLanguage('javascript', js)
 
@@ -18,7 +19,7 @@ function code({className, ...properties}) {
 }
 
 function App(props) {
-  const {renderArticle, files, hidePreview} = props
+  const {renderArticle, files, caseRender} = props
 
   const z = localStorage.getItem('active_code')
   const auth = z === democode
@@ -26,7 +27,15 @@ function App(props) {
   return (
     <div className='md:flex h-[calc(100vh_-_8rem)] overflow-hidden mx-auto w-full max-w-[1244px]'>
       <div className='md:flex-1 h-full overflow-scroll md:pr-4 keep w-full max-w-[768px]'>
-        {z ? renderArticle(code) : <EnterCode />}
+
+        {caseRender ? (
+          <Cardruntime reload className='mt-0'>{caseRender}</Cardruntime>
+        ) : null}
+        <div className='md:hidden'>
+          <Codepack files={files} className='h-full rounded-md border-gray-200'/>
+        </div>
+
+        {z ? renderArticle(code) : <EnterCode/>}
 
         <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
 
@@ -46,8 +55,8 @@ function App(props) {
           async
         />
       </div>
-      <div className='hidden md:block md:flex-1 top-[8rem] h-[calc(100vh_-_8rem-35px)] overflow-y-auto max-w-[768px]'>
-        <Codepack files={files} className='h-full rounded-md border-gray-200' />
+      <div className='hidden md:block md:flex-1 top-[8rem] h-full overflow-y-auto max-w-[768px]'>
+        <Codepack files={files} className='h-full rounded-md border-gray-200'/>
       </div>
     </div>
   )

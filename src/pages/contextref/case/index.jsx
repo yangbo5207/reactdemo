@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import Button from './Button'
+import Button from 'components/Button'
 import Post from './Post'
 
 export default function App() {

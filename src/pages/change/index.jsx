@@ -7,6 +7,7 @@ import Button from './case/Button.jsx?raw'
 import Article from './article.mdx'
 
 import Playground from "components/Playground/index";
+import MainCase from './case/App'
 
 const files = {
   'App.js': App,
@@ -18,7 +19,11 @@ const files = {
 
 function Entry() {
   return (
-    <Playground files={files} renderArticle={(code) => <Article components={{code}} />} />
+    <Playground
+      files={files}
+      renderArticle={(code) => <Article components={{code}} />}
+      caseRender={<MainCase />}
+    />
   )
 }
 

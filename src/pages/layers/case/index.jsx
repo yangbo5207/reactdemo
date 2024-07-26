@@ -13,9 +13,6 @@ const Index = () => {
 
   return (
     <>
-      <div className='text-xs border-b border-gray-100 py-2 mb-4 text-gray-500 sticky top-0 bg-white'>
-        案例演示：点击按钮加载更多
-      </div>
       {promises.map((promise, i) => (
         <Suspense fallback={<Skeleton />} key={`hello ${i}`}>
           <CurrentList promise={promise} />

@@ -8,19 +8,19 @@ import ListText from './case/List.jsx?raw'
 import Article from './article.mdx'
 
 import Playground from "components/Playground/index";
+import MainCase from "./case";
 
 const files = {
   'App.js': AppText,
   'api.js': apiText,
   'List.jsx': ListText,
   'Button.jsx': ButtonText,
-  'Skeleton.jsx': SkeletonText,
-  '/public/index.html': htmlText
+  'Skeleton.jsx': SkeletonText
 }
 
 function App() {
   return (
-    <Playground files={files} renderArticle={(code) => <Article components={{code}} />} />
+    <Playground files={files} renderArticle={(code) => <Article components={{code}} />} caseRender={<MainCase />} />
   )
 }
 

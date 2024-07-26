@@ -47,7 +47,7 @@ export default function Tutorial() {
           <SideNav />
         </ul>
       </nav>
-      <div className='md:flex-1 md:w-[calc(100vw_-_15rem)] p-8 min-h-[calc(100vh_-_5rem)] box-border'>
+      <div className='md:flex-1 md:w-[calc(100vw_-_15rem)] p-4 md:p-8 min-h-[calc(100vh_-_5rem)] box-border'>
         {/*<Outlet />*/}
         {Array.from(pageMap.current).map(([key, component]) => (
           <div key={key} style={{display: pathname === key ? 'block' : 'none'}}>
