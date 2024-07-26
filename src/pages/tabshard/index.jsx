@@ -18,8 +18,8 @@ const files = {
   'api.js': apiText,
   'Tabs.jsx': Tabs,
   'List.jsx': ListText,
-  'Input.jsx': {code: InputText, hidden: true},
-  'Skeleton.jsx': {code: SkeletonText, hidden: true},
+  'Input.jsx': InputText,
+  'Skeleton.jsx': SkeletonText,
 }
 
 function App() {

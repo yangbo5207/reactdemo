@@ -14,7 +14,7 @@ const files = {
   'Panel2.jsx': Panel2,
   'Panel3.jsx': Panel3,
   'Panel4.jsx': Panel4,
-  'Button.jsx': {code: Button, hidden: true},
+  'Button.jsx': Button,
 }
 
 export default function App() {

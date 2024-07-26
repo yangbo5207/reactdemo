@@ -9,8 +9,6 @@ import Playground from "components/Playground";
 const files = {
   'App.js': Entry,
   '原代码': Source,
-  'useCache.js': {code: useCache, hidden: true},
-  'Button.jsx': {code: Button, hidden: true},
 }
 
 export default function App() {

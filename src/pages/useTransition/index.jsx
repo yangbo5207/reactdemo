@@ -16,10 +16,8 @@ const files = {
   'Tabs.jsx': Tabs,
   'List.jsx': List,
   'Skeleton.jsx': Skeleton,
-  // 'Spin.jsx': Spin,
-  // 'index.css': SpinCss,
-  'Spin.jsx': {code: Spin, hidden: true},
-  'index.css': {code: SpinCss, hidden: true},
+  'Spin.jsx': Spin,
+  'index.css': SpinCss,
 }
 
 function App() {
