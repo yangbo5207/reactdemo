@@ -97,7 +97,7 @@ export const getApi = async () => {
 
 然后创建一个函数组件，并执行该 api
 
-```jsx
+```js
 export default function App() {
   const promise = getApi()
 
@@ -111,7 +111,7 @@ export default function App() {
 
 最后在子组件中，获取 api 执行之后得到的数据
 
-```jsx
+```js
 const Message = (props) => {
   const {response} = props
   const content = use(response)

@@ -42,6 +42,9 @@ import FormDataBase from '../formaction_formdata'
 import FormAction from '../formaction_action'
 import UseFormStatus from '../formaction_useformstatus'
 import UseActionState from '../formaction_useactionstate'
+import UseOptimistic from '../formaction_useoptimistic'
+import UseOptimistic2 from '../formaction_useoptimistic2'
+import UseOptimistic3 from '../formaction_useoptimistic3'
 
 export const navigation = [{
   type: 'tip',
@@ -196,4 +199,19 @@ export const navigation = [{
   path: 'formaction/useactionstate',
   name: '32、useActionState',
   component: UseActionState
+}, {
+  path: 'formaction/useoptimistic',
+  name: '33、useOptimistic',
+  component: UseOptimistic,
+  label: '1'
+}, {
+  path: 'formaction/useoptimistic2',
+  name: '33、useOptimistic',
+  component: UseOptimistic2,
+  label: '2'
+}, {
+  path: 'formaction/useoptimistic3',
+  name: '33、useOptimistic',
+  component: UseOptimistic3,
+  label: '3'
 }]
