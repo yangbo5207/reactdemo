@@ -1,6 +1,7 @@
 import AppText from './case/index.jsx?raw'
 import apiRaw from './case/api.js?raw'
 import reducerRaw from './case/reducer.js?raw'
+import cssraw from './case/index.module.css?raw'
 
 import Article from './article.mdx'
 
@@ -10,7 +11,8 @@ import MainCase from './case'
 const files = {
   'App.js': AppText,
   'api.js': apiRaw,
-  'reducer.js': reducerRaw
+  'reducer.js': reducerRaw,
+  'index.module.css': cssraw
 }
 
 function App() {

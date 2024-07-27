@@ -14,7 +14,7 @@ import MainCase from './case'
 
 UI 需求的步骤为
 
-```js
+```javascript
 1、事件触发 -> UI 立即更新
 2、UI 更新的同时，发送请求，此时可以显示 Loading 状态
 3、请求成功之后，UI 确定更新，Loading 状态小时
@@ -25,7 +25,7 @@ UI 需求的步骤为
 
 首先，我们设计一个状态数据结构，该状态将要保留了乐观更新时提前展示的消息，以及一个 promise 用于请求。我们准备结合 `use` + `Suspense` 共同完成这个事情。
 
-```js
+```javascript
 action = {
   newMessage: 'hello world',
   promise: getMessage(newMessage)

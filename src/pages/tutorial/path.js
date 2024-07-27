@@ -45,6 +45,7 @@ import UseActionState from '../formaction_useactionstate'
 import UseOptimistic from '../formaction_useoptimistic'
 import UseOptimistic2 from '../formaction_useoptimistic2'
 import UseOptimistic3 from '../formaction_useoptimistic3'
+import UseOptimistic4 from '../formaction_useoptimistic4'
 
 export const navigation = [{
   type: 'tip',
@@ -214,4 +215,9 @@ export const navigation = [{
   name: '33、useOptimistic',
   component: UseOptimistic3,
   label: '3'
+}, {
+  path: 'formaction/useoptimistic4',
+  name: '34、复杂案例',
+  component: UseOptimistic4,
+  label: '4'
 }]

@@ -1,51 +1,45 @@
-import { useState, useRef, use, Suspense } from "react";
-import { getMessage } from "./api";
+import { useOptimistic, useState, useTransition } from "react";
+import {reducer} from './reducer'
+import { likeApi } from "./api";
+import s from './index.module.css'
 
 export default function Index() {
-  const [actions, updateActions] = useState([]);
-  const form = useRef(null);
+  const [like, setLike] = useState(false);
+  const [optimisticLike, dispatch] = useOptimistic(like, reducer);
+  const [isPending, startTransition] = useTransition()
+  const [end, setEnd] = useState()
 
-  async function formAction(formData) {
-    let newMessage = formData.get("message")
-    form.current.reset();
-    let action = {
-      newMessage,
-      promise: getMessage(newMessage)
-    }
-    updateActions((actions) => [...actions, action])
+  function __clickHandler() {
+    if (isPending) return
+    let newState = !like;
+    startTransition(async () => {
+      dispatch(newState)
+      try {
+        let state = await likeApi(newState)
+        setLike(state)
+        setEnd(true)
+      } catch (e) {
+        setEnd(false)
+      }
+    })
   }
 
-  return (
-    <>
-      <form action={formAction} ref={form} className='flex'>
-        <input
-          type="text"
-          name="message"
-          placeholder="enter your message"
-        />
-        <button type="submit" className='ml-2'>Send</button>
-      </form>
+  let __cls = optimisticLike ? `${s.cen} ${s.active}` : s.cen
 
-      {actions.map((action, index) => (
-        <Suspense key={`h-${index}`} fallback={<Message>{action.newMessage}(Seding...)</Message>}>
-          <ListItem promise={action.promise} />
-        </Suspense>
-      ))}
-    </>
+  return (
+    <div>
+      <div className={s.star} onClick={__clickHandler}>
+        <div id={s.lef} className={__cls}></div>
+        <div id={s.c} className={__cls}></div>
+        <div id={s.rig} className={__cls}></div>
+      </div>
+      <div className={s.loading}>
+        状态：
+        {isPending && '请求中...'}
+        {!isPending && end === true && '请求成功'}
+        {!isPending && end === false && '请求失败'}
+      </div>
+    </div>
   );
 }
 
-function Message({children}) {
-  return (
-    <div className='indent-1 text-slate-600 mt-1 hover:bg-slate-100 p-2 cursor-pointer rounded'>
-      {children}
-    </div>
-  )
-}
-
-function ListItem(props) {
-  const msg = use(props.promise)
-  return (
-    <Message>{msg}</Message>
-  )
-}

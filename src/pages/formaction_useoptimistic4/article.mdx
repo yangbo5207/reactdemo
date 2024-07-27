@@ -2,9 +2,9 @@ import Cardruntime from 'components/Cardruntime'
 import MainCase from './case'
 
 
-### **解决上一章的问题**
+### 一个复杂的案例
 
-再来实现一个比较常见的点赞按钮的交互逻辑。演示效果如下图所示
+再来实现一个比较常见的点赞按钮的交互逻辑。演示效果如上图所示。具体需求如下：
 
 当按钮处于灰色状态时，表示用户还未点赞该文章。点击之后，变成红色，表示点赞。
 
@@ -61,14 +61,14 @@ export default function Index() {
 }
 ```
 
-在 api 的请求中，我们可以通过判断随机数的大小来模拟请求失败时的表现。
+在 api 的请求中，我们可以通过判断随机数的大小来模拟请求失败时的表现。目前请求失败的概率是 10%
 
 ```js
 // api.js
 export async function likeApi(message) {
   await new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() > 0) {
+      if (Math.random() > 0.1) {
         resolve(message)
       } else {
         reject(message)
@@ -79,13 +79,4 @@ export async function likeApi(message) {
 }
 ```
 
-如下图所示，请求失败，状态重置。
-
-
-## 8
-**总结**
-
-在特定的场景中，乐观更新在交互体验上有非常大的提升，因此是我们完成 C 端项目的重要技术手段。但是如果我们自己去实现的话有一定的复杂度，好在 React 19 提供了比较简单的解决方案来帮助我们完成这个需求。我非常喜欢 useOptimistic 这个新 hook.
-
-
-> 成为 React 高手，推荐阅读 React 哲学
+由于逻辑与之前几乎保持一致，因此本案例主要通过代码学习，未做详细讲解，完整代码如右侧所示。

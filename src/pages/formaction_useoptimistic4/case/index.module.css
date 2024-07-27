@@ -1,0 +1,45 @@
+.star {
+  position: relative;
+  transform: scale(0.2);
+  height: 200px;
+  --active-color: #d5093c;
+  --normal-color: #cdcdcd;
+}
+.cen {
+  width: 200px;
+  height: 200px;
+  background-color: var(--normal-color);
+}
+.cen.active {
+  background-color: var(--active-color);
+  animation: 1s aj;
+}
+
+#lef {
+  border-radius: 100px;
+  position: absolute;
+  top:200px;
+  left: 300px;
+}
+#c {
+  transform: rotate(45deg);
+  position: absolute;
+  top:275px;
+  left: 375px;
+}
+#rig {
+  border-radius: 100px;
+  position: absolute;
+  top:200px;
+  left: 450px;
+}
+
+.loading {
+  text-align: center;
+}
+
+@keyframes aj {
+  0%{transform: scale(1)rotate(45deg);}
+  50%{transform: scale(1.1)rotate(45deg);}
+  100%{transform: scale(1)rotate(45deg);}
+}
