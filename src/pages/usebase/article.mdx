@@ -133,17 +133,20 @@ export default function Demo01() {
 function Demo03() {
   let [loading, setLoading] = useState(true)
 
-  const promise = getMessage().then(res => {
+  const promise = useRef(getMessage().then(res => {
     setLoading(false)
     return res
-  })
-
+  }))
+  
+  
   let result = {value: '', icon_url: ''}
+
   if (!loading) {
-    result = use(promise)
+    result = use(promise.current)
+    return <Message message={result.value} />
   }
 
-  return loading ? <Skeleton /> : <Message message={result.value} />
+  return <Skeleton /> 
 }
 ```
 

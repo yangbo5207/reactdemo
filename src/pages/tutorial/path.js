@@ -47,7 +47,14 @@ import UseOptimistic2 from '../formaction_useoptimistic2'
 import UseOptimistic3 from '../formaction_useoptimistic3'
 import UseOptimistic4 from '../formaction_useoptimistic4'
 
-export const navigation = [{
+import End from '../end'
+
+export const navigation = [
+  {
+    path: 'formaction/end',
+    name: '附录：完结感言',
+    component: End
+  }, {
   type: 'tip',
   name: '前言'
 }, {
@@ -220,4 +227,11 @@ export const navigation = [{
   name: '34、复杂案例',
   component: UseOptimistic4,
   label: '4'
+}, {
+  type: 'tip',
+  name: '后续闲谈'
+}, {
+  path: 'formaction/end',
+  name: '35、完结感言',
+  component: End
 }]

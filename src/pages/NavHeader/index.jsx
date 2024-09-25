@@ -8,7 +8,7 @@ import Button_code from "pages/NavHeader/Button_code.jsx";
 const links = [
   {path: 'tutorial', text: '教程'},
   {path: 'component', text: '组件'},
-  {path: 'other', text: '其他'},
+  {path: 'advance', text: '进阶'},
 ]
 
 export default function NavHeader() {

@@ -29,9 +29,7 @@ function App(props) {
   if (auth) {
     content = (
       <>
-        {caseRender ? (
-          <Cardruntime reload className='mt-0'>{caseRender}</Cardruntime>
-        ) : null}
+        {caseRender ? <Cardruntime reload className='mt-0'>{caseRender}</Cardruntime> : null}
         <div className='md:hidden'>
           <Codepack files={files} className='h-full rounded-md border-gray-200'/>
         </div>
@@ -46,7 +44,7 @@ function App(props) {
 
         {content}
 
-        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
+        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3 border-dashed'></div>
 
         <Gisucs
           repo='yangbo5207/react19feature'

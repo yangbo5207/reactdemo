@@ -25,8 +25,8 @@ function TailwindDiv(props) {
   const {className, children, ...other} = props
 
   let bgclass = ''
-  let borderclass = 'border'
-  let roundclass = 'rounded'
+  let borderclass = ''
+  let roundclass = ''
 
   Object.keys(other).forEach(key => {
     if (key.indexOf('bg-') === 0) {

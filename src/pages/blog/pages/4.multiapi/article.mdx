@@ -1,0 +1,182 @@
+import Cardruntime from 'components/Cardruntime'
+import Demo01 from './case/Demo01'
+
+<Cardruntime><Demo01 /></Cardruntime>
+
+这是一个搜索的案例。当我们学会把数据存放在 promise 中时，实现这个案例的代码将会非常简单。案例演示如上面所示。
+
+首先，我们需要定义一个 List 组件，用于显示列表数据。我们计划将列表数据存放在一个 promise 中，然后使用 use 从该 promise 中读取列表然后渲染。
+
+因此，该 List 组件的代码如下所示
+
+```javascript
+import { use } from 'react';
+export default function CurrentList({promise}) {
+  const {results} = use(promise)
+  return (
+    <div>
+      {results.map((item, i) => (
+        <div key={`h${i}`} className='flex border p-4 items-center my-4 rounded-md'>
+          <img className='w-12 h-12 rounded-full' src={item.picture.large} alt='' />
+          <div className='flex-1 ml-4'>
+            <div className='font-bold'>{item.name.last}</div>
+            <div className='text-gray-400 mt-1 text-sm line-clamp-1'>react 19 re, a design language for background applications</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+```
+
+然后，我们只需要在 useState 中存储一个 promise 即可
+
+```javascript
+const [promise, update] = useState(() => fetchList(10))
+```
+
+更新时，更改该 promise
+
+```javascript
+function __inputChange(e) {
+  const len = e.target.value.length % 10
+  update(fetchList(len))
+}
+```
+
+最后结合 Suspense，完整代码如下
+
+```javascript
+import {useState, Suspense} from 'react'
+import Skeleton from './Skeleton'
+import {fetchList} from './api'
+import List from './List'
+import Input from './Input'
+
+export default function Demo01() {
+  const [promise, update] = useState(() => fetchList(10))
+
+  function __inputChange(e) {
+    const len = e.target.value.length % 10
+    update(fetchList(len))
+  }
+
+  return (
+    <div>
+      <Input onChange={__inputChange} placeholder='Enter something' />
+      <Suspense fallback={<Skeleton />}>
+        <List promise={promise} />
+      </Suspense>
+    </div>
+  )
+}
+```
+
+在演示这个例子时，我们要结合 chrome 开发者工具一起查看。观察接口请求的情况。我们发现，当我们快速输入时，此时会发起多个接口请求。React 会帮助我们解决竞态的问题，将接口任务依次排列好执行。
+
+但是在请求结果的获取上，反馈到页面上只会获取最后一次请求的结果。这一点非常舒适。
+
+与此同时，本次案例演示了一个需要传入参数的接口应该如何处理。
+
+## *1*
+**取消上一次请求**
+
+由于上面的实现方式，每次都会发送接口请求，因此在耗时上可能会比较久，所以我们可以使用防抖或者节流的方式减少请求次数。这两个也是面试中比较常见的需要考察的小知识点。
+
+除此之外，我们这里介绍一种新的方案来解决这个问题，那就是在新的请求发生时，取消上一次还未完成的请求。我们一起来学习一下
+
+在 JavaScript 中，有一个特殊的内建对象 `AbortController` 可以终止异步任务。我们可以利用该对象实例来终止 `fetch` 请求。
+
+```ts
+let controller = new AbortController();
+```
+
+`controller` 具有单个属性 `signal`，我们可以在这个属性上设置事件监听。
+
+```ts
+let signal = controller.signal
+signal.addEventListener('abort', () => alert("abort!"));
+```
+
+`controller` 具有单个方法：`abort()`，当 `abort()` 调用时，signal 的事件监听就会执行。
+
+```ts
+controller.abort();
+
+// 事件触发，signal.aborted 变为 true
+alert(signal.aborted); // true
+```
+
+`fetch` 中封装了 `signal` 的事件监听，因此它可以很好的与 `AbortController` 对象一起工作。
+
+`fetch` 的第二个参数 option 可以接收 `signal`
+
+```js
+fetch(url, {
+  signal: controller.signal
+});
+```
+
+当我们在任意地方调用 `abort` 时，对应的请求就会被取消
+
+```ts
+controller.abort();
+```
+
+借助这些基础知识，我们就可以封装一个可以被取消的 promise。
+
+## 2
+**封装一个新的 api 函数**
+
+封装代码如下
+
+```javascript
+export const fetchListWithCancel = (number) => {
+  let controller = new AbortController();
+  let signal = controller.signal;
+  const promise = new Promise(resolve => {
+    fetch(
+      `https://randomuser.me/api/?results=${number}&inc=name,gender,email,nat,picture&noinfo`,
+      {signal}
+    ).then(res => {
+      resolve(res.json())
+    }).catch(() => {
+      console.log('接口成功取消！')
+    })
+  })
+
+  promise.cancel = () => {
+    if (controller) {
+      controller.abort()
+    }
+  }
+  return promise
+}
+```
+
+我这里使用了一个返回结果是一个列表的案例接口。然后将 `abort` 函数挂载到返回的 `promise` 中
+
+使用时，只需要调用 `promise.cancel()` 就可以取消对应的请求了。
+
+
+## 3
+**结合 react 19 使用**
+
+我们接下来要完成右侧案例的演示效果。注意仔细感受一下代码的简洁性。逻辑和之前没有发生任何明显的变化，只是我们需要切换我们新封装的 api 来发送请求。
+
+
+```javascript
+const [promise, update] = useState(() => fetchListWithCancel(10))
+```
+
+然后在新的请求发生之前，取消还未完成的请求
+
+```javascript
+function __inputChange(e) {
+  promise.cancel()
+  const len = e.target.value.length % 10
+  update(fetchListWithCancel(len))
+}
+```
+
+其他的逻辑基本保持不变，完整代码和演示效果请在右侧区域查看。请务必结合调试工具中的网络请求一起观察演示效果。

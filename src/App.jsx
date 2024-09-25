@@ -12,6 +12,12 @@ import {navigation} from 'pages/tutorial/path.js'
 import Components from './pages/components'
 import {compath} from 'pages/components/path.js'
 
+import Advance from './pages/blog'
+import {navigation as advances} from 'pages/blog/path.js'
+
+import Payment from 'pages/payment'
+
+
 function Layou2t() {
   return (
     <div>
@@ -44,7 +50,17 @@ function App() {
             } />
           ))}
         </Route>
-        <Route path="*" element={<div>nothingsdfsdfsdf</div>} />
+        <Route path='advance' element={<Advance />}>
+          {advances.filter((item) => !!item.path).map((item ,i) => (
+            <Route key={item.path} path={item.path} element={
+              <Suspense fallback={<PageLoading />}>
+                <item.component />
+              </Suspense>
+            } />
+          ))}
+        </Route>
+        <Route path='pay' element={<Payment />} />
+        <Route path="*" element={<div className='p-32'>暂无内容</div>} />
       </Route>
     </Routes>
   )

@@ -3,6 +3,10 @@ import {democode} from './activecode.js'
 
 export default function EnterCode() {
   function __submit(e) {
+    const code = e.get('code')
+    if (code !== democode) {
+      return alert('请输入正确的激活码')
+    }
     localStorage.setItem('active_code', e.get('code'))
     location.reload()
   }
@@ -30,7 +34,7 @@ export default function EnterCode() {
       </div>
 
       <form action={__submit} className='flex items-center justify-between'>
-        <Input name='code' placeholder="Please input your active code" className="flex-1 mr-4" pattern={democode}/>
+        <Input name='code' placeholder="Please input your active code" className="flex-1 mr-4" />
         <button type='submit'>确认</button>
       </form>
     </div>

@@ -1,1 +1,2 @@
-export const democode = 'U2FsdGVkX3xOPhN009'
+// UxFsdGVkX3xOPhN321
+export const democode = ['UxFs', 'GVkX3xOPhN321'].join('d')

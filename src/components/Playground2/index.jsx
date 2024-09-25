@@ -6,6 +6,7 @@ import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import atomOneLight from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light'
 
 import {democode} from "components/Playground/activecode.js";
+import Show from '../Show';
 
 SyntaxHighlighter.registerLanguage('javascript', js)
 
@@ -24,28 +25,29 @@ function App(props) {
 
   return (
     <div className='keep max-w-[700px] mx-auto'>
-      {auth ? renderArticle(code) : <EnterCode />}
+      {/* {auth ? renderArticle(code) : <EnterCode />} */}
+      <Show when={auth} fallback={<EnterCode />}>
+        {renderArticle(code)}
+      </Show>
 
-      {isGiscus && (
-        <>
-          <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
-          <Giscus
-            repo='yangbo5207/react19feature'
-            repoId='R_kgDOMGiHOw'
-            category='General'
-            categoryId='DIC_kwDOMGiHO84Cf8dR'
-            maping='pathname'
-            term='欢迎道友'
-            strict='0'
-            reactionsEnabled='1'
-            emitMetadata="1"
-            inputPosition="top"
-            lang="zh-CN"
-            crossorigin="anonymous"
-            async
-          />
-        </>
-      )}
+      <Show when={isGiscus}>
+        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
+        <Giscus
+          repo='yangbo5207/react19feature'
+          repoId='R_kgDOMGiHOw'
+          category='General'
+          categoryId='DIC_kwDOMGiHO84Cf8dR'
+          maping='pathname'
+          term='欢迎道友'
+          strict='0'
+          reactionsEnabled='1'
+          emitMetadata="1"
+          inputPosition="top"
+          lang="zh-CN"
+          crossorigin="anonymous"
+          async
+        />
+      </Show>
     </div>
   )
 }

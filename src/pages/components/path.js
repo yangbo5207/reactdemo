@@ -1,6 +1,7 @@
 import Button from './pages/button'
 import Input from './pages/input'
 import Skeleton from './pages/skeleton'
+import Pagination from './pages/pagination'
 
 export const compath = [
   {
@@ -22,4 +23,9 @@ export const compath = [
     name: '2、骨架屏 Skeleton',
     component: Skeleton
   },
+  {
+    path: 'pagination',
+    name: '3、分页器 Pagination',
+    component: Pagination
+  }
 ]

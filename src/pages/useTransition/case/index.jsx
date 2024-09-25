@@ -12,7 +12,6 @@ const tabs = [
   { name: 'Billing', href: '#', current: false },
 ]
 
-
 export default function Example() {
   const [current, switchToSelected] = useState(0)
   const [promise, update] = useState(() => fetchListWithCancel(5))
