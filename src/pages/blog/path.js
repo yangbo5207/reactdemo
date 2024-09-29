@@ -1,7 +1,9 @@
 // base
-import Architecture from './pages/1.index'
-import Split from './pages/2.architectrure'
-import Multapi from './pages/3.split'
+import Home from './pages/1.index'
+import Architecture from './pages/2.architectrure'
+import BFF from './pages/3.bff'
+import Split from './pages/4.split'
+import Multapi from './pages/4.split'
 
 export const navigation = [
   {
@@ -11,7 +13,7 @@ export const navigation = [
   {
     path: 'index',
     name: '1、如何理解体系化',
-    component: Architecture
+    component: Home
   },
   {
     type: 'tip',
@@ -23,8 +25,13 @@ export const navigation = [
     component: Architecture
   },
   {
+    path: 'bff',
+    name: '3、BFF架构思维',
+    component: BFF
+  },
+  {
     path: 'split',
-    name: '3、拆分 1:1 原则',
+    name: '4、组件拆分原则',
     component: Split
   },
   {
@@ -35,6 +42,11 @@ export const navigation = [
   {
     path: 'belong',
     name: '4、归属与内聚',
+    component: Split
+  },
+  {
+    path: 'datadw',
+    name: '5、数据层职能与细分',
     component: Split
   },
   {
