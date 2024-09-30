@@ -20,7 +20,7 @@ const files = {
 
 function App() {
   return (
-    <Playground files={files} renderArticle={(code) => <Article components={{code}} />} />
+    <Playground files={files} renderArticle={(code) => <Article components={{code}} />} advance />
   )
 }
 

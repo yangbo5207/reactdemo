@@ -11,6 +11,7 @@ import Deps from './pages/8.deps'
 import Cache from './pages/9.cache'
 import MultParams from './pages/10.mutiparams'
 import Diff from './pages/11.diff'
+import PickOne from './pages/12.pickone'
 
 export const navigation = [
   {
@@ -83,41 +84,41 @@ export const navigation = [
   {
     path: 'pickapi',
     name: '12、更新其中某个接口',
-    component: Diff
+    component: PickOne
   },
-  {
-    path: 'pickdata',
-    name: '9、更新某一项数据',
-    component: Multapi
-  },
-  {
-    path: 'delete',
-    name: '10、删除',
-    component: Multapi
-  },
-  {
-    path: 'new',
-    name: '11、新增',
-    component: Multapi
-  },
-  {
-    path: 'signal',
-    name: '12、从列表中筛选',
-    component: Multapi
-  },
-  {
-    path: 'showcache',
-    name: '13、详情回显',
-    component: Multapi
-  },
-  {
-    path: 'shocachemore',
-    name: '14、复杂项回显',
-    component: Multapi
-  },
-  {
-    path: 'editor',
-    name: '15、详情编辑',
-    component: Multapi
-  },
+  // {
+  //   path: 'pickdata',
+  //   name: '9、更新某一项数据',
+  //   component: Multapi
+  // },
+  // {
+  //   path: 'delete',
+  //   name: '10、删除',
+  //   component: Multapi
+  // },
+  // {
+  //   path: 'new',
+  //   name: '11、新增',
+  //   component: Multapi
+  // },
+  // {
+  //   path: 'signal',
+  //   name: '12、从列表中筛选',
+  //   component: Multapi
+  // },
+  // {
+  //   path: 'showcache',
+  //   name: '13、详情回显',
+  //   component: Multapi
+  // },
+  // {
+  //   path: 'shocachemore',
+  //   name: '14、复杂项回显',
+  //   component: Multapi
+  // },
+  // {
+  //   path: 'editor',
+  //   name: '15、详情编辑',
+  //   component: Multapi
+  // },
 ]

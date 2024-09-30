@@ -1,13 +1,16 @@
 import Input from 'components/Input'
-import {democode} from './activecode.js'
+import {getActiveCode} from './activecode.js'
 
-export default function EnterCode() {
+export default function EnterCode(props) {
+  const {advance} = props
+  const key = advance ? 'active_code_adv' : 'active_code'
+
   function __submit(e) {
     const code = e.get('code')
-    if (code !== democode) {
+    if (code !== getActiveCode(advance)) {
       return alert('请输入正确的激活码')
     }
-    localStorage.setItem('active_code', e.get('code'))
+    localStorage.setItem(key, e.get('code'))
     location.reload()
   }
 
