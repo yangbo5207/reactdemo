@@ -9,6 +9,8 @@ import Streaming from './pages/6.streaming'
 import Multapi from './pages/7.multi'
 import Deps from './pages/8.deps'
 import Cache from './pages/9.cache'
+import MultParams from './pages/10.mutiparams'
+import Diff from './pages/11.diff'
 
 export const navigation = [
   {
@@ -71,27 +73,17 @@ export const navigation = [
   {
     path: 'update',
     name: '10、多个更新条件',
-    component: Multapi
-  },
-  {
-    path: 'filter',
-    name: '5、统一思考过滤条件',
-    component: Multapi
-  },
-  {
-    path: 'filterwithreq',
-    name: '6、过滤条件中包含请求',
-    component: Multapi
+    component: MultParams
   },
   {
     path: 'different',
-    name: '7、接口更新频率不一致',
-    component: Multapi
+    name: '11、接口更新频率不一致',
+    component: Diff
   },
   {
     path: 'pickapi',
-    name: '8、更新其中某个接口',
-    component: Multapi
+    name: '12、更新其中某个接口',
+    component: Diff
   },
   {
     path: 'pickdata',
