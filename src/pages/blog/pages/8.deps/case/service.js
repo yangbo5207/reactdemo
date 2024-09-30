@@ -1,16 +1,17 @@
 import {prevListApi, nextListApi} from './api'
 
-export const fetchList = () => {
+export const fetchList =  () => {
   const prev = prevListApi()
-  const next = nextListApi()
-  const promise = Promise.all([prev, next]).then(res => {
-    return res.reduce((prev, cur) => {
-      return prev.concat(cur.results)
-    }, [])
+
+  const p = new Promise((resolve) => {
+    prev.then(res => {
+      nextListApi().then(res2 => {
+        resolve(res.results.concat(res2.results))
+      })
+    })
   })
-  promise.cancel = () => {
-    prev.cancel()
-    next.cancel()
-  }
-  return promise
+
+  p.cancel = prev.cancel
+
+  return p
 }

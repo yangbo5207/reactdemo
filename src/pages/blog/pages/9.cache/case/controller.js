@@ -5,8 +5,8 @@
  */
 import {fetchList} from './service'
 
-export const fetchListController = () => {
-  const p = fetchList()
+export const fetchListController = (search) => {
+  const p = fetchList(search)
 
   p.then(list => {
     return list.map((item, index) => {

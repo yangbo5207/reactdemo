@@ -7,6 +7,8 @@ import Nested from './pages/5.nested'
 
 import Streaming from './pages/6.streaming'
 import Multapi from './pages/7.multi'
+import Deps from './pages/8.deps'
+import Cache from './pages/9.cache'
 
 export const navigation = [
   {
@@ -52,28 +54,23 @@ export const navigation = [
     component: Streaming
   },
   {
-    path: 'dep',
-    name: '7、多个接口',
-    component: Multapi
-  },
-  {
     path: 'multapi',
-    name: '2、多个接口初始化',
+    name: '7、多个接口并行',
     component: Multapi
   },
   {
-    path: 'secondary',
-    name: '2、数据额外处理',
-    component: Multapi
+    path: 'deps',
+    name: '8、多个接口前后依赖',
+    component: Deps
   },
   {
     path: 'cache',
-    name: '4、数据缓存',
-    component: Multapi
+    name: '9、数据缓存',
+    component: Cache
   },
   {
     path: 'update',
-    name: '3、多个更新条件',
+    name: '10、多个更新条件',
     component: Multapi
   },
   {

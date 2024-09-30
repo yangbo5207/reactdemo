@@ -10,7 +10,7 @@ export default function Demo01() {
 
   function __inputChange(e) {
     promise.cancel()
-    update(fetchListController())
+    update(fetchListController(e.target.value))
   }
 
   return (

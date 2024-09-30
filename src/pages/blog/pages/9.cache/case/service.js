@@ -1,17 +1,24 @@
-import {prevListApi, nextListApi} from './api'
+import {prevListApi} from './api'
 
-export const fetchList =  () => {
-  const prev = prevListApi()
+export const fetchList = (search) => {
+  const cacheArr = localStorage.getItem(search)
 
-  const p = new Promise((resolve) => {
-    prev.then(res => {
-      nextListApi().then(res2 => {
-        resolve(res.results.concat(res2.results))
-      })
+  if (cacheArr) {
+    let p = new Promise((resolve) => {
+      resolve(JSON.parse(cacheArr))
     })
+    p.cancel = () => {}
+    return p
+  }
+
+  let prev = prevListApi()
+
+  let p1 = prev.then((res) => {
+    localStorage.setItem(search, JSON.stringify(res.results))
+    return res.results
   })
 
-  p.cancel = prev.cancel
+  p1.cancel = prev.cancel
 
-  return p
+  return p1
 }
