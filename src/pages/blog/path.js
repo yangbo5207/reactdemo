@@ -3,7 +3,10 @@ import Home from './pages/1.index'
 import Architecture from './pages/2.architectrure'
 import BFF from './pages/3.bff'
 import Split from './pages/4.split'
-import Multapi from './pages/4.split'
+import Nested from './pages/5.nested'
+
+import Streaming from './pages/6.streaming'
+import Multapi from './pages/7.multi'
 
 export const navigation = [
   {
@@ -36,31 +39,21 @@ export const navigation = [
   },
   {
     path: 'nest',
-    name: '4、解耦与嵌套思维',
-    component: Split
-  },
-  {
-    path: 'belong',
-    name: '4、归属与内聚',
-    component: Split
-  },
-  {
-    path: 'datadw',
-    name: '5、数据层职能与细分',
-    component: Split
+    name: '5、解耦与嵌套',
+    component: Nested
   },
   {
     type: 'tip',
     name: '实战篇'
   },
   {
-    path: 'mult',
-    name: '2、流式渲染',
-    component: Multapi
+    path: 'streaming',
+    name: '6、流式渲染',
+    component: Streaming
   },
   {
     path: 'dep',
-    name: '2、依赖渲染',
+    name: '7、多个接口',
     component: Multapi
   },
   {

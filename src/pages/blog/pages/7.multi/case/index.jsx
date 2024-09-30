@@ -1,16 +1,16 @@
 import {useState, Suspense} from 'react'
 import Skeleton from './Skeleton'
-import {fetchListWithCancel} from './api'
 import List from './List'
 import Input from './Input'
 
+import {fetchListController} from './controller'
+
 export default function Demo01() {
-  const [promise, update] = useState(() => fetchListWithCancel(10))
+  const [promise, update] = useState(fetchListController)
 
   function __inputChange(e) {
     promise.cancel()
-    const len = e.target.value.length % 10
-    update(fetchListWithCancel(len))
+    update(fetchListController())
   }
 
   return (
