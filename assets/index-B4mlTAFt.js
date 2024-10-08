@@ -9193,7 +9193,7 @@ export default function CurrentList({promise}) {
 `]}),`
 `,t.jsx(e.h3,{children:"三、结合案例来理解"}),`
 `,t.jsx(e.p,{children:"例如本文顶部的那个案例，我们用代码实现大概如下。其中"}),`
-`,t.jsx(Cn,{files:{"index.jsx":k1,"api.js":C1,List:_1}}),`
+`,t.jsx(Cn,{files:{"index.jsx":k1,"api.js":C1,List:_1},auth:!0}),`
 `,t.jsxs(e.p,{children:[t.jsx(e.code,{children:"index.jsx"})," 表示 View 层"]}),`
 `,t.jsxs(e.p,{children:[t.jsx(e.code,{children:"api.js"})," 表示 Model 层"]}),`
 `,t.jsxs(e.p,{children:[t.jsx(e.code,{children:"update"})," 表示控制器。"]}),`
