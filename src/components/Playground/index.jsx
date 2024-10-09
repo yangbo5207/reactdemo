@@ -64,7 +64,7 @@ function App(props) {
         />
       </div>
       <div className='hidden md:block md:flex-1 top-[8rem] h-full overflow-y-auto max-w-[768px]'>
-        <Codepack files={files} className='h-full rounded-md border-gray-200'/>
+        <Codepack auth={auth} files={files} className='h-full rounded-md border-gray-200'/>
       </div>
     </div>
   )

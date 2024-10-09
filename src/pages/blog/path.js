@@ -12,6 +12,8 @@ import Cache from './pages/9.cache'
 import MultParams from './pages/10.mutiparams'
 import Diff from './pages/11.diff'
 import PickOne from './pages/12.pickone'
+import C13 from './pages/13.childx'
+import C14fitler from './pages/14.cfilter'
 
 export const navigation = [
   {
@@ -86,16 +88,16 @@ export const navigation = [
     name: '12、更新其中某个接口',
     component: PickOne
   },
-  // {
-  //   path: 'pickdata',
-  //   name: '9、更新某一项数据',
-  //   component: Multapi
-  // },
-  // {
-  //   path: 'delete',
-  //   name: '10、删除',
-  //   component: Multapi
-  // },
+  {
+    path: 'childx',
+    name: '13、子组件数据解耦',
+    component: C13
+  },
+  {
+    path: 'cfilter',
+    name: '14、统一思考过滤条件',
+    component: C14fitler
+  },
   // {
   //   path: 'new',
   //   name: '11、新增',

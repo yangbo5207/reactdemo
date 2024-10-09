@@ -6,9 +6,9 @@ import Button_qun from "pages/NavHeader/Button_qun.jsx";
 import Button_code from "pages/NavHeader/Button_code.jsx";
 
 const links = [
-  {path: 'tutorial', text: '教程'},
+  {path: 'tutorial', text: '基础版'},
   {path: 'component', text: '组件'},
-  {path: 'advance', text: '进阶'},
+  {path: 'advance', text: '尊享版'},
 ]
 
 export default function NavHeader() {

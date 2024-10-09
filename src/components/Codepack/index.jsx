@@ -17,7 +17,7 @@ const defiles = {
 }
 
 export default function Codepack(props) {
-  const {files = defiles, caseRender, active = 0, className} = props
+  const {files = defiles, caseRender, active = 0, className, auth} = props
   const titles = Object.keys(files)
 
   const [currentCode, updateCurrentCode] = useState(titles[active])
@@ -41,11 +41,11 @@ export default function Codepack(props) {
         </div>
         <pre className='text-sm leading-6'>
           <SyntaxHighlighter language='javascript' PreTag="div" style={atomOneLight}>
-            {files[currentCode]}
+            {auth ? files[currentCode] : '未获得阅读权限'}
           </SyntaxHighlighter>
         </pre>
       </div>
-      
+
       <Show when={caseRender}>
         <div className='sm:w-[1px] h-[1px] sm:h-auto bg-gray-100'></div>
         <div className='flex-1 overflow-hidden'>
