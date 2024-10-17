@@ -56,15 +56,15 @@ const pricing = {
       features: ultraFeatures,
       mostPopular: false,
     },
-    {
-      name: '尊享版提前投资',
-      id: 'tier-startup',
-      href: './pay?price=200',
-      price: { monthly: '￥200', annually: '$576' },
-      description: '在创作完成之前投资，可以获得更优惠的购买折扣',
-      features: ultraFeatures,
-      mostPopular: true,
-    },
+    // {
+    //   name: '尊享版提前投资',
+    //   id: 'tier-startup',
+    //   href: './pay?price=200',
+    //   price: { monthly: '￥200', annually: '$576' },
+    //   description: '在创作完成之前投资，可以获得更优惠的购买折扣',
+    //   features: ultraFeatures,
+    //   mostPopular: true,
+    // },
     {
       name: 'KeepCoder',
       id: 'tier-enterprise',
@@ -102,7 +102,7 @@ export default function Price() {
         </p>
 
         <div
-          className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
+          className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
           {pricing.tiers.map((tier, index) => (
             <div key={tier.id} className={classNames(tier.mostPopular ? 'ring-2 ring-indigo-600' : 'ring-1 ring-gray-200', 'rounded-3xl p-8')}>
               <h2 id={tier.id} className={classNames(tier.mostPopular ? 'text-indigo-600' : 'text-gray-900', 'text-lg font-semibold leading-8',)}>

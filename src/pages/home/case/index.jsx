@@ -9,6 +9,7 @@ function App() {
     <Codepack
       files={{ 'ButtonCase': ButtonCaseRaw, Button: ButtonRaw }}
       caseRender={<ButtonCase />}
+      auth
     />
   )
 }

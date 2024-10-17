@@ -6,14 +6,14 @@ import PageLoading from 'components/PageLoading'
 import NavHeader from "./pages/NavHeader/index.jsx";
 
 import Home from 'pages/home'
-import Tutorial from './pages/tutorial'
-import {navigation} from 'pages/tutorial/path.js'
+import Tutorial from './pages/base'
+import {navigation} from 'pages/base/path.js'
 
 import Components from './pages/components'
 import {compath} from 'pages/components/path.js'
 
-import Advance from './pages/blog'
-import {navigation as advances} from 'pages/blog/path.js'
+import Advance from './pages/plus'
+import {navigation as advances} from 'pages/plus/path.js'
 
 import Payment from 'pages/payment'
 

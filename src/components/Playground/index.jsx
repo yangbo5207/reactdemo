@@ -32,7 +32,7 @@ function App(props) {
       <>
         {caseRender ? <Cardruntime reload className='mt-0'>{caseRender}</Cardruntime> : null}
         <div className='md:hidden'>
-          <Codepack files={files} className='h-full rounded-md border-gray-200'/>
+          <Codepack files={files} className='h-full rounded-md border-gray-200' auth />
         </div>
         {renderArticle(code)}
       </>
