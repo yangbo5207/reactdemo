@@ -3923,12 +3923,12 @@ react-devtools-inline@4.4.0:
   dependencies:
     es6-symbol "^3"
 
-react-dom@19.0.0-rc-915b914b3a-20240515:
-  version "19.0.0-rc-915b914b3a-20240515"
-  resolved "https://registry.npmjs.org/react-dom/-/react-dom-19.0.0-rc-915b914b3a-20240515.tgz#01d92b86fe37aa673da22fdd789ed24ff1248026"
-  integrity sha512-Njv9p2b7/3ZEk7hcWAzgxbLfYbYJfI01bwI0V+a1WKbhhxwth1o2mQejIsUtnDwkXZ34Oej8rIY5Z93pUfSCdQ==
+react-dom@19.0.0:
+  version "19.0.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.0.0.tgz#43446f1f01c65a4cd7f7588083e686a6726cfb57"
+  integrity sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==
   dependencies:
-    scheduler "0.25.0-rc-915b914b3a-20240515"
+    scheduler "^0.25.0"
 
 react-is@^16.13.1:
   version "16.13.1"
@@ -3971,10 +3971,10 @@ react-syntax-highlighter@^15.5.0:
     prismjs "^1.27.0"
     refractor "^3.6.0"
 
-react@19.0.0-rc-915b914b3a-20240515:
-  version "19.0.0-rc-915b914b3a-20240515"
-  resolved "https://registry.npmjs.org/react/-/react-19.0.0-rc-915b914b3a-20240515.tgz#4542c3da2227de3f426d314e7065766de220a0af"
-  integrity sha512-/XKPm2pbDBheMbNUV/uRoL0/RZXg+CCyen3YBjDetySqGZjsRBQKKtK9sWMjQO8J6y8PoC02HzjAP4/OQ2Wmow==
+react@19.0.0:
+  version "19.0.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-19.0.0.tgz#6e1969251b9f108870aa4bff37a0ce9ddfaaabdd"
+  integrity sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==
 
 read-cache@^1.0.0:
   version "1.0.0"
@@ -4157,10 +4157,10 @@ safe-regex-test@^1.0.3:
     es-errors "^1.3.0"
     is-regex "^1.1.4"
 
-scheduler@0.25.0-rc-915b914b3a-20240515:
-  version "0.25.0-rc-915b914b3a-20240515"
-  resolved "https://registry.npmjs.org/scheduler/-/scheduler-0.25.0-rc-915b914b3a-20240515.tgz#31e542d20dcdf4e71c00379318314e34b1a0fa5a"
-  integrity sha512-NeqcaiiRfnXjrrtI8CxyU9FlT9UTdRvpSCy/fnAK+hwwrMjk6BhtCmdziCOkCat5bI3p6uUIwR2NNCK2F/1bZg==
+scheduler@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.25.0.tgz#336cd9768e8cceebf52d3c80e3dcf5de23e7e015"
+  integrity sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==
 
 semver@^6.0.0, semver@^6.3.1:
   version "6.3.1"

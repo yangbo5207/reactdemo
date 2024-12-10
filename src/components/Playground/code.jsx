@@ -1,13 +1,15 @@
 import Input from 'components/Input'
-import {getActiveCode} from './activecode.js'
+import {equalAdv, equalBase} from './activecode.js'
 
 export default function EnterCode(props) {
   const {advance} = props
   const key = advance ? 'active_code_adv' : 'active_code'
+  const equal = advance ? equalAdv : equalBase
 
   function __submit(e) {
     const code = e.get('code')
-    if (code !== getActiveCode(advance)) {
+
+    if (!equal(code)) {
       return alert('请输入正确的激活码')
     }
     localStorage.setItem(key, e.get('code'))

@@ -1,11 +1,11 @@
 import Giscus from '@giscus/react'
-import EnterCode from './code'
+import EnterCode from 'components/Playground/code'
+import useAuth from "components/Playground/useAuth.js";
 
 import {Light as SyntaxHighlighter} from 'react-syntax-highlighter'
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import atomOneLight from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light'
 
-import {democode} from "components/Playground/activecode.js";
 import Show from '../Show';
 
 SyntaxHighlighter.registerLanguage('javascript', js)
@@ -18,14 +18,13 @@ function code({className, ...properties}) {
 }
 
 function App(props) {
-  const {renderArticle, isAuth = true, isGiscus = true} = props
+  const {renderArticle, isAuth = true, isGiscus = true, advance = false} = props
 
-  const z = localStorage.getItem('active_code')
-  const auth = isAuth ? z === democode : true
+  const auth = useAuth(isAuth, advance)
 
   return (
     <div className='keep max-w-[700px] mx-auto'>
-      {/* {auth ? renderArticle(code) : <EnterCode />} */}
+
       <Show when={auth} fallback={<EnterCode />}>
         {renderArticle(code)}
       </Show>

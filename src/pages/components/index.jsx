@@ -33,7 +33,7 @@ export default function Tutorial() {
 
           <div className='text-sm'>
             <div>当前版本</div>
-            <div className='text-gray-500'>React@19.0.0-rc</div>
+            <div className='text-gray-500'>React@19.0.0</div>
           </div>
         </div>
         <ul className='border-r h-[calc(100vh_-_9rem_-_35px)] overflow-y-auto pb-8'>

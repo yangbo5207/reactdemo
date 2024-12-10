@@ -5,9 +5,9 @@ import {Light as SyntaxHighlighter} from 'react-syntax-highlighter'
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import atomOneLight from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light'
 
-import {democode, advcode, getActiveCode} from "components/Playground/activecode.js";
 import Codepack from "components/Codepack/index.jsx";
 import Cardruntime from "components/Cardruntime.jsx";
+import useAuth from "./useAuth.js";
 
 SyntaxHighlighter.registerLanguage('javascript', js)
 
@@ -20,10 +20,7 @@ function code({className, ...properties}) {
 
 function App(props) {
   const {renderArticle, files, caseRender, isAuth = true, advance = false} = props
-
-  const key = advance ? 'active_code_adv' : 'active_code'
-  const localCode = localStorage.getItem(key)
-  const auth = isAuth ? localCode === getActiveCode(advance) : true
+  const auth = useAuth(isAuth, advance)
 
   let content = <EnterCode advance={advance} />
 

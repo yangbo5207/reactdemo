@@ -17,7 +17,7 @@ const defiles = {
 }
 
 export default function Codepack(props) {
-  const {files = defiles, caseRender, active = 0, className, auth} = props
+  const {files = defiles, caseRender, active = 0, className, auth = true} = props
   const titles = Object.keys(files)
 
   const [currentCode, updateCurrentCode] = useState(titles[active])
