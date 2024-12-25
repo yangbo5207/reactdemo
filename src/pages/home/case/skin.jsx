@@ -1,4 +1,7 @@
 import {useState} from 'react'
+import Button from 'components/Button'
+import {Pizza, Drum, Grape} from 'lucide-react'
+import {motion} from 'motion/react'
 
 export default function Skin() {
   // theme-swiss theme-neon
@@ -7,21 +10,35 @@ export default function Skin() {
   const cls = `relative ${skin} bg-skin-fill overflow-hidden rounded`
 
   return (
-    <div className='my-8 border border-gray-150 rounded px-8 pb-8'>
-      <div className='flex justify-center'>
-        <div onClick={() => setSkin('')} className='my-6 mx-2 h-6 w-6 rounded bg-indigo-500 cursor-pointer'></div>
-        <div onClick={() => setSkin('theme-swiss')} className='my-6 mx-2 h-6 w-6 rounded bg-red-600 cursor-pointer'></div>
-        <div onClick={() => setSkin('theme-neon')} className='my-6 mx-2 h-6 w-6 rounded bg-green-400 cursor-pointer'></div>
+    <motion.div
+      className='my-8 border border-gray-150 rounded px-8 pb-8'
+      initial={{y: 60, opacity: 0}}
+      whileInView={{y: 0, opacity: 1}}
+      transition={{duration: 0.5, delay: 0.5}}
+    >
+      <div className='text-center py-4 space-x-4'>
+        <Button primary={skin === ''} onClick={() => setSkin('')} className='inline-flex space-x-2 items-center'>
+          <Pizza size={18} />
+          <span>Default</span>
+        </Button>
+        <Button primary={skin === 'theme-swiss'} onClick={() => setSkin('theme-swiss')} className='inline-flex space-x-2 items-center'>
+          <Drum size={18} />
+          <span>Swiss</span>
+        </Button>
+        <Button primary={skin === 'theme-neon'} onClick={() => setSkin('theme-neon')} className='inline-flex space-x-2 items-center'>
+          <Grape size={18} />
+          <span>Neon</span>
+        </Button>
       </div>
 
       <div className={cls}>
         <img className='absolute inset-0 h-full w-full object-cover opacity-30' src="https://images.unsplash.com/photo-1602576666092-bf6447a729fc?q=80&w=3732&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/>
         <div className='absolute inset-0 bg-gradient-to-br from-skin-hue via-skin-hue to-transparent opacity-90 transition'></div>
         <div className='relative max-w-2xl mx-auto text-center py-16 px-8'>
-          <h2 className='font-extrabold text-skin-base text-4xl transition'>
+          <h2 className='font-extrabold text-skin-base text-2xl transition'>
             <span>极客时间、掘金买课优惠</span>
           </h2>
-          <p className='mt-4 text-md text-left text-skin-muted transition'>
+          <p className='mt-4 text-md text-left text-skin-muted transition leading-8'>
             官方的课程返现全部归还，需要从网站 coursesub.top 或者公众号「课程减减」通过邀请链接进行下单，购买后添加客服微信发送课程名确认后即可收到红包，可正常使用极客时间的优惠券或者学生半价优惠。
           </p>
 
@@ -33,6 +50,6 @@ export default function Skin() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

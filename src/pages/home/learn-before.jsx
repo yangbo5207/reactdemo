@@ -21,7 +21,7 @@ export default function LearnBefore() {
     delay: 0.8
   }]
   return (
-    <div className='backdrop-blur-sm py-36 bg-opacity-70 max-w-[1080px] mx-auto px-32'>
+    <div className='bg-white backdrop-blur-sm py-36 bg-opacity-70 max-w-[1080px] mx-auto md:px-32 px-8'>
       <motion.h2 
         className='text-4xl font-bold text-center'
         initial={{y: 60, opacity: 0}}

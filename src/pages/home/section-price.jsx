@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
+import {motion} from 'motion/react'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -32,6 +33,7 @@ const pricing = {
       href: './pay?price=30',
       price: { monthly: '￥30', annually: '$144' },
       description: '大量可演示实践案例，帮助学习者轻松掌握 React 19.',
+      delay: 0.4,
       features: [
         '基础理论',
         'use promise',
@@ -55,16 +57,8 @@ const pricing = {
       description: '严格践行一套架构思维扩展复杂场景的使用',
       features: ultraFeatures,
       mostPopular: false,
+      delay: 0.5,
     },
-    // {
-    //   name: '尊享版提前投资',
-    //   id: 'tier-startup',
-    //   href: './pay?price=200',
-    //   price: { monthly: '￥200', annually: '$576' },
-    //   description: '在创作完成之前投资，可以获得更优惠的购买折扣',
-    //   features: ultraFeatures,
-    //   mostPopular: true,
-    // },
     {
       name: 'KeepCoder',
       id: 'tier-enterprise',
@@ -85,26 +79,43 @@ const pricing = {
         '完整的全栈思维',
       ],
       mostPopular: false,
+      delay: 0.6,
     },
   ],
 }
 
 export default function Price() {
-  const [frequency, setFrequency] = useState(pricing.frequencies[0])
+  const [frequency] = useState(pricing.frequencies[0])
   return (
-    <main>
-      <div className="mx-auto mt-16 max-w-7xl sm:mt-32">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="mt-2 text-xl font-bold tracking-tight text-gray-900 sm:text-5xl">价格</p>
-        </div>
-        <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
-          请根据自己的学习意愿和经济能力综合考虑，理性消费，选择一种适合自己的学习方式。我确保提供过硬的学习质量，确保每一位认真投入的同学都能学有所得
-        </p>
+    <main className='backdrop-blur-sm py-28 bg-gray-50 bg-opacity-70 px-8'>
+      <div className="mx-auto max-w-[1080px]">
+        <motion.a
+          initial={{y: 60, opacity: 0}}
+          whileInView={{y: 0, opacity: 1}}
+          transition={{duration: 0.5}}
+          className="font-bold sm:text-4xl text-center block scroll-mt-52"
+          href='#price'
+          name='price' id='price'
+        >价格</motion.a>
+        
+        <motion.p 
+          initial={{y: 60, opacity: 0}}
+          whileInView={{y: 0, opacity: 1}}
+          transition={{duration: 0.5, delay: 0.2}}
+        className="mt-12 text-center leading-8">
+          请根据自己的学习意愿和经济能力综合考虑，理性消费。我负责提供过硬的学习质量，确保每一位用户都能学有所得
+        </motion.p>
 
         <div
           className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
           {pricing.tiers.map((tier, index) => (
-            <div key={tier.id} className={classNames(tier.mostPopular ? 'ring-2 ring-indigo-600' : 'ring-1 ring-gray-200', 'rounded-3xl p-8')}>
+            <motion.div
+              initial={{y: 60, opacity: 0}}
+              whileInView={{y: 0, opacity: 1}}
+              transition={{duration: 0.5, delay: tier.delay}}
+              key={tier.id} 
+              className={classNames(tier.mostPopular ? 'ring-2 ring-indigo-600' : 'ring-1 ring-gray-200', 'rounded-3xl p-8')}
+            >
               <h2 id={tier.id} className={classNames(tier.mostPopular ? 'text-indigo-600' : 'text-gray-900', 'text-lg font-semibold leading-8',)}>
                 {tier.name}
               </h2>
@@ -137,7 +148,7 @@ export default function Price() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

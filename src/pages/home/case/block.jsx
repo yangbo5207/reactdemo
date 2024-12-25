@@ -1,7 +1,8 @@
 import {useState, useEffect, useRef} from 'react'
+import {motion} from 'motion/react'
 import clsx from 'clsx'
 
-export default function Block({title, desc = '', path, icon, className}) {
+export default function Block({title, desc = '', path, className, delay}) {
   const [pos, setPos] = useState({x: 0, y: 0});
   const ref = useRef(null)
 
@@ -31,7 +32,7 @@ export default function Block({title, desc = '', path, icon, className}) {
   const cls = clsx(base, className)
 
   return (
-    <div ref={ref} className={cls}>
+    <motion.div ref={ref} className={cls} initial={{y: 60, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{duration: 0.5, delay: delay}}>
       <div className="pointer-events-none">
         <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
           <svg aria-hidden="true" className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/[0.02] stroke-black/5 dark:fill-white/1 dark:stroke-white/2.5">
@@ -78,6 +79,6 @@ export default function Block({title, desc = '', path, icon, className}) {
         </h3>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{_desc}</p>
       </div>
-    </div>
+    </motion.div>
   )
 }

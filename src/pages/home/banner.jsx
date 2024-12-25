@@ -3,12 +3,25 @@ import {Link} from 'react-router-dom'
 import Dialog from "components/Dialog";
 import ercode from '/src/assets/ercode.png'
 import {motion} from 'motion/react'
+import {ShoppingCart} from 'lucide-react'
 
 export default function Banner() {
   const dialog = useRef(null)
   function __viewclick(e) {
     e.preventDefault()
     dialog.current.show()
+  }
+
+  function __scrollToAnchor(name) {
+    if (name) {
+      const anchor = document.getElementById(name)
+      if (anchor) {
+        anchor.scrollIntoView({
+          block: 'start',
+          behavior: 'smooth'
+        })
+      }
+    }
   }
 
   return (
@@ -25,12 +38,12 @@ export default function Banner() {
       </motion.div>
 
       <motion.h2
-        className='text-5xl mt-12 text-center'
+        className='text-5xl mt-12 text-center font-bold'
         initial={{opacity: 0, y: 60}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.5}}
       >
-        REACT 19 全解
+        React 19 全解
       </motion.h2>
 
       <motion.p
@@ -42,12 +55,11 @@ export default function Banner() {
         React19 为开发者带来了新的开发理念，这又是一次开发方式上的一次变革。并且在开发体验和性能上都有大幅度的提升，值得每一位 React 开发者学习。 本专栏是全网第一本系统学习 React 19 的专栏。在公众号「这波能反杀」首发，受到了大量粉丝的喜爱。专栏中包含大量实践案例，深入简出，理论结合实践为大家分享 React19 的学习，赶紧行动吧。
       </motion.p>
 
-
       <motion.div
         initial={{opacity: 0, y: 60}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.5, delay: 0.4}}
-        className='mt-10 text-center'
+        className='mt-10 flex items-center justify-center'
       >
         <Link to='tutorial/index' className='inline-flex items-center px-5 py-2 bg-gray-800 hover:bg-gray-900 text-white text-sm rounded-full'>
           <span className='mr-2'>快速开始</span>
@@ -63,6 +75,13 @@ export default function Banner() {
         <Dialog ref={dialog} title='Follow me!'>
           <img src={ercode} alt=''/>
         </Dialog>
+
+        <a onClick={() => __scrollToAnchor('price')}
+          className='inline-flex px-4 py-2 text-white ring-1 ring-red-800 text-sm rounded-full ml-4 bg-red-600 space-x-2 cursor-pointer'
+        >
+          <ShoppingCart size={18} />
+          <span>立即购买</span>
+        </a>
       </motion.div>
     </div>
   )

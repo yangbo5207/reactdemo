@@ -1,12 +1,14 @@
-import Skin from './Skin'
 import Background from './background'
 import Banner from './banner'
 import SectionCase from './section-case'
 import LearnBefore from './learn-before'
-import Block from './block'
-import Gisucs from '@giscus/react'
-import MiniBlock from './MiniBlock'
-import Price from './price'
+import EfficientLearning from './efficient-learning'
+import SectionType from './section-type' 
+import SectionPrice from './section-price' 
+import SectionSponsor from './section-sponsor'
+import SectionCourse from './section-course'
+import SctionComment from './section-comment'
+import SectionFooter from './section-footer'
 import './App.css'
 
 function App() {
@@ -17,137 +19,13 @@ function App() {
         <Banner />
         <SectionCase />
         <LearnBefore />
-
-
-        <Price/>
-
-        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>主要内容
-        </div>
-
-        <div
-          className='flex items-stretch md:justify-between flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0'>
-          <Block
-            title='Compiler'
-            path='./tutorial/use/importwith19'
-            desc='你可以不再使用 memo、useMemo、useCallback 来优化你的项目性能，大幅度提高开发体验'
-            className='flex-1'
-          />
-          <Block
-            title='新的架构思路'
-            path='./tutorial/index'
-            desc='并发模式变得更加实用，得益于并发模式的成熟，我们将可以使用新的架构思路构思我的项目'
-            className='flex-1'
-          />
-          <Block
-            title='新的交互方式'
-            path='./tutorial/use/base'
-            desc='React 在人机交互的开发体验上做了很多努力和尝试，他们将在这个版本中得以体现'
-            className='flex-1'
-          />
-        </div>
-
-        <div
-          className='border-b mt-20 mb-8 text-lg font-bold pb-3'>案例展示方式
-        </div>
-
-
-        <p className='mt-10 flex items-center'>
-          所见即所得。所有案例直接渲染，可操作、可交互。例如：点击按钮，切换皮肤
-          <span
-            className="animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center ml-4">
-            <svg className="w-6 h-6 text-violet-500" fill="none"
-                 strokeLinecap="round" strokeLinejoin="round"
-                 strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </span>
-        </p>
-
-        <Skin/>
-
-      
-
-        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'>其他课程
-        </div>
-
-        <div
-          className='flex justify-between flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6'>
-          <MiniBlock
-            title='私人面试指导'
-            desc='前端专家：这波能反杀，为您提供全网最专业的面试辅导，结合个人目标与工作经验，时长 2 ~ 3 小时，一次沟通，解决所有问题'
-            href='https://appxw863qeq2150.h5.xiaoeknow.com/v1/goods/goods_detail/course_2YWwycNZDt3u59naEs57g0gGa0H?'
-            className='flex-1'
-          />
-          <MiniBlock
-            title='keepCoder'
-            desc='资深前端进阶通道，1V1深度沟通辅导，聚焦学习方法，深挖知识体系，深挖应用场景，凝聚核心竞争力'
-            href='https://www.yuque.com/coreadvance/ar2my1/apk8cr'
-            className='flex-1 bg-orange-100 border-orange-300'
-          />
-          <MiniBlock
-            title='keepCharts'
-            desc='聚焦技术深度，手写基于 Canvas 的渲染引擎，并在此基础之上实现可视化图表等应用层库，打造自己牢不可破的核心竞争力'
-            href='https://www.yuque.com/coreadvance/ar2my1/em5rrk6p1umptsxw'
-            className='flex-1 bg-green-200 border-green-600'
-          />
-        </div>
-
-        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
-
-        <Gisucs
-          repo='yangbo5207/react19feature'
-          repoId='R_kgDOMGiHOw'
-          category='General'
-          categoryId='DIC_kwDOMGiHO84Cf8dR'
-          maping='pathname'
-          term='欢迎道友'
-          strict='0'
-          reactionsEnabled='1'
-          emitMetadata="1"
-          inputPosition="top"
-          lang="zh-CN"
-          loading="lazy"
-          crossorigin="anonymous"
-          async
-        />
-
-        <div className='border-b mt-20 mb-8 text-lg font-bold pb-3'></div>
-        <div className='flex justify-between pb-10'>
-          <span className='text-gray-400'>
-            © Copyright 2024.
-            <a href="https://beian.miit.gov.cn/" target="_blank">这波能反杀.</a>
-            <a href="https://beian.miit.gov.cn/"
-               target="_blank">粤ICP备2024222174号</a>
-          </span>
-
-          <div className='flex'>
-            <div className='ml-3'>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                   viewBox="0 0 24 24" strokeWidth={1.5}
-                   stroke="currentColor" className="size-5">
-                <path strokeLinecap="round" strokeLinejoin="round"
-                      d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/>
-              </svg>
-            </div>
-            <div className='ml-3'>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                   viewBox="0 0 24 24" strokeWidth={1.5}
-                   stroke="currentColor" className="size-5">
-                <path strokeLinecap="round" strokeLinejoin="round"
-                      d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/>
-              </svg>
-
-            </div>
-            <div className='ml-3'>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                   viewBox="0 0 24 24" strokeWidth={1.5}
-                   stroke="currentColor" className="size-5">
-                <path strokeLinecap="round" strokeLinejoin="round"
-                      d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/>
-              </svg>
-            </div>
-          </div>
-        </div>
+        <EfficientLearning />
+        <SectionType />
+        <SectionPrice />
+        <SectionSponsor />
+        <SectionCourse />
+        <SctionComment />
+        <SectionFooter />
       </div>
     </div>
   )
