@@ -11,6 +11,7 @@
     --color-button-accent: #FFF;
     --color-button-accent-hover: #eef2ff;
     --color-button-muted: 99, 102, 241;
+    --color-primary-500: rgb(0, 193, 106)
   }
   .theme-swiss {
     --color-text-base: #FFF;
@@ -31,6 +32,13 @@
     --color-button-accent-hover: #374f05;
     --color-button-muted: 212, 255, 122;
   }
+}
+
+.bg-primary {
+  background-color: var(--color-primary-500);
+}
+.text-primary {
+  color: var(--color-primary-500);
 }
 
 button {

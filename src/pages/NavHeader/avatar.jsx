@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import Loading from './loading.jsx'
+import Loading from './loading'
 
 export default function Avatar() {
   const [loading, setLoading] = useState(true);
