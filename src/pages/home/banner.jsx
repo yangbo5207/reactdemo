@@ -25,7 +25,7 @@ export default function Banner() {
   }
 
   return (
-    <div className='py-36 max-w-[750px] mx-auto'>
+    <div className='py-14 md:py-36 max-w-[800px] mx-auto px-6 md:px-8 space-y-8 md:space-y-12'>
       <motion.div
         className='flex items-center space-x-2 justify-center'
         initial={{opacity: 0, scale: 0.5}}
@@ -38,7 +38,7 @@ export default function Banner() {
       </motion.div>
 
       <motion.h2
-        className='text-5xl mt-12 text-center font-bold'
+        className='text-3xl md:text-5xl text-center font-bold'
         initial={{opacity: 0, y: 60}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.5}}
@@ -50,7 +50,7 @@ export default function Banner() {
         initial={{opacity: 0, y: 60}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.5, delay: 0.2}}
-        className="mt-12 text-gray-500 leading-8 text-md text-center"
+        className="text-gray-500 leading-8 text-md text-center"
       >
         React19 为开发者带来了新的开发理念，这又是一次开发方式上的一次变革。并且在开发体验和性能上都有大幅度的提升，值得每一位 React 开发者学习。 本专栏是全网第一本系统学习 React 19 的专栏。在公众号「这波能反杀」首发，受到了大量粉丝的喜爱。专栏中包含大量实践案例，深入简出，理论结合实践为大家分享 React19 的学习，赶紧行动吧。
       </motion.p>
@@ -59,7 +59,7 @@ export default function Banner() {
         initial={{opacity: 0, y: 60}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.5, delay: 0.4}}
-        className='mt-10 flex items-center justify-center'
+        className='flex items-center justify-center'
       >
         <Link to='tutorial/index' className='inline-flex items-center px-5 py-2 bg-gray-800 hover:bg-gray-900 text-white text-sm rounded-full'>
           <span className='mr-2'>快速开始</span>

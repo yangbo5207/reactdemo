@@ -4,20 +4,20 @@ import {Cookie, ChevronRight} from 'lucide-react'
 
 export default function SectionCourse() {  
   return (
-    <main className='backdrop-blur-sm py-28 bg-gray-50 bg-opacity-70 px-8'>
+    <main className='backdrop-blur-sm py-14 md:py-28 bg-gray-50 bg-opacity-70 px-6 md:px-8'>
       <div className="mx-auto max-w-[1080px]">
         <motion.p 
           initial={{y: 60, opacity: 0}}
           whileInView={{y: 0, opacity: 1}}
           transition={{duration: 0.5}}
-          className="font-bold sm:text-4xl text-center"
+          className="font-bold text-2xl md:text-4xl text-center"
         >我的其他付费课程</motion.p>
         
         <motion.p 
           initial={{y: 60, opacity: 0}}
           whileInView={{y: 0, opacity: 1}}
           transition={{duration: 0.5, delay: 0.2}}
-        className="mt-12 text-center leading-8">
+        className="my-8 md:my-12 text-center leading-8">
           请根据自己的学习意愿和经济能力综合考虑，理性消费。我负责提供过硬的学习质量，确保每一位用户都能学有所得
         </motion.p>
         

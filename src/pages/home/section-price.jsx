@@ -87,13 +87,13 @@ const pricing = {
 export default function Price() {
   const [frequency] = useState(pricing.frequencies[0])
   return (
-    <main className='backdrop-blur-sm py-28 bg-gray-50 bg-opacity-70 px-8'>
+    <main className='backdrop-blur-sm py-14 md:py-28 bg-gray-50 bg-opacity-70 px-6 md:px-8'>
       <div className="mx-auto max-w-[1080px]">
         <motion.a
           initial={{y: 60, opacity: 0}}
           whileInView={{y: 0, opacity: 1}}
           transition={{duration: 0.5}}
-          className="font-bold sm:text-4xl text-center block scroll-mt-52"
+          className="font-bold text-2xl md:text-4xl text-center block scroll-mt-52"
           href='#price'
           name='price' id='price'
         >价格</motion.a>
@@ -102,7 +102,7 @@ export default function Price() {
           initial={{y: 60, opacity: 0}}
           whileInView={{y: 0, opacity: 1}}
           transition={{duration: 0.5, delay: 0.2}}
-        className="mt-12 text-center leading-8">
+        className="mt-8 md:mt-12 text-center leading-8 px-10">
           请根据自己的学习意愿和经济能力综合考虑，理性消费。我负责提供过硬的学习质量，确保每一位用户都能学有所得
         </motion.p>
 

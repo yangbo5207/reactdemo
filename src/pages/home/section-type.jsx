@@ -3,10 +3,10 @@ import Block from './case/block'
 
 export default function LearnBefore() {
   return (
-    <div className='bg-white backdrop-blur-sm py-36 bg-opacity-70 mx-auto px-8'>
+    <div className='bg-white backdrop-blur-sm py-14 md:py-28 bg-opacity-70 mx-auto px-6 md:px-8'>
       <div className='max-w-[1080px] mx-auto'>
         <motion.h2 
-          className='text-4xl font-bold text-center'
+          className='text-2xl md:text-4xl font-bold text-center'
           initial={{y: 60, opacity: 0}}
           whileInView={{y: 0, opacity: 1}}
           transition={{duration: 0.5}}
@@ -16,7 +16,7 @@ export default function LearnBefore() {
           initial={{y: 60, opacity: 0}}
           whileInView={{y: 0, opacity: 1}}
           transition={{duration: 0.5, delay: 0.2}}
-          className='text-center my-12'
+          className='text-center my-8 md:my-12 px-10'
         >
           React 19 给开发者带来了巨大的变化和提升，主要体现在如下几个方面
         </motion.p>

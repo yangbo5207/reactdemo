@@ -4,7 +4,7 @@ import {Cookie, ChevronRight} from 'lucide-react'
 
 export default function SectionCourse() {  
   return (
-    <main className='backdrop-blur-sm py-8 bg-gray-50 bg-opacity-70 px-8'>
+    <main className='backdrop-blur-sm py-4 bg-gray-50 bg-opacity-70 px-6 md:px-8'>
       <div className="mx-auto max-w-[1080px]">
         
       <div className='flex justify-between'>

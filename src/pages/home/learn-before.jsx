@@ -21,9 +21,9 @@ export default function LearnBefore() {
     delay: 0.8
   }]
   return (
-    <div className='bg-white backdrop-blur-sm py-36 bg-opacity-70 max-w-[1080px] mx-auto md:px-32 px-8'>
+    <div className='bg-white backdrop-blur-sm py-14 md:py-28 bg-opacity-70 max-w-[1080px] mx-auto md:px-32 px-6'>
       <motion.h2 
-        className='text-4xl font-bold text-center'
+        className='text-2xl md:text-4xl font-bold text-center'
         initial={{y: 60, opacity: 0}}
         whileInView={{y: 0, opacity: 1}}
         transition={{duration: 0.5}}
@@ -33,7 +33,7 @@ export default function LearnBefore() {
         initial={{y: 60, opacity: 0}}
         whileInView={{y: 0, opacity: 1}}
         transition={{duration: 0.5, delay: 0.2}}
-        className='text-center my-12'
+        className='text-center my-8 md:my-12'
       >
         学习之前，你需要具备一些前置的基础能力
       </motion.p>

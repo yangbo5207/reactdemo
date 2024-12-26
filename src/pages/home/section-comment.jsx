@@ -5,7 +5,7 @@ import Gisucs from '@giscus/react'
 
 export default function SectionCourse() {  
   return (
-    <main className='backdrop-blur-sm py-28 bg-white bg-opacity-70 px-8'>
+    <main className='backdrop-blur-sm my-14 md:py-28 bg-white bg-opacity-70 px-6 md:px-8'>
       <div className="mx-auto max-w-[1080px]">
         <Gisucs
           repo='yangbo5207/react19feature'
