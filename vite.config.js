@@ -45,5 +45,13 @@ export default defineConfig({
       'pages': path.resolve(__dirname, './src/pages'),
       'utils': path.resolve(__dirname, './src/utils'),
     }
-  }
+  },
+  // server: {
+  //   proxy: {
+  //     '/eden': {
+  //       target: 'https://xinyuzone.cn',
+  //       changeOrigin: true
+  //     }
+  //   }
+  // }
 })

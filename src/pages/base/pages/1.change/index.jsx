@@ -6,8 +6,8 @@ import Button from './case/Button.jsx?raw'
 
 import Article from './article.mdx'
 
-import Playground from "components/Playground/index.jsx";
-import MainCase from './case/App.jsx'
+import Playground from "components/Playground";
+import MainCase from './case/App'
 
 const files = {
   'App.js': App,

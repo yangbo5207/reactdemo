@@ -1,11 +1,8 @@
-import {motion} from 'motion/react'
-import MiniBlock from './MiniBlock'
-import {Cookie, ChevronRight} from 'lucide-react'
 import Gisucs from '@giscus/react'
 
 export default function SectionCourse() {  
   return (
-    <main className='backdrop-blur-sm my-14 md:py-28 bg-white bg-opacity-70 px-6 md:px-8'>
+    <main className='backdrop-blur-sm my-14 bg-white bg-opacity-70 px-6 md:px-8'>
       <div className="mx-auto max-w-[1080px]">
         <Gisucs
           repo='yangbo5207/react19feature'
@@ -19,7 +16,7 @@ export default function SectionCourse() {
           emitMetadata="1"
           inputPosition="top"
           lang="zh-CN"
-          loading="lazy"
+          loading='lazy'
           crossorigin="anonymous"
           async
         />

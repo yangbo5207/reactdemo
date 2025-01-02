@@ -2,6 +2,7 @@ import {useState} from 'react'
 import Button from 'components/Button'
 import {Pizza, Drum, Grape} from 'lucide-react'
 import {motion} from 'motion/react'
+import {variants} from '../index'
 
 export default function Skin() {
   // theme-swiss theme-neon
@@ -10,12 +11,7 @@ export default function Skin() {
   const cls = `relative ${skin} bg-skin-fill overflow-hidden rounded`
 
   return (
-    <motion.div
-      className='my-8 border border-gray-150 rounded px-8 pb-8'
-      initial={{y: 60, opacity: 0}}
-      whileInView={{y: 0, opacity: 1}}
-      transition={{duration: 0.5, delay: 0.5}}
-    >
+    <motion.div className='my-8 border border-gray-150 rounded px-8 pb-8'{...variants(0.3)}>
       <div className='text-center py-4 space-x-4'>
         <Button primary={skin === ''} onClick={() => setSkin('')} className='inline-flex space-x-2 items-center'>
           <Pizza size={18} />

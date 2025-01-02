@@ -1,38 +1,26 @@
 import {Suspense} from 'react'
-import {Routes, Route, Outlet} from 'react-router-dom'
-
+import {Routes, Route} from 'react-router-dom'
 import PageLoading from 'components/PageLoading'
-
-import NavHeader from "./pages/NavHeader/index.jsx";
-
 import Home from 'pages/home'
-import Tutorial from './pages/base'
-import {navigation} from 'pages/base/path.js'
+
+import BaseLayout from './pages/base/Layout'
+import {navigation} from 'pages/base/path'
 
 import Components from './pages/components'
-import {compath} from 'pages/components/path.js'
+import {compath} from 'pages/components/path'
 
 import Advance from './pages/plus'
-import {navigation as advances} from 'pages/plus/path.js'
+import {navigation as advances} from 'pages/plus/path'
 
 import Payment from 'pages/payment'
-
-
-function Layou2t() {
-  return (
-    <div>
-      <NavHeader className='line' />
-      <Outlet />
-    </div>
-  )
-}
+import AppLayout from './pages/Layout'
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Layou2t />}>
+      <Route path='/' element={<AppLayout />}>
         <Route index element={<Home />} />
-        <Route path='tutorial' element={<Tutorial />}>
+        <Route path='tutorial' element={<BaseLayout />}>
           {navigation.filter((item) => !!item.path).map((item ,i) => (
             <Route key={item.path} path={item.path} element={
               <Suspense fallback={<PageLoading />}>

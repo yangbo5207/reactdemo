@@ -7,13 +7,13 @@ export default function SideNav() {
     <div>
       {navigation.map((item, index) => {
         if (item.type === 'tip') {
-          return <div className='mx-2 text-sm px-4 text-gray-400 first:pt-0 pb-4 pt-8' key={`z-${index}`}>
+          return <div className='text-sm text-gray-400 first:pt-0 pb-4 pt-8' key={`z-${index}`}>
             {item.name}
           </div>
         }
         return (
           <ActiveLink className='text-gray-700' activeName='text-blue-700' to={item.path} key={item.path}>
-            <li key={item.path} className='mx-2 px-4 py-3 transition hover:bg-blue-100 text-sm flex items-center justify-between hover:text-blue-700 rounded'>
+            <li key={item.path} className='py-3 transition hover:bg-blue-100 text-sm flex items-center justify-between hover:text-blue-700 rounded'>
               <div className='flex items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                     stroke="currentColor" className="size-4">

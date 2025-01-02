@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
 import {motion} from 'motion/react'
+import {variants} from './index'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -56,7 +57,7 @@ const pricing = {
       price: { monthly: '￥400', annually: '$288' },
       description: '严格践行一套架构思维扩展复杂场景的使用',
       features: ultraFeatures,
-      mostPopular: false,
+      mostPopular: true,
       delay: 0.5,
     },
     {
@@ -89,33 +90,16 @@ export default function Price() {
   return (
     <main className='backdrop-blur-sm py-14 md:py-28 bg-gray-50 bg-opacity-70 px-6 md:px-8'>
       <div className="mx-auto max-w-[1080px]">
-        <motion.a
-          initial={{y: 60, opacity: 0}}
-          whileInView={{y: 0, opacity: 1}}
-          transition={{duration: 0.5}}
-          className="font-bold text-2xl md:text-4xl text-center block scroll-mt-52"
-          href='#price'
-          name='price' id='price'
-        >价格</motion.a>
+        <motion.a {...variants()} className="font-bold text-2xl md:text-4xl text-center block scroll-mt-52" href='#price' name='price' id='price'>价格</motion.a>
         
-        <motion.p 
-          initial={{y: 60, opacity: 0}}
-          whileInView={{y: 0, opacity: 1}}
-          transition={{duration: 0.5, delay: 0.2}}
-        className="mt-8 md:mt-12 text-center leading-8 px-10">
+        <motion.p {...variants(0.1)} className="mt-8 md:mt-12 text-center leading-8 px-10">
           请根据自己的学习意愿和经济能力综合考虑，理性消费。我负责提供过硬的学习质量，确保每一位用户都能学有所得
         </motion.p>
 
         <div
-          className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
+          className="isolate mx-auto mt-10 grid grid-cols-1 gap-8 md:grid-cols-3 md:max-w-none xl:grid-cols-3">
           {pricing.tiers.map((tier, index) => (
-            <motion.div
-              initial={{y: 60, opacity: 0}}
-              whileInView={{y: 0, opacity: 1}}
-              transition={{duration: 0.5, delay: tier.delay}}
-              key={tier.id} 
-              className={classNames(tier.mostPopular ? 'ring-2 ring-indigo-600' : 'ring-1 ring-gray-200', 'rounded-3xl p-8')}
-            >
+            <motion.div {...variants(tier.delay)} key={tier.id} className={classNames(tier.mostPopular ? 'ring-2 ring-indigo-600' : 'ring-1 ring-gray-200', 'rounded-md p-8')}>
               <h2 id={tier.id} className={classNames(tier.mostPopular ? 'text-indigo-600' : 'text-gray-900', 'text-lg font-semibold leading-8',)}>
                 {tier.name}
               </h2>
@@ -127,7 +111,7 @@ export default function Price() {
               <Link
                 to={tier.href}
                 aria-describedby={tier.id}
-                target={index === 3 ? '_blank' : ''}
+                target={index === 2 ? '_blank' : ''}
                 className={classNames(
                   tier.mostPopular
                     ? 'bg-indigo-600 text-white shadow-sm hover:bg-indigo-500'
@@ -135,7 +119,7 @@ export default function Price() {
                   'mt-6 block rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600',
                 )}
               >
-                {index < 3 ? '点击购买' : '了解详情'}
+                {index < 2 ? '点击购买' : '了解详情'}
               </Link>
               <ul role="list"
                   className="mt-8 space-y-3 text-sm leading-6 text-gray-600">

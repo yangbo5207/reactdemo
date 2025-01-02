@@ -26,7 +26,7 @@ export default function Codepack(props) {
     updateCurrentCode(titles[i])
   }
 
-  const base = 'border border-gray-100 flex bg-white keepx flex-col-reverse sm:flex-row overflow-hidden'
+  const base = 'border border-gray-100 flex bg-white keepx flex-col-reverse sm:flex-row overflow-hidden rounded-md'
   const cls = clsx(base, className)
 
   return (

@@ -1,7 +1,3 @@
-import {motion} from 'motion/react'
-import MiniBlock from './MiniBlock'
-import {Cookie, ChevronRight} from 'lucide-react'
-
 export default function SectionCourse() {  
   return (
     <main className='backdrop-blur-sm py-4 bg-gray-50 bg-opacity-70 px-6 md:px-8'>
@@ -43,7 +39,6 @@ export default function SectionCourse() {
             </div>
           </div>
         </div>
-        
       </div>
     </main>
   )

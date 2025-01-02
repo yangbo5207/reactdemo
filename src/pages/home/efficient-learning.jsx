@@ -44,19 +44,19 @@ export default function EfficientLearning() {
           </Flex>
 
           <div className='grid grid-cols-2 gap-6 mt-8'>
-            <Flex col className='flex-1 border h-36 rounded-xl hover:bg-gray-100 transition p-6 justify-between items-start'>
+            <Flex col className='flex-1 border h-36 rounded-md hover:bg-gray-100 transition p-6 justify-between items-start'>
               <Castle size={28} className='text-green-400' />
               <p className='text-lg'>知识点覆盖完整</p>
             </Flex>
-            <Flex col className='flex-1 border h-36 rounded-xl hover:bg-gray-100 transition p-6 justify-between items-start'>
+            <Flex col className='flex-1 border h-36 rounded-md hover:bg-gray-100 transition p-6 justify-between items-start'>
               <GitPullRequestDraft size={28} className='text-green-400' />
               <p className='text-lg'>深入浅出，理论结合实践</p>
             </Flex>
-            <Flex col className='flex-1 border h-36 rounded-xl hover:bg-gray-100 transition p-6 justify-between items-start'>
+            <Flex col className='flex-1 border h-36 rounded-md hover:bg-gray-100 transition p-6 justify-between items-start'>
               <Projector size={28} className='text-green-400' />
               <p className='text-lg'>实践案例内置可演示</p>
             </Flex>
-            <Flex col className='flex-1 border h-36 rounded-xl hover:bg-gray-100 transition p-6 justify-between items-start'>
+            <Flex col className='flex-1 border h-36 rounded-md hover:bg-gray-100 transition p-6 justify-between items-start'>
               <Unplug size={28} className='text-green-400' />
               <p className='text-lg'>付费群内容直播答疑</p>
             </Flex>

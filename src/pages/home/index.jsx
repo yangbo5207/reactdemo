@@ -11,6 +11,15 @@ import SctionComment from './section-comment'
 import SectionFooter from './section-footer'
 import './App.css'
 
+export function variants(delay = 0) {
+  return {
+    initial: {y: 60, opacity: 0},
+    whileInView: {y: 0, opacity: 1},
+    transition: {duration: 0.5, delay: delay},
+    viewport: {once: true}
+  }
+}
+
 function App() {
   return (
     <div className='relative pt-16'>
