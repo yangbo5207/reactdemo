@@ -1,4 +1,3 @@
-import Authentication from '../../authentication'
 import Playground from "components/Playground";
 
 import AppText from './case/index.jsx?raw'
@@ -18,12 +17,6 @@ const files = {
 
 export default function App() {
   return (
-    <Authentication>
-      <Playground
-        files={files}
-        renderArticle={(code) => <Article components={{code}} />}
-        caseRender={<MainCase />}
-      />
-    </Authentication>
+    <Playground files={files} column='base' renderArticle={(code) => <Article components={{code}} />} caseRender={<MainCase />}/>
   )
 }

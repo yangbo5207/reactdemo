@@ -1,5 +1,4 @@
 import {Link} from 'react-router-dom'
-import {ShieldCheck, ArrowRight} from 'lucide-react'
 import { getAuthURL } from '../../utils/http'
 import {getUserinfo} from '../service'
 
@@ -9,11 +8,10 @@ export default function Avatar() {
   if (!isLogin) {
     return (
       <Link 
-        className='flex items-center px-3 py-1 rounded bg-blue-500 text-white ml-4' 
+        className='flex items-center px-8 py-1 rounded bg-blue-500 text-white' 
         to={getAuthURL()}
       >
-        <div className='text-sm mr-1'>登录</div>
-        <ArrowRight size={14} />
+        <div>登录</div>
       </Link>
     )
   }
@@ -22,7 +20,7 @@ export default function Avatar() {
 
   return (
     <Link to={profileLink} target='_blank' className='flex items-center'>
-      <div className='w-8 h-8 ml-4 border rounded-full overflow-hidden'>
+      <div className='w-6 h-6 ml-0 md:ml-4 border rounded-full overflow-hidden'>
         <img className='w-full h-full' src={avatar_url} alt='' />
       </div>
       <span className='ml-2'>{nickname}</span>

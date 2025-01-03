@@ -3,7 +3,7 @@ import ActiveLink from 'components/ActiveLink'
 import Dialog from 'components/Dialog';
 import {UserRoundPlus} from 'lucide-react'
 
-export default function Button_qun() {
+export default function ChatButton() {
   const dialog = useRef(null)
 
   function __clickhandler(e) {
@@ -14,8 +14,8 @@ export default function Button_qun() {
   return (
     <>
       <ActiveLink className='flex items-center' onClick={__clickhandler}>
-        <UserRoundPlus size={14} />
-        <div className='ml-1 text-sm'>交流群</div>
+        <UserRoundPlus size={18} />
+        <div className='ml-2'>交流群</div>
       </ActiveLink>
       <Dialog ref={dialog} title='Message' onSure={() => dialog.current.close()}>
         添加我的微信：

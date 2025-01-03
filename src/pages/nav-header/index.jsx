@@ -23,22 +23,22 @@ export default function NavHeader() {
       </aside>
 
       <div id='vp-content' className='h-16 flex items-center pr-4 md:pr-0'>
-        <div className='flex space-x-6 px-4 2xl:px-24 flex-1'>
+        <div className='flex px-4 md:px-8 2xl:px-24 flex-1'>
           <div className='md:hidden'>
             <LOGO />
           </div>
           {links.map((link, index) => (
             <ActiveLink 
               to={link.path} key={link.path}
-              className='hidden md:block text-gray-500' end={false} activeName='text-gray-900'
+              className='hidden md:block mr-6 text-gray-500' end={false} activeName='text-gray-900'
             >
               {link.text}
             </ActiveLink>
           ))}
         </div>
 
-        <aside id='hp-aside' className='hidden md:flex h-16 items-center pr-4 lg:pr-6'>
-          <ChatButton alt='交流群' />
+        <aside id='hp-aside' className='hidden md:flex h-16 items-center pr-4 lg:pr-6 space-x-4'>
+          <ChatButton />
           <Profile />
         </aside>
 

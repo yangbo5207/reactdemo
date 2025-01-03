@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from  "tailwindcss"
 import autoprefixer from "autoprefixer"
 import { visualizer } from "rollup-plugin-visualizer";
+import vitePluginRequire from 'vite-plugin-require'
 import path from 'path'
 
 const ReactCompilerConfig = { /* ... */ };
@@ -18,6 +19,7 @@ export default defineConfig({
         ],
       },
     }),
+    vitePluginRequire.default(),
     mdx(),
     visualizer({
       gzipSize: true,
@@ -42,6 +44,7 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
       'components': path.resolve(__dirname, './src/components'),
+      'app': path.resolve(__dirname, './src/app'),
       'pages': path.resolve(__dirname, './src/pages'),
       'utils': path.resolve(__dirname, './src/utils'),
     }

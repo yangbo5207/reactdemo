@@ -1,25 +1,25 @@
 import {Suspense, useState, useTransition} from 'react'
-import Message from './Message.jsx'
-import Button from './Button.jsx'
-import Skeleton from './Skeleton.jsx'
-import {getApi} from './api.js'
+import Message from './Message'
+import Button from 'components/Button'
+import Skeleton from 'components/Skeleton'
+import {getApi} from '../api'
 
 export default function App() {
   const [response, setApi] = useState(getApi)
   const [isPending, startTransition] = useTransition()
 
-  function __clickToGetMessage() {
+  function __click() {
     startTransition(() => {
       setApi(getApi())
     })
   }
 
   return (
-    <div>
-      <Button onClick={__clickToGetMessage} disabled={isPending}>
-        点击更新
-      </Button>
-
+    <div className='space-y-4'>
+      <div className='flex justify-end'>
+        <Button onClick={__click} disabled={isPending}>点击更新</Button>
+      </div>
+      
       <Suspense fallback={<Skeleton />}>
         <Message response={response} isPending={isPending} />
       </Suspense>

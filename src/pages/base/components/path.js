@@ -1,53 +1,49 @@
-// base
-import C1Change from './pages/1.change'
-import C2Layers from './pages/2.layers'
-import C3Create from './pages/3.create'
 
 // use promise
-import C4Usebase from './pages/4.usebase'
-import C5Suspense from './pages/5.suspense'
-import C6Update from './pages/6.update'
-import C7InitUpdate from './pages/7.useInitUpdate'
-import C8UpdateToList from './pages/8.updateToList'
-import C9Loadmore from './pages/9.Loadmore'
-import C10Search from './pages/10.Search'
-import C11Tabs from './pages/11.tabs'
-import C12TabShare from './pages/12.tabshard'
-import UseTabscount from './pages/13.tabscount'
-import UseNest from './pages/14.usenest'
-import UseLower from './pages/15.usewitchreact16'
+import C4Usebase from 'pages/base/pages/4.usebase'
+import C5Suspense from 'pages/base/pages/5.suspense'
+import C6Update from 'pages/base/pages/6.update'
+import C7InitUpdate from 'pages/base/pages/7.useInitUpdate'
+import C8UpdateToList from 'pages/base/pages/8.updateToList'
+import C9Loadmore from 'pages/base/pages/9.Loadmore'
+import C10Search from 'pages/base/pages/10.Search'
+import C11Tabs from 'pages/base/pages/11.tabs'
+import C12TabShare from 'pages/base/pages/12.tabshard'
+import UseTabscount from 'pages/base/pages/13.tabscount'
+import UseNest from 'pages/base/pages/14.usenest'
+import UseLower from 'pages/base/pages/15.usewitchreact16'
 
 // use context
-import CtxRef from './pages/16.contextRef'
-import CtxModal from './pages/17.contextmodal'
-import CtxModify from './pages/18.contextmodify'
-import CtxCount from './pages/19.contextcount'
+import CtxRef from 'pages/base/pages/16.contextRef'
+import CtxModal from 'pages/base/pages/17.contextmodal'
+import CtxModify from 'pages/base/pages/18.contextmodify'
+import CtxCount from 'pages/base/pages/19.contextcount'
 
 // 并发 API
-import Deferred from './pages/20.deferred'
-import Transition from './pages/21.useTransition'
+import Deferred from 'pages/base/pages/20.deferred'
+import Transition from 'pages/base/pages/21.useTransition'
 
 // Compiler
-import ImportCompiler from './pages/22.compilerimport19'
-import ImportWithLower from './pages/23.compilerimportlower'
-import ImportWithWebpack from './pages/24.compilerimportwebpack'
-import CompilerBase from './pages/25.compilerbase'
-import CompilerCount from './pages/26.compilercounter'
-import CompilerExpensive from './pages/27.compilerexpensive'
-import CompilerTabs from './pages/28.compilertabs'
+import ImportCompiler from 'pages/base/pages/22.compilerimport19'
+import ImportWithLower from 'pages/base/pages/23.compilerimportlower'
+import ImportWithWebpack from 'pages/base/pages/24.compilerimportwebpack'
+import CompilerBase from 'pages/base/pages/25.compilerbase'
+import CompilerCount from 'pages/base/pages/26.compilercounter'
+import CompilerExpensive from 'pages/base/pages/27.compilerexpensive'
+import CompilerTabs from 'pages/base/pages/28.compilertabs'
 
 // form action
-import ActionBase from './pages/29.fabase'
-import FormDataBase from './pages/30.faformdata'
-import FormAction from './pages/31.faAction'
-import UseFormStatus from './pages/32.faUseformstatus'
-import UseActionState from './pages/33.faUseactionstate'
-import UseOptimistic from './pages/34.faUseoptimistic1'
-import UseOptimistic2 from './pages/35.faUseoptimistic2'
-import UseOptimistic3 from './pages/36.faUseoptimistic3'
-import UseOptimistic4 from './pages/37.faUseoptimistic4'
+import ActionBase from 'pages/base/pages/29.fabase'
+import FormDataBase from 'pages/base/pages/30.faformdata'
+import FormAction from 'pages/base/pages/31.faAction'
+import UseFormStatus from 'pages/base/pages/32.faUseformstatus'
+import UseActionState from 'pages/base/pages/33.faUseactionstate'
+import UseOptimistic from 'pages/base/pages/34.faUseoptimistic1'
+import UseOptimistic2 from 'pages/base/pages/35.faUseoptimistic2'
+import UseOptimistic3 from 'pages/base/pages/36.faUseoptimistic3'
+import UseOptimistic4 from 'pages/base/pages/37.faUseoptimistic4'
 
-import End from './pages/38.end'
+import End from 'pages/base/pages/38.end'
 
 export const navigation = [
   {
@@ -56,15 +52,15 @@ export const navigation = [
 }, {
   path: 'index',
   name: '1、开发方式变革',
-  component: C1Change
+  component: require('pages/base/pages/1.change')
 }, {
   path: 'layers',
   name: '2、学习的三个层次',
-  component: C2Layers
+  component: require('pages/base/pages/2.layers')
 }, {
   path: 'create',
   name: '3、创建项目',
-  component: C3Create
+  component: require('pages/base/pages/3.create')
 }, {
   type: 'tip',
   name: 'use(promise)'

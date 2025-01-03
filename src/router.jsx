@@ -4,7 +4,7 @@ import PageLoading from 'components/PageLoading'
 import Home from 'pages/home'
 
 import BaseLayout from './pages/base/Layout'
-import {navigation} from 'pages/base/path'
+import {navigation} from 'pages/base/components/path'
 
 import Components from './pages/components'
 import {compath} from 'pages/components/path'

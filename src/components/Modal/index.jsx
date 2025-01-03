@@ -1,7 +1,7 @@
 import { useState, useImperativeHandle} from "react";
-import s from './index.module.css'
 import {createPortal} from 'react-dom'
 import clsx from 'clsx'
+import './index.css'
 
 export default function Modal(props) {
   const {onClose, children, ref} = props
@@ -20,9 +20,9 @@ export default function Modal(props) {
     }
   }))
 
-  const cls = clsx(s.modal, {
-    [s.in]: show,
-    [s.out]: !show
+  const cls = clsx('modal', {
+    'animation-in': show,
+    'animation-out': !show
   })
 
   function __animationendHandler() {
@@ -31,22 +31,18 @@ export default function Modal(props) {
 
   function __closeHandler() {
     setShow(false)
+    document.body.style.overflow = 'visible'
     onClose && onClose()
   }
 
   if (!display) { return null }
 
-  return (
-    <>
-      {
-        createPortal(
-          <div
-            className={cls}
-            onAnimationEnd={__animationendHandler}
-            onClick={__closeHandler}
-          >{children}</div>, document.body
-        )
-      }
-    </>
+
+  return createPortal(
+    <div
+      onAnimationEnd={__animationendHandler}
+      className={cls}
+      onClick={__closeHandler}
+    >{children}</div>, document.body
   )
 }

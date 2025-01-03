@@ -1,5 +1,6 @@
 import {useRef, useEffect, use} from 'react'
 import {useOutlet, useLocation, useNavigate} from 'react-router-dom'
+import Authentication from './components/authentication'
 import {setSubscribe} from './api'
 
 export default function BaseArticle({promise}) {
@@ -23,7 +24,7 @@ export default function BaseArticle({promise}) {
 
   return Array.from(pageMap.current).map(([key, component]) => (
     <div key={key} style={{display: pathname === key ? 'block' : 'none'}}>
-      {component}
+      <Authentication>{component}</Authentication>
     </div>
   ))
 }

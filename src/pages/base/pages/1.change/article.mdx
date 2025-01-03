@@ -1,5 +1,5 @@
-import Cardruntime from "components/Cardruntime.jsx";
-import Demo01 from './case/Demo01.jsx'
+import Case01 from './case/demo01/Layout'
+import Case02 from './case/demo02/Layout'
 
 ## *0*
 **序**
@@ -10,11 +10,11 @@ import Demo01 from './case/Demo01.jsx'
 
 但是，我要告诉大家的是，**我们都严重低估了 React 19**。
 
-经过我长达两个月的使用体验，我的感受就是：
+经过我长达一整年的使用体验，我的感受是：
 
 **我们的开发方式，又要迎来一次重大升级了。** 因为新的 hook 真的太好用了。
 
-所以我准备写一系列合集，为大家完整、详细的介绍 React 19 的新的最佳实践。在后续的文章中，我会详细分析新的开发方式的思考。相关的实践案例我已经写完，后续的二十多篇文章预计会在 React19 正式发布之前完成。大家可以保持持续关注。
+所以我准备写一系列合集，为大家完整、详细的介绍 React 19 的新的最佳实践。在后续的文章中，我会详细分析新的开发方式的思考。
 
 和过去的 React 版本相比，React 19 主要从如下两个方面带来了显著的提升。
 
@@ -83,7 +83,7 @@ React 19 之前，React 高手与普通开发者之间，开发的项目无论�
 
 首先我们需要定义一个 API 用于请求数据。
 
-```ts
+```jsx
 export const getApi = async () => {
   await fetch(url, requestOptions)
   const i = Math.floor(Math.random() * 10) % 5
@@ -97,7 +97,7 @@ export const getApi = async () => {
 
 然后创建一个函数组件，并执行该 api
 
-```js
+```jsx
 export default function App() {
   const promise = getApi()
 
@@ -111,7 +111,7 @@ export default function App() {
 
 最后在子组件中，获取 api 执行之后得到的数据
 
-```js
+```jsx
 const Message = (props) => {
   const {response} = props
   const content = use(response)
@@ -125,11 +125,13 @@ const Message = (props) => {
 
 演示效果如下
 
-<Cardruntime reload><Demo01 /></Cardruntime>
+<Case01 />
 
-大家可以自行感受一下新的开发方式与以前基于 `useEffect` 请求数据有什么不同之处。我在右侧案例演示中，还提供了更完整更具代表性的案例。大家可以先瞄一眼体会一下。案例代码有对应的完整演示效果，你可以通过修改代码观察案例的变化。
+大家可以自行感受一下新的开发方式与以前基于 `useEffect` 请求数据有什么不同之处。我在下方案例演示中，还提供了更完整更具代表性的案例。大家可以先瞄一眼体会一下。案例代码有对应的完整演示效果，你可以通过修改代码观察案例的变化。
 
 > 注意：一套成熟架构思维，不是使用一个简单的方案解决某一个问题，而是要基于这套思维去解决项目中的绝大多数场景。因此我们一定要结合大量的场景去理解一套项目架构思维。
+
+<Case02 />
 
 ## *5*
 **合集介绍**

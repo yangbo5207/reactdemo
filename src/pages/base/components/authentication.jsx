@@ -1,9 +1,9 @@
 import {Link} from 'react-router-dom'
 import {Tent} from 'lucide-react'
 
-import {getUserinfo} from '../service'
-import {getSubscribe, columnURL} from './api'
-import { getAuthURL } from '../../utils/http'
+import {getUserinfo} from 'pages/service'
+import {getSubscribe, columnURL} from '../api'
+import { getAuthURL } from 'utils/http'
 
 export default function Authentication({children, pass}) {
   const {isLogin} = getUserinfo()
